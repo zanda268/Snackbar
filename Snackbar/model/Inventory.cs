@@ -7,19 +7,19 @@ using System.Text;
 
 namespace Snackbar.model
 {
-    class Inventory
+    internal class Inventory
     {
-        private SortableBindingList<Item> inventory;
+        private SortableBindingList<Item> _inventory;
 
-        public Inventory()
+        internal Inventory()
         {
-            inventory = new SortableBindingList<Item>();
+            _inventory = new SortableBindingList<Item>();
         }
 
         //Adds an Item object to the inventory list
         public void AddItem(Item item)
         {
-            inventory.Add(item);
+            _inventory.Add(item);
         }
 
         //Returns a string with each line representing an inventory object
@@ -27,7 +27,7 @@ namespace Snackbar.model
         {
             string returnString = "";
 
-            foreach (Item i in inventory)
+            foreach (Item i in _inventory)
                 returnString += i.ToString() + Environment.NewLine;
 
             return returnString;
@@ -36,13 +36,13 @@ namespace Snackbar.model
         //Returns an item that matches the UPC
         public Item GetItem(string UPC)
         {
-            return inventory.ToList<Item>().Find(item => item.UPC == UPC);
+            return _inventory.ToList<Item>().Find(item => item.UPC == UPC);
         }
 
         //Returns the SortableBindingList containing the items that make up the inventory
         public SortableBindingList<Item> GetItemList()
         {
-            return inventory;
+            return _inventory;
         }
 
     }

@@ -13,89 +13,91 @@ using static Snackbar.model.Settings;
 
 namespace Snackbar
 {
-    partial class DataManagement : Form
+    internal partial class DataManagement : Form
     {
-        private UserList userList;
-        private Inventory inventory;
-        private PurchaseHistory purchaseHistory;
-        private Settings settings;
+        private UserList _userList;
+        private Inventory _inventory;
+        private PurchaseHistory _purchaseHistory;
+        private Settings _settings;
 
-        private int SolemnlySwearCount;
-        private string SolemnlySwear = "I solemnly swear that I am up to no good.";
-        
+        private int _solemnlySwearCount;
+        private string _solemnlySwear = "I solemnly swear that I am up to no good.";
 
-        public DataManagement(UserList userList, Inventory inventory, PurchaseHistory purchaseHistory, Settings settings)
+
+        internal DataManagement(UserList userList, Inventory inventory, PurchaseHistory purchaseHistory, Settings settings)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
 
-            this.userList = userList;
-            this.inventory = inventory;
-            this.purchaseHistory = purchaseHistory;
-            this.settings = settings;
+            this._userList = userList;
+            this._inventory = inventory;
+            this._purchaseHistory = purchaseHistory;
+            this._settings = settings;
 
             //Set DataGrid Data Sources
-            DataGrid_Users.DataSource = userList.GetUserList();
-            DataGrid_Inventory.DataSource = inventory.GetItemList();
-            DataGrid_Purchases.DataSource = purchaseHistory.GetPurchaseHistoryList();
+            dataGrid_Users.DataSource = userList.GetUserList();
+            dataGrid_Inventory.DataSource = inventory.GetItemList();
+            dataGrid_Purchases.DataSource = purchaseHistory.GetPurchaseHistoryList();
 
             //Cell Validators
-            DataGrid_Users.CellValidating += new DataGridViewCellValidatingEventHandler(DataGrid_Users_CellValidating);
-            DataGrid_Users.CellEndEdit += new DataGridViewCellEventHandler(DataGrid_Users_CellEndEdit);
-            DataGrid_Inventory.CellValidating += new DataGridViewCellValidatingEventHandler(DataGrid_Inventory_CellValidating);
-            DataGrid_Inventory.CellEndEdit += new DataGridViewCellEventHandler(DataGrid_Inventory_CellEndEdit);
+            dataGrid_Users.CellValidating += new DataGridViewCellValidatingEventHandler(DataGrid_Users_CellValidating);
+            dataGrid_Users.CellEndEdit += new DataGridViewCellEventHandler(DataGrid_Users_CellEndEdit);
+            dataGrid_Inventory.CellValidating += new DataGridViewCellValidatingEventHandler(DataGrid_Inventory_CellValidating);
+            dataGrid_Inventory.CellEndEdit += new DataGridViewCellEventHandler(DataGrid_Inventory_CellEndEdit);
 
             //Initialize Settings tab to values from settings
-            CheckBox_NegativeBalance.Checked = settings.NegativeBalancesEnabled;
-            CheckBox_Warn.Checked = settings.WarnUserEnabled;
-            Numeric_WarnLevel.Value = settings.WarnUserValue;
-            CheckBox_Shame.Checked = settings.ShameUserEnabled;
-            Numeric_ShameLevel.Value = settings.ShameUserValue;
-            CheckBox_LimitDebt.Checked = settings.LimitDebtEnabled;
-            Numeric_MaxDebt.Value = settings.MaxDebtValue;
-            CheckBox_Guest.Checked = settings.GuestAccountEnabled;
-            TextBox_GuestID.Text = settings.GuestAccountID;
-            CheckBox_EnableEasterEggs.Checked = settings.EasterEggsEnabled;
-            CheckBox_FridaySongEnabled.Checked = settings.FridaySongEnabled;
-            Numeric_FridaySongChance.Value = settings.FridaySongChance;
-            CheckBox_DejaVuEnabled.Checked = settings.DejaVuEnabled;
-            Numeric_DejaVuChance.Value = settings.DejaVuChance;
-            CheckBox_JeopardyEnabled.Checked = settings.JeopardyEnabled;
-            Numeric_JeopardyChance.Value = settings.JeopardyChance;
-            ListBox_EasterEggUsers.DataSource = settings.EasterEggUsers;
+            checkBox_NegativeBalance.Checked = settings.NegativeBalancesEnabled;
+            checkBox_Warn.Checked = settings.WarnUserEnabled;
+            numeric_WarnLevel.Value = settings.WarnUserValue;
+            checkBox_Shame.Checked = settings.ShameUserEnabled;
+            numeric_ShameLevel.Value = settings.ShameUserValue;
+            checkBox_LimitDebt.Checked = settings.LimitDebtEnabled;
+            numeric_MaxDebt.Value = settings.MaxDebtValue;
 
-            initializeEasterEggComp();
+            checkBox_Guest.Checked = settings.GuestAccountEnabled;
+            textBox_GuestID.Text = settings.GuestAccountID;
+
+            checkBox_EnableEasterEggs.Checked = settings.EasterEggsEnabled;
+            checkBox_FridaySongEnabled.Checked = settings.FridaySongEnabled;
+            numeric_FridaySongChance.Value = settings.FridaySongChance;
+            checkBox_DejaVuEnabled.Checked = settings.DejaVuEnabled;
+            numeric_DejaVuChance.Value = settings.DejaVuChance;
+            checkBox_JeopardyEnabled.Checked = settings.JeopardyEnabled;
+            numeric_JeopardyChance.Value = settings.JeopardyChance;
+            listBox_EasterEggUsers.DataSource = settings.EasterEggUsers;
+
+            InitializeEasterEggComp();
 
             if (!settings.EasterEggsEnabled)
-                TabControl_DataManagement.TabPages.Remove(Tab_EasterEggs);
+                tabControl_DataManagement.TabPages.Remove(tab_EasterEggs);
 
             this.Icon = Properties.Resources.icon;
-            DataGrid_Purchases.Sort(timestampDataGridViewTextBoxColumn, ListSortDirection.Descending);
+            dataGrid_Purchases.Sort(timestampDataGridViewTextBoxColumn, ListSortDirection.Descending);
         }
 
         //Save data on window close.
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
-            FileIO.SaveData(userList, purchaseHistory, inventory, settings);
+            FileIO.SaveData(_userList, _purchaseHistory, _inventory, _settings);
         }
 
         //Initializes components on the EasterEgg tab to correct values after changes have occured.
-        private void initializeEasterEggComp()
+        private void InitializeEasterEggComp()
         {
-            if (settings.EasterEggUsers.Count != userList.GetUserList().Count + 1)
+            if (_settings.EasterEggUsers.Count != _userList.GetUserList().Count + 1)
             {
-                SortableBindingList<EasterEggUser> temp = new SortableBindingList<EasterEggUser>(settings.EasterEggUsers);
-                settings.EasterEggUsers.Clear();
+                SortableBindingList<EasterEggUser> temp = new SortableBindingList<EasterEggUser>(_settings.EasterEggUsers);
+                _settings.EasterEggUsers.Clear();
 
-                settings.EasterEggUsers.Add(new EasterEggUser(settings.ALL_USERS, settings.ALL_USERS));
+                _settings.EasterEggUsers.Add(new EasterEggUser(_settings.ALL_USERS, _settings.ALL_USERS));
 
-                foreach (User u in userList.GetUserList())
+                foreach (User u in _userList.GetUserList())
                 {
-                    settings.EasterEggUsers.Add(new EasterEggUser(u.ID, u.Name));
+                    _settings.EasterEggUsers.Add(new EasterEggUser(u.ID, u.Name));
                 }
 
-                foreach (EasterEggUser u in settings.EasterEggUsers)
+                foreach (EasterEggUser u in _settings.EasterEggUsers)
                 {
                     try
                     {
@@ -116,7 +118,7 @@ namespace Snackbar
                     }
                 }
 
-                settings.AllUsersUser = settings.EasterEggUsers.Find(x => x.UserID.Equals(settings.ALL_USERS));
+                _settings.AllUsersUser = _settings.EasterEggUsers.Find(x => x.UserID.Equals(_settings.ALL_USERS));
 
                 UpdateEasterEggControlsForNewUser();
             }
@@ -124,48 +126,48 @@ namespace Snackbar
 
         private void Timer_SolemnlySwear_Tick(object sender, EventArgs e)
         {
-            if (SolemnlySwearCount > 80)
+            if (_solemnlySwearCount > 80)
             {
-                Timer_SolemnlySwear.Enabled = false;
-                Label_SolemnlySwear.Visible = false;
-                Label_SolemnlySwear.Text = "";
-                Panel_EasterEggs.Controls.Remove(Label_SolemnlySwear);
-                Panel_EasterEgg_MainLeft.Visible = true;
-                Panel_EasterEgg_MainLeft.Enabled = true;
-                Panel_EasterEgg_MainRight.Visible = true;
-                Panel_EasterEgg_MainRight.Enabled = true;
-                ListBox_EasterEggUsers.SelectedItem = ListBox_EasterEggUsers.GetSelected(0);
+                timer_SolemnlySwear.Enabled = false;
+                label_SolemnlySwear.Visible = false;
+                label_SolemnlySwear.Text = "";
+                panel_EasterEggs.Controls.Remove(label_SolemnlySwear);
+                panel_EasterEgg_MainLeft.Visible = true;
+                panel_EasterEgg_MainLeft.Enabled = true;
+                panel_EasterEgg_MainRight.Visible = true;
+                panel_EasterEgg_MainRight.Enabled = true;
+                listBox_EasterEggUsers.SelectedItem = listBox_EasterEggUsers.GetSelected(0);
             }
 
-            if (SolemnlySwearCount <= SolemnlySwear.Length)
+            if (_solemnlySwearCount <= _solemnlySwear.Length)
             {
-                Label_SolemnlySwear.Text = SolemnlySwear.Substring(0, SolemnlySwearCount);
+                label_SolemnlySwear.Text = _solemnlySwear.Substring(0, _solemnlySwearCount);
             }
 
-            if (SolemnlySwearCount >= 60)
+            if (_solemnlySwearCount >= 60)
             {
-                int color = (SolemnlySwearCount - 60) * 25;
+                int color = (_solemnlySwearCount - 60) * 25;
                 color = color <= 255 ? color : 255;
 
-                Label_SolemnlySwear.ForeColor = Color.FromArgb(255, color, color, color);
+                label_SolemnlySwear.ForeColor = Color.FromArgb(255, color, color, color);
             }
 
-            SolemnlySwearCount++;
+            _solemnlySwearCount++;
         }
 
         private void UpdateEasterEggControlsForNewUser()
         {
-            EasterEggUser u = (EasterEggUser)ListBox_EasterEggUsers.SelectedItem;
+            EasterEggUser u = (EasterEggUser)listBox_EasterEggUsers.SelectedItem;
 
             if (u != null)
             {
-                Panel_EasterEgg_LeftBottom.Enabled = u.UserID.Equals(settings.ALL_USERS);
-                Numeric_LoginChance.Value = u.LoginChance;
-                Numeric_ScanChance.Value = u.ScanChance;
-                Numeric_CheckoutChance.Value = u.CheckoutChance;
-                ListBox_Login.DataSource = u.LoginSounds;
-                ListBox_Scan.DataSource = u.ScanSounds;
-                ListBox_Checkout.DataSource = u.CheckoutSounds;
+                panel_EasterEgg_LeftBottom.Enabled = u.UserID.Equals(_settings.ALL_USERS);
+                numeric_LoginChance.Value = u.LoginChance;
+                numeric_ScanChance.Value = u.ScanChance;
+                numeric_CheckoutChance.Value = u.CheckoutChance;
+                listBox_Login.DataSource = u.LoginSounds;
+                listBox_Scan.DataSource = u.ScanSounds;
+                listBox_Checkout.DataSource = u.CheckoutSounds;
             }
         }
 
@@ -175,134 +177,134 @@ namespace Snackbar
         {
             if (Control.ModifierKeys == Keys.Control)
             {
-                SolemnlySwearCount = 0;
-                Timer_SolemnlySwear.Interval = 100;
-                Timer_SolemnlySwear.Enabled = true;
-                Timer_SolemnlySwear.Tick += new EventHandler(Timer_SolemnlySwear_Tick);
-                this.toolTip1.SetToolTip(this.Panel_EasterEggs, "");
+                _solemnlySwearCount = 0;
+                timer_SolemnlySwear.Interval = 100;
+                timer_SolemnlySwear.Enabled = true;
+                timer_SolemnlySwear.Tick += new EventHandler(Timer_SolemnlySwear_Tick);
+                this.toolTip1.SetToolTip(this.panel_EasterEggs, "");
             }
         }
 
         private void CheckBox_EnableEasterEggs_CheckedChanged(object sender, EventArgs e)
         {
-            settings.EasterEggsEnabled = CheckBox_EnableEasterEggs.Checked;
-            if (!settings.EasterEggsEnabled)
-                TabControl_DataManagement.TabPages.Remove(Tab_EasterEggs);
+            _settings.EasterEggsEnabled = checkBox_EnableEasterEggs.Checked;
+            if (!_settings.EasterEggsEnabled)
+                tabControl_DataManagement.TabPages.Remove(tab_EasterEggs);
             else
             {
-                if (!TabControl_DataManagement.TabPages.Contains(Tab_EasterEggs))
-                    TabControl_DataManagement.TabPages.Add(Tab_EasterEggs);
+                if (!tabControl_DataManagement.TabPages.Contains(tab_EasterEggs))
+                    tabControl_DataManagement.TabPages.Add(tab_EasterEggs);
             }
         }
 
         private void CheckBox_NegativeBalance_CheckedChanged(object sender, EventArgs e)
         {
-            Panel_NegativeBalanceGroup.Enabled = CheckBox_NegativeBalance.Checked;
-            settings.NegativeBalancesEnabled = CheckBox_NegativeBalance.Checked;
+            panel_NegativeBalanceGroup.Enabled = checkBox_NegativeBalance.Checked;
+            _settings.NegativeBalancesEnabled = checkBox_NegativeBalance.Checked;
         }
 
         private void CheckBox_Warn_CheckedChanged(object sender, EventArgs e)
         {
-            Numeric_WarnLevel.Enabled = CheckBox_Warn.Checked;
-            settings.WarnUserEnabled = CheckBox_Warn.Checked;
+            numeric_WarnLevel.Enabled = checkBox_Warn.Checked;
+            _settings.WarnUserEnabled = checkBox_Warn.Checked;
         }
 
         private void CheckBox_Shame_CheckedChanged(object sender, EventArgs e)
         {
-            Numeric_ShameLevel.Enabled = CheckBox_Shame.Checked;
-            settings.ShameUserEnabled = CheckBox_Shame.Checked;
+            numeric_ShameLevel.Enabled = checkBox_Shame.Checked;
+            _settings.ShameUserEnabled = checkBox_Shame.Checked;
         }
 
         private void CheckBox_Guest_CheckedChanged(object sender, EventArgs e)
         {
-            TextBox_GuestID.Enabled = CheckBox_Guest.Checked;
-            settings.GuestAccountEnabled = CheckBox_Guest.Checked;
+            textBox_GuestID.Enabled = checkBox_Guest.Checked;
+            _settings.GuestAccountEnabled = checkBox_Guest.Checked;
         }
 
         private void CheckBox_FridaySongEnabled_CheckedChanged(object sender, EventArgs e)
         {
-            Numeric_FridaySongChance.Enabled = CheckBox_FridaySongEnabled.Checked;
-            settings.FridaySongEnabled = CheckBox_FridaySongEnabled.Checked;
+            numeric_FridaySongChance.Enabled = checkBox_FridaySongEnabled.Checked;
+            _settings.FridaySongEnabled = checkBox_FridaySongEnabled.Checked;
         }
 
         private void Numeric_FridaySongChance_ValueChanged(object sender, EventArgs e)
         {
-            settings.FridaySongChance = (int)Numeric_FridaySongChance.Value;
+            _settings.FridaySongChance = (int)numeric_FridaySongChance.Value;
         }
 
         private void CheckBox_DejaVuEnabled_CheckedChanged(object sender, EventArgs e)
         {
-            Numeric_DejaVuChance.Enabled = CheckBox_DejaVuEnabled.Checked;
-            settings.DejaVuEnabled = CheckBox_DejaVuEnabled.Checked;
+            numeric_DejaVuChance.Enabled = checkBox_DejaVuEnabled.Checked;
+            _settings.DejaVuEnabled = checkBox_DejaVuEnabled.Checked;
         }
 
         private void Numeric_DejaVuChance_ValueChanged(object sender, EventArgs e)
         {
-            settings.DejaVuChance = (int)Numeric_DejaVuChance.Value;
+            _settings.DejaVuChance = (int)numeric_DejaVuChance.Value;
         }
 
         private void CheckBox_JeopardyEnabled_CheckedChanged(object sender, EventArgs e)
         {
-            CheckBox_JeopardyEnabled.Enabled = CheckBox_JeopardyEnabled.Checked;
-            settings.JeopardyEnabled = CheckBox_JeopardyEnabled.Checked;
+            checkBox_JeopardyEnabled.Enabled = checkBox_JeopardyEnabled.Checked;
+            _settings.JeopardyEnabled = checkBox_JeopardyEnabled.Checked;
         }
 
         private void Numeric_JeopardyChance_ValueChanged(object sender, EventArgs e)
         {
-            settings.JeopardyChance = (int)Numeric_JeopardyChance.Value;
+            _settings.JeopardyChance = (int)numeric_JeopardyChance.Value;
         }
 
         private void Numeric_LoginChance_ValueChanged(object sender, EventArgs e)
         {
-            EasterEggUser u = (EasterEggUser)ListBox_EasterEggUsers.SelectedItem;
-            u.LoginChance = (int)Numeric_LoginChance.Value;
+            EasterEggUser u = (EasterEggUser)listBox_EasterEggUsers.SelectedItem;
+            u.LoginChance = (int)numeric_LoginChance.Value;
         }
 
         private void Numeric_ScanChance_ValueChanged(object sender, EventArgs e)
         {
-            EasterEggUser u = (EasterEggUser)ListBox_EasterEggUsers.SelectedItem;
-            u.ScanChance = (int)Numeric_ScanChance.Value;
+            EasterEggUser u = (EasterEggUser)listBox_EasterEggUsers.SelectedItem;
+            u.ScanChance = (int)numeric_ScanChance.Value;
         }
 
         private void Numeric_CheckoutChance_ValueChanged(object sender, EventArgs e)
         {
-            EasterEggUser u = (EasterEggUser)ListBox_EasterEggUsers.SelectedItem;
-            u.CheckoutChance = (int)Numeric_CheckoutChance.Value;
+            EasterEggUser u = (EasterEggUser)listBox_EasterEggUsers.SelectedItem;
+            u.CheckoutChance = (int)numeric_CheckoutChance.Value;
         }
 
         private void Numeric_WarnLevel_ValueChanged(object sender, EventArgs e)
         {
-            settings.WarnUserValue = (int)Numeric_WarnLevel.Value;
+            _settings.WarnUserValue = (int)numeric_WarnLevel.Value;
         }
 
         private void Numeric_ShameLevel_ValueChanged(object sender, EventArgs e)
         {
-            settings.ShameUserValue = (int)Numeric_ShameLevel.Value;
+            _settings.ShameUserValue = (int)numeric_ShameLevel.Value;
         }
 
         private void TextBox_GuestID_TextChanged(object sender, EventArgs e)
         {
-            if(userList.UserIDExists(TextBox_GuestID.Text))
+            if(_userList.UserIDExists(textBox_GuestID.Text))
             {
                 Label_GuestIDError.Text = "User ID already exists!";
             }
             else
             {
                 Label_GuestIDError.Text = "";
-                settings.GuestAccountID = TextBox_GuestID.Text;
+                _settings.GuestAccountID = textBox_GuestID.Text;
             }
         }
 
         //Attempts to add a new user to the list up to 100.
         private void Button_AddUser_Click(object sender, EventArgs e)
         {
-            if (!userList.AddUser(new User("New User ID", "New User Name", 0m)))
+            if (!_userList.AddUser(new User("New User ID", "New User Name", 0m)))
             {
                 int count = 1;
-                while (userList.UserIDExists("New User ID_" + count) && count < 100)
+                while (_userList.UserIDExists("New User ID_" + count) && count < 100)
                     count++;
 
-                userList.AddUser(new User("New User ID_" + count, "New User Name", 0m));
+                _userList.AddUser(new User("New User ID_" + count, "New User Name", 0m));
             }
         }
 
@@ -311,7 +313,7 @@ namespace Snackbar
         {
             List<DataGridViewRow> removeList = new List<DataGridViewRow>();
 
-            foreach (DataGridViewCell cell in DataGrid_Users.SelectedCells)
+            foreach (DataGridViewCell cell in dataGrid_Users.SelectedCells)
             {
                 if (!removeList.Contains(cell.OwningRow))
                     removeList.Add(cell.OwningRow);
@@ -325,7 +327,7 @@ namespace Snackbar
                     foreach (DataGridViewRow row in removeList)
                     {
                         User u = (User)row.DataBoundItem;
-                        userList.GetUserList().Remove(u);
+                        _userList.GetUserList().Remove(u);
                     }
             }
             else
@@ -337,7 +339,7 @@ namespace Snackbar
         //Add item to inventory list
         private void Button_AddItem_Click(object sender, EventArgs e)
         {
-            inventory.GetItemList().Add(new Item("Item Name", "Item UPC", 0m, 0));
+            _inventory.GetItemList().Add(new Item("Item Name", "Item UPC", 0m, 0));
         }
 
         //Delete selected items from inventory list
@@ -345,7 +347,7 @@ namespace Snackbar
         {
             List<DataGridViewRow> removeList = new List<DataGridViewRow>();
 
-            foreach (DataGridViewCell cell in DataGrid_Inventory.SelectedCells)
+            foreach (DataGridViewCell cell in dataGrid_Inventory.SelectedCells)
             {
                 if (!removeList.Contains(cell.OwningRow))
                     removeList.Add(cell.OwningRow);
@@ -357,7 +359,7 @@ namespace Snackbar
 
                 if (result == DialogResult.Yes)
                     foreach (DataGridViewRow row in removeList)
-                        inventory.GetItemList().Remove((Item)row.DataBoundItem);
+                        _inventory.GetItemList().Remove((Item)row.DataBoundItem);
             }
             else
             {
@@ -368,45 +370,47 @@ namespace Snackbar
         //Filters Inventory list for UPCs/Item Names that match current text in search box
         private void TextBox_InventorySearch_TextChanged(object sender, EventArgs e)
         {
-            SortableBindingList<Item> filteredList = new SortableBindingList<Item>(inventory.GetItemList().Where(i =>
-            i.Name.ToLower().Contains(TextBox_InventorySearch.Text.ToLower()) ||
-            i.UPC.ToLower().Contains(TextBox_InventorySearch.Text.ToLower())
+            SortableBindingList<Item> filteredList = new SortableBindingList<Item>(_inventory.GetItemList().Where(i =>
+            i.Name.ToLower().Contains(textBox_InventorySearch.Text.ToLower()) ||
+            i.UPC.ToLower().Contains(textBox_InventorySearch.Text.ToLower())
             ).ToList());
-            DataGrid_Inventory.DataSource = filteredList;
+            dataGrid_Inventory.DataSource = filteredList;
         }
 
         //Filters Users list for IDs/User Names that match current text in search box
         private void TextBox_UsersSearch_TextChanged(object sender, EventArgs e)
         {
-            SortableBindingList<User> filteredList = new SortableBindingList<User>(userList.GetUserList().Where(i =>
-            i.Name.ToLower().Contains(TextBox_UsersSearch.Text.ToLower()) ||
-            i.ID.ToLower().Contains(TextBox_UsersSearch.Text.ToLower())
+            SortableBindingList<User> filteredList = new SortableBindingList<User>(_userList.GetUserList().Where(i =>
+            i.Name.ToLower().Contains(textBox_UsersSearch.Text.ToLower()) ||
+            i.ID.ToLower().Contains(textBox_UsersSearch.Text.ToLower())
             ).ToList());
-            DataGrid_Users.DataSource = filteredList;
+            dataGrid_Users.DataSource = filteredList;
         }
 
         //Filters Purchase list for User IDs/Item Names/Dates that match current text in search box
         private void TextBox_PurchaseSearch_TextChanged(object sender, EventArgs e)
         {
-            SortableBindingList<Purchase> filteredList = new SortableBindingList<Purchase>(purchaseHistory.GetPurchaseHistoryList().Where(i =>
-            i.UserID.ToLower().Contains(TextBox_PurchaseSearch.Text.ToLower()) ||
-            i.ItemName.ToLower().Contains(TextBox_PurchaseSearch.Text.ToLower()) ||
-            i.Timestamp.ToString().ToLower().Contains(TextBox_PurchaseSearch.Text.ToLower())
+            SortableBindingList<Purchase> filteredList = new SortableBindingList<Purchase>(_purchaseHistory.GetPurchaseHistoryList().Where(i =>
+            i.UserID.ToLower().Contains(textBox_PurchaseSearch.Text.ToLower()) ||
+            i.ItemName.ToLower().Contains(textBox_PurchaseSearch.Text.ToLower()) ||
+            i.Timestamp.ToString().ToLower().Contains(textBox_PurchaseSearch.Text.ToLower())
             ).ToList());
-            DataGrid_Purchases.DataSource = filteredList;
+            dataGrid_Purchases.DataSource = filteredList;
         }
 
         //Changes Admin password
         private void Button_ChangeAdminPassword_Click(object sender, EventArgs e)
         {
-            if (TextBox_AdminPassword.Text.Length == 0)
+            if (textBox_AdminPassword.Text.Length == 0)
             {
+                Label_AdminPasswordError.ForeColor = System.Drawing.Color.Red;
                 Label_AdminPasswordError.Text = "Text cannot be empty!";
                 return;
             }
 
-            if (!TextBox_AdminPassword.Text.Equals(TextBox_AdminPassword2.Text))
+            if (!textBox_AdminPassword.Text.Equals(textBox_AdminPassword2.Text))
             {
+                Label_AdminPasswordError.ForeColor = System.Drawing.Color.Red;
                 Label_AdminPasswordError.Text = "Passwords must match!";
                 return;
             }
@@ -414,7 +418,7 @@ namespace Snackbar
             //Text is not empty and matches each other.
             Label_AdminPasswordError.ForeColor = System.Drawing.Color.Green;
             Label_AdminPasswordError.Text = "Password updated!";
-            settings.AdminPassword = TextBox_AdminPassword.Text;
+            _settings.AdminPassword = textBox_AdminPassword.Text;
         }
 
         //Validates User datagrid
@@ -423,7 +427,7 @@ namespace Snackbar
             //Ensure text fields reject commas
             if ((e.ColumnIndex == 0 || e.ColumnIndex == 1) && e.FormattedValue.ToString().Contains(","))
             {
-                DataGrid_Users.Rows[e.RowIndex].ErrorText = "Can't use commas!";
+                dataGrid_Users.Rows[e.RowIndex].ErrorText = "Can't use commas!";
                 e.Cancel = true;
             }
 
@@ -431,13 +435,13 @@ namespace Snackbar
             if (e.ColumnIndex == 0)
             {
                 //Checks if user is attempting to change value of user ID
-                if (!DataGrid_Users.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Equals(e.FormattedValue.ToString()))
+                if (!dataGrid_Users.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Equals(e.FormattedValue.ToString()))
                 {
-                    if (e.FormattedValue.ToString().Equals(settings.ALL_USERS) || 
-                        e.FormattedValue.ToString().Equals(settings.GuestAccountID) ||
-                        userList.UserIDExists(e.FormattedValue.ToString()))
+                    if (e.FormattedValue.ToString().Equals(_settings.ALL_USERS) || 
+                        e.FormattedValue.ToString().Equals(_settings.GuestAccountID) ||
+                        _userList.UserIDExists(e.FormattedValue.ToString()))
                     {
-                        DataGrid_Users.Rows[e.RowIndex].ErrorText = "UserID already exists!";
+                        dataGrid_Users.Rows[e.RowIndex].ErrorText = "UserID already exists!";
                         e.Cancel = true;
                     }
                 }
@@ -446,7 +450,7 @@ namespace Snackbar
             {
                 if (!decimal.TryParse(e.FormattedValue.ToString(), out decimal result))
                 {
-                    DataGrid_Users.Rows[e.RowIndex].ErrorText = "Not a valid decimal value!";
+                    dataGrid_Users.Rows[e.RowIndex].ErrorText = "Not a valid decimal value!";
                     e.Cancel = true;
                 }
             }
@@ -455,7 +459,7 @@ namespace Snackbar
         //Clears error messages if user hits ESC to revert cell value
         private void DataGrid_Users_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            DataGrid_Users.Rows[e.RowIndex].ErrorText = String.Empty;
+            dataGrid_Users.Rows[e.RowIndex].ErrorText = String.Empty;
         }
 
         //Validates Inventory datagrid
@@ -464,7 +468,7 @@ namespace Snackbar
             //Ensure text fields reject commas
             if((e.ColumnIndex == 0 || e.ColumnIndex == 3) && e.FormattedValue.ToString().Contains(","))
             {
-                DataGrid_Inventory.Rows[e.RowIndex].ErrorText = "Can't use commas!";
+                dataGrid_Inventory.Rows[e.RowIndex].ErrorText = "Can't use commas!";
                 e.Cancel = true;
             }
 
@@ -472,11 +476,11 @@ namespace Snackbar
             if (e.ColumnIndex == 3)
             {
                 //Checks if user is attempting to change value of UPC
-                if (!DataGrid_Inventory.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Equals(e.FormattedValue.ToString()))
+                if (!dataGrid_Inventory.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Equals(e.FormattedValue.ToString()))
                 {
-                    if (inventory.GetItem(e.FormattedValue.ToString()) != null)
+                    if (_inventory.GetItem(e.FormattedValue.ToString()) != null)
                     {
-                        DataGrid_Inventory.Rows[e.RowIndex].ErrorText = "UPC already exists!";
+                        dataGrid_Inventory.Rows[e.RowIndex].ErrorText = "UPC already exists!";
                         e.Cancel = true;
                     }
                 }
@@ -485,7 +489,7 @@ namespace Snackbar
             {
                 if (!decimal.TryParse(e.FormattedValue.ToString(), out decimal result))
                 {
-                    DataGrid_Inventory.Rows[e.RowIndex].ErrorText = "Not a valid decimal value!";
+                    dataGrid_Inventory.Rows[e.RowIndex].ErrorText = "Not a valid decimal value!";
                     e.Cancel = true;
                 }
             }
@@ -493,7 +497,7 @@ namespace Snackbar
             {
                 if (!int.TryParse(e.FormattedValue.ToString(), out int result))
                 {
-                    DataGrid_Inventory.Rows[e.RowIndex].ErrorText = "Not a valid integer value!";
+                    dataGrid_Inventory.Rows[e.RowIndex].ErrorText = "Not a valid integer value!";
                     e.Cancel = true;
                 }
             }
@@ -503,13 +507,13 @@ namespace Snackbar
         //Clears error messages if user hits ESC to revert cell value
         private void DataGrid_Inventory_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            DataGrid_Inventory.Rows[e.RowIndex].ErrorText = String.Empty;
+            dataGrid_Inventory.Rows[e.RowIndex].ErrorText = String.Empty;
         }
 
         private void Button_SelectLogin_Click(object sender, EventArgs e)
         {
             DialogResult dr = this.soundFileDialog.ShowDialog();
-            EasterEggUser u = (EasterEggUser)ListBox_EasterEggUsers.SelectedItem;
+            EasterEggUser u = (EasterEggUser)listBox_EasterEggUsers.SelectedItem;
             u.LoginSounds.Clear();
             foreach (string str in soundFileDialog.FileNames.ToList())
             {
@@ -520,7 +524,7 @@ namespace Snackbar
         private void Button_SelectScan_Click(object sender, EventArgs e)
         {
             DialogResult dr = this.soundFileDialog.ShowDialog();
-            EasterEggUser u = (EasterEggUser)ListBox_EasterEggUsers.SelectedItem;
+            EasterEggUser u = (EasterEggUser)listBox_EasterEggUsers.SelectedItem;
             u.ScanSounds.Clear();
             foreach (string str in soundFileDialog.FileNames.ToList())
             {
@@ -531,7 +535,7 @@ namespace Snackbar
         private void Button_SelectCheckout_Click(object sender, EventArgs e)
         {
             DialogResult dr = this.soundFileDialog.ShowDialog();
-            EasterEggUser u = (EasterEggUser)ListBox_EasterEggUsers.SelectedItem;
+            EasterEggUser u = (EasterEggUser)listBox_EasterEggUsers.SelectedItem;
             u.CheckoutSounds.Clear();
             foreach (string str in soundFileDialog.FileNames.ToList())
             {
@@ -541,8 +545,13 @@ namespace Snackbar
 
         private void TabControl_DataManagement_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (TabControl_DataManagement.SelectedTab.Equals(Tab_EasterEggs))
-                initializeEasterEggComp();
+            //Resets Easter egg tab incase users were added or removed from user tab.
+            if (tabControl_DataManagement.SelectedTab.Equals(tab_EasterEggs))
+                InitializeEasterEggComp();
+
+            //Clears text from errors after leaving tab.
+            if (!tabControl_DataManagement.SelectedTab.Equals(tab_Settings))
+                Label_AdminPasswordError.Text = "";
         }
 
         private void ListBox_EasterEggUsers_SelectedIndexChanged(object sender, EventArgs e)
@@ -552,13 +561,13 @@ namespace Snackbar
 
         private void CheckBox_LimitDebt_CheckedChanged(object sender, EventArgs e)
         {
-            Numeric_MaxDebt.Enabled = CheckBox_LimitDebt.Checked;
-            settings.LimitDebtEnabled = CheckBox_LimitDebt.Checked;
+            numeric_MaxDebt.Enabled = checkBox_LimitDebt.Checked;
+            _settings.LimitDebtEnabled = checkBox_LimitDebt.Checked;
         }
 
         private void Numeric_MaxDebt_ValueChanged(object sender, EventArgs e)
         {
-            settings.MaxDebtValue = (int)Numeric_MaxDebt.Value;
+            _settings.MaxDebtValue = (int)numeric_MaxDebt.Value;
         }
 
         #endregion

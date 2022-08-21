@@ -30,196 +30,196 @@ namespace Snackbar
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.GroupBox_Admin = new System.Windows.Forms.GroupBox();
-            this.TabControl_DataManagement = new System.Windows.Forms.TabControl();
-            this.Tab_Users = new System.Windows.Forms.TabPage();
+            this.groupBox_Admin = new System.Windows.Forms.GroupBox();
+            this.tabControl_DataManagement = new System.Windows.Forms.TabControl();
+            this.tab_Users = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
-            this.TextBox_UsersSearch = new System.Windows.Forms.TextBox();
-            this.Button_DeleteUser = new System.Windows.Forms.Button();
-            this.DataGrid_Users = new System.Windows.Forms.DataGridView();
+            this.textBox_UsersSearch = new System.Windows.Forms.TextBox();
+            this.button_DeleteUser = new System.Windows.Forms.Button();
+            this.dataGrid_Users = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.balanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Button_AddUser = new System.Windows.Forms.Button();
-            this.Tab_Inventory = new System.Windows.Forms.TabPage();
-            this.TextBox_InventorySearch = new System.Windows.Forms.TextBox();
+            this.button_AddUser = new System.Windows.Forms.Button();
+            this.tab_Inventory = new System.Windows.Forms.TabPage();
+            this.textBox_InventorySearch = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.Button_DeleteItem = new System.Windows.Forms.Button();
-            this.Button_AddItem = new System.Windows.Forms.Button();
-            this.DataGrid_Inventory = new System.Windows.Forms.DataGridView();
+            this.button_DeleteItem = new System.Windows.Forms.Button();
+            this.button_AddItem = new System.Windows.Forms.Button();
+            this.dataGrid_Inventory = new System.Windows.Forms.DataGridView();
             this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uPCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Tab_Purchases = new System.Windows.Forms.TabPage();
-            this.TextBox_PurchaseSearch = new System.Windows.Forms.TextBox();
+            this.tab_Purchases = new System.Windows.Forms.TabPage();
+            this.textBox_PurchaseSearch = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.DataGrid_Purchases = new System.Windows.Forms.DataGridView();
+            this.dataGrid_Purchases = new System.Windows.Forms.DataGridView();
             this.amountDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timestampDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.purchaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Tab_Settings = new System.Windows.Forms.TabPage();
+            this.tab_Settings = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.CheckBox_EnableEasterEggs = new System.Windows.Forms.CheckBox();
+            this.checkBox_EnableEasterEggs = new System.Windows.Forms.CheckBox();
             this.label26 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.Label_GuestIDError = new System.Windows.Forms.Label();
-            this.TextBox_GuestID = new System.Windows.Forms.TextBox();
+            this.textBox_GuestID = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.CheckBox_Guest = new System.Windows.Forms.CheckBox();
+            this.checkBox_Guest = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.Panel_NegativeBalanceGroup = new System.Windows.Forms.Panel();
+            this.panel_NegativeBalanceGroup = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.Numeric_MaxDebt = new System.Windows.Forms.NumericUpDown();
+            this.numeric_MaxDebt = new System.Windows.Forms.NumericUpDown();
             this.label28 = new System.Windows.Forms.Label();
-            this.CheckBox_LimitDebt = new System.Windows.Forms.CheckBox();
+            this.checkBox_LimitDebt = new System.Windows.Forms.CheckBox();
             this.label27 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.Numeric_ShameLevel = new System.Windows.Forms.NumericUpDown();
+            this.numeric_ShameLevel = new System.Windows.Forms.NumericUpDown();
             this.Label_Shame = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.CheckBox_Shame = new System.Windows.Forms.CheckBox();
+            this.checkBox_Shame = new System.Windows.Forms.CheckBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.Numeric_WarnLevel = new System.Windows.Forms.NumericUpDown();
+            this.numeric_WarnLevel = new System.Windows.Forms.NumericUpDown();
             this.Label_Warn = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.CheckBox_Warn = new System.Windows.Forms.CheckBox();
+            this.checkBox_Warn = new System.Windows.Forms.CheckBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.CheckBox_NegativeBalance = new System.Windows.Forms.CheckBox();
+            this.checkBox_NegativeBalance = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Label_AdminPasswordError = new System.Windows.Forms.Label();
-            this.Button_ChangeAdminPassword = new System.Windows.Forms.Button();
+            this.button_ChangeAdminPassword = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.TextBox_AdminPassword2 = new System.Windows.Forms.TextBox();
-            this.TextBox_AdminPassword = new System.Windows.Forms.TextBox();
-            this.Tab_EasterEggs = new System.Windows.Forms.TabPage();
-            this.Panel_EasterEggs = new System.Windows.Forms.Panel();
-            this.Panel_EasterEgg_MainRight = new System.Windows.Forms.Panel();
-            this.ListBox_Checkout = new System.Windows.Forms.ListBox();
-            this.ListBox_Scan = new System.Windows.Forms.ListBox();
-            this.ListBox_Login = new System.Windows.Forms.ListBox();
+            this.textBox_AdminPassword2 = new System.Windows.Forms.TextBox();
+            this.textBox_AdminPassword = new System.Windows.Forms.TextBox();
+            this.tab_EasterEggs = new System.Windows.Forms.TabPage();
+            this.panel_EasterEggs = new System.Windows.Forms.Panel();
+            this.panel_EasterEgg_MainRight = new System.Windows.Forms.Panel();
+            this.listBox_Checkout = new System.Windows.Forms.ListBox();
+            this.listBox_Scan = new System.Windows.Forms.ListBox();
+            this.listBox_Login = new System.Windows.Forms.ListBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.Numeric_CheckoutChance = new System.Windows.Forms.NumericUpDown();
-            this.Numeric_ScanChance = new System.Windows.Forms.NumericUpDown();
-            this.Numeric_LoginChance = new System.Windows.Forms.NumericUpDown();
+            this.numeric_CheckoutChance = new System.Windows.Forms.NumericUpDown();
+            this.numeric_ScanChance = new System.Windows.Forms.NumericUpDown();
+            this.numeric_LoginChance = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.Button_SelectCheckout = new System.Windows.Forms.Button();
+            this.button_SelectCheckout = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.Button_SelectScan = new System.Windows.Forms.Button();
+            this.button_SelectScan = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
-            this.Button_SelectLogin = new System.Windows.Forms.Button();
+            this.button_SelectLogin = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.Panel_EasterEgg_MainLeft = new System.Windows.Forms.Panel();
-            this.Panel_EasterEgg_LeftBottom = new System.Windows.Forms.Panel();
-            this.CheckBox_JeopardyEnabled = new System.Windows.Forms.CheckBox();
-            this.CheckBox_DejaVuEnabled = new System.Windows.Forms.CheckBox();
+            this.panel_EasterEgg_MainLeft = new System.Windows.Forms.Panel();
+            this.panel_EasterEgg_LeftBottom = new System.Windows.Forms.Panel();
+            this.checkBox_JeopardyEnabled = new System.Windows.Forms.CheckBox();
+            this.checkBox_DejaVuEnabled = new System.Windows.Forms.CheckBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.CheckBox_FridaySongEnabled = new System.Windows.Forms.CheckBox();
-            this.Numeric_FridaySongChance = new System.Windows.Forms.NumericUpDown();
+            this.checkBox_FridaySongEnabled = new System.Windows.Forms.CheckBox();
+            this.numeric_FridaySongChance = new System.Windows.Forms.NumericUpDown();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.Numeric_JeopardyChance = new System.Windows.Forms.NumericUpDown();
+            this.numeric_JeopardyChance = new System.Windows.Forms.NumericUpDown();
             this.label22 = new System.Windows.Forms.Label();
-            this.Numeric_DejaVuChance = new System.Windows.Forms.NumericUpDown();
-            this.Panel_EasterEgg_LeftTop = new System.Windows.Forms.Panel();
+            this.numeric_DejaVuChance = new System.Windows.Forms.NumericUpDown();
+            this.panel_EasterEgg_LeftTop = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
-            this.ListBox_EasterEggUsers = new System.Windows.Forms.ListBox();
+            this.listBox_EasterEggUsers = new System.Windows.Forms.ListBox();
             this.easterEggUserBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Label_SolemnlySwear = new System.Windows.Forms.Label();
+            this.label_SolemnlySwear = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.soundFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.Timer_SolemnlySwear = new System.Windows.Forms.Timer(this.components);
-            this.GroupBox_Admin.SuspendLayout();
-            this.TabControl_DataManagement.SuspendLayout();
-            this.Tab_Users.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Users)).BeginInit();
+            this.timer_SolemnlySwear = new System.Windows.Forms.Timer(this.components);
+            this.groupBox_Admin.SuspendLayout();
+            this.tabControl_DataManagement.SuspendLayout();
+            this.tab_Users.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Users)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
-            this.Tab_Inventory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Inventory)).BeginInit();
+            this.tab_Inventory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Inventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
-            this.Tab_Purchases.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Purchases)).BeginInit();
+            this.tab_Purchases.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Purchases)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.purchaseBindingSource)).BeginInit();
-            this.Tab_Settings.SuspendLayout();
+            this.tab_Settings.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.Panel_NegativeBalanceGroup.SuspendLayout();
+            this.panel_NegativeBalanceGroup.SuspendLayout();
             this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Numeric_MaxDebt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_MaxDebt)).BeginInit();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Numeric_ShameLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_ShameLevel)).BeginInit();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Numeric_WarnLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_WarnLevel)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.Tab_EasterEggs.SuspendLayout();
-            this.Panel_EasterEggs.SuspendLayout();
-            this.Panel_EasterEgg_MainRight.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Numeric_CheckoutChance)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Numeric_ScanChance)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Numeric_LoginChance)).BeginInit();
-            this.Panel_EasterEgg_MainLeft.SuspendLayout();
-            this.Panel_EasterEgg_LeftBottom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Numeric_FridaySongChance)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Numeric_JeopardyChance)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Numeric_DejaVuChance)).BeginInit();
-            this.Panel_EasterEgg_LeftTop.SuspendLayout();
+            this.tab_EasterEggs.SuspendLayout();
+            this.panel_EasterEggs.SuspendLayout();
+            this.panel_EasterEgg_MainRight.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_CheckoutChance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_ScanChance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_LoginChance)).BeginInit();
+            this.panel_EasterEgg_MainLeft.SuspendLayout();
+            this.panel_EasterEgg_LeftBottom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_FridaySongChance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_JeopardyChance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_DejaVuChance)).BeginInit();
+            this.panel_EasterEgg_LeftTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.easterEggUserBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // GroupBox_Admin
+            // groupBox_Admin
             // 
-            this.GroupBox_Admin.Controls.Add(this.TabControl_DataManagement);
-            this.GroupBox_Admin.Location = new System.Drawing.Point(12, 12);
-            this.GroupBox_Admin.Name = "GroupBox_Admin";
-            this.GroupBox_Admin.Size = new System.Drawing.Size(776, 426);
-            this.GroupBox_Admin.TabIndex = 1;
-            this.GroupBox_Admin.TabStop = false;
-            this.GroupBox_Admin.Text = "Data Management";
+            this.groupBox_Admin.Controls.Add(this.tabControl_DataManagement);
+            this.groupBox_Admin.Location = new System.Drawing.Point(12, 12);
+            this.groupBox_Admin.Name = "groupBox_Admin";
+            this.groupBox_Admin.Size = new System.Drawing.Size(776, 426);
+            this.groupBox_Admin.TabIndex = 1;
+            this.groupBox_Admin.TabStop = false;
+            this.groupBox_Admin.Text = "Data Management";
             // 
-            // TabControl_DataManagement
+            // tabControl_DataManagement
             // 
-            this.TabControl_DataManagement.Controls.Add(this.Tab_Users);
-            this.TabControl_DataManagement.Controls.Add(this.Tab_Inventory);
-            this.TabControl_DataManagement.Controls.Add(this.Tab_Purchases);
-            this.TabControl_DataManagement.Controls.Add(this.Tab_Settings);
-            this.TabControl_DataManagement.Controls.Add(this.Tab_EasterEggs);
-            this.TabControl_DataManagement.Location = new System.Drawing.Point(6, 19);
-            this.TabControl_DataManagement.Name = "TabControl_DataManagement";
-            this.TabControl_DataManagement.SelectedIndex = 0;
-            this.TabControl_DataManagement.Size = new System.Drawing.Size(764, 401);
-            this.TabControl_DataManagement.TabIndex = 0;
-            this.TabControl_DataManagement.SelectedIndexChanged += new System.EventHandler(this.TabControl_DataManagement_SelectedIndexChanged);
+            this.tabControl_DataManagement.Controls.Add(this.tab_Users);
+            this.tabControl_DataManagement.Controls.Add(this.tab_Inventory);
+            this.tabControl_DataManagement.Controls.Add(this.tab_Purchases);
+            this.tabControl_DataManagement.Controls.Add(this.tab_Settings);
+            this.tabControl_DataManagement.Controls.Add(this.tab_EasterEggs);
+            this.tabControl_DataManagement.Location = new System.Drawing.Point(6, 19);
+            this.tabControl_DataManagement.Name = "tabControl_DataManagement";
+            this.tabControl_DataManagement.SelectedIndex = 0;
+            this.tabControl_DataManagement.Size = new System.Drawing.Size(764, 401);
+            this.tabControl_DataManagement.TabIndex = 0;
+            this.tabControl_DataManagement.SelectedIndexChanged += new System.EventHandler(this.TabControl_DataManagement_SelectedIndexChanged);
             // 
-            // Tab_Users
+            // tab_Users
             // 
-            this.Tab_Users.BackColor = System.Drawing.SystemColors.Control;
-            this.Tab_Users.Controls.Add(this.label8);
-            this.Tab_Users.Controls.Add(this.TextBox_UsersSearch);
-            this.Tab_Users.Controls.Add(this.Button_DeleteUser);
-            this.Tab_Users.Controls.Add(this.DataGrid_Users);
-            this.Tab_Users.Controls.Add(this.Button_AddUser);
-            this.Tab_Users.Location = new System.Drawing.Point(4, 22);
-            this.Tab_Users.Name = "Tab_Users";
-            this.Tab_Users.Padding = new System.Windows.Forms.Padding(3);
-            this.Tab_Users.Size = new System.Drawing.Size(756, 375);
-            this.Tab_Users.TabIndex = 0;
-            this.Tab_Users.Text = "Users";
+            this.tab_Users.BackColor = System.Drawing.SystemColors.Control;
+            this.tab_Users.Controls.Add(this.label8);
+            this.tab_Users.Controls.Add(this.textBox_UsersSearch);
+            this.tab_Users.Controls.Add(this.button_DeleteUser);
+            this.tab_Users.Controls.Add(this.dataGrid_Users);
+            this.tab_Users.Controls.Add(this.button_AddUser);
+            this.tab_Users.Location = new System.Drawing.Point(4, 22);
+            this.tab_Users.Name = "tab_Users";
+            this.tab_Users.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_Users.Size = new System.Drawing.Size(756, 375);
+            this.tab_Users.TabIndex = 0;
+            this.tab_Users.Text = "Users";
             // 
             // label8
             // 
@@ -230,39 +230,39 @@ namespace Snackbar
             this.label8.TabIndex = 4;
             this.label8.Text = "Search:";
             // 
-            // TextBox_UsersSearch
+            // textBox_UsersSearch
             // 
-            this.TextBox_UsersSearch.Location = new System.Drawing.Point(633, 354);
-            this.TextBox_UsersSearch.Name = "TextBox_UsersSearch";
-            this.TextBox_UsersSearch.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_UsersSearch.TabIndex = 3;
-            this.TextBox_UsersSearch.TextChanged += new System.EventHandler(this.TextBox_UsersSearch_TextChanged);
+            this.textBox_UsersSearch.Location = new System.Drawing.Point(633, 354);
+            this.textBox_UsersSearch.Name = "textBox_UsersSearch";
+            this.textBox_UsersSearch.Size = new System.Drawing.Size(120, 20);
+            this.textBox_UsersSearch.TabIndex = 3;
+            this.textBox_UsersSearch.TextChanged += new System.EventHandler(this.TextBox_UsersSearch_TextChanged);
             // 
-            // Button_DeleteUser
+            // button_DeleteUser
             // 
-            this.Button_DeleteUser.Location = new System.Drawing.Point(87, 352);
-            this.Button_DeleteUser.Name = "Button_DeleteUser";
-            this.Button_DeleteUser.Size = new System.Drawing.Size(75, 23);
-            this.Button_DeleteUser.TabIndex = 2;
-            this.Button_DeleteUser.Text = "Delete User";
-            this.Button_DeleteUser.UseVisualStyleBackColor = true;
-            this.Button_DeleteUser.Click += new System.EventHandler(this.Button_DeleteUser_Click);
+            this.button_DeleteUser.Location = new System.Drawing.Point(87, 352);
+            this.button_DeleteUser.Name = "button_DeleteUser";
+            this.button_DeleteUser.Size = new System.Drawing.Size(75, 23);
+            this.button_DeleteUser.TabIndex = 2;
+            this.button_DeleteUser.Text = "Delete User";
+            this.button_DeleteUser.UseVisualStyleBackColor = true;
+            this.button_DeleteUser.Click += new System.EventHandler(this.Button_DeleteUser_Click);
             // 
-            // DataGrid_Users
+            // dataGrid_Users
             // 
-            this.DataGrid_Users.AllowUserToAddRows = false;
-            this.DataGrid_Users.AllowUserToDeleteRows = false;
-            this.DataGrid_Users.AutoGenerateColumns = false;
-            this.DataGrid_Users.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGrid_Users.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGrid_Users.AllowUserToAddRows = false;
+            this.dataGrid_Users.AllowUserToDeleteRows = false;
+            this.dataGrid_Users.AutoGenerateColumns = false;
+            this.dataGrid_Users.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid_Users.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
             this.balanceDataGridViewTextBoxColumn});
-            this.DataGrid_Users.DataSource = this.userBindingSource;
-            this.DataGrid_Users.Location = new System.Drawing.Point(3, 3);
-            this.DataGrid_Users.Name = "DataGrid_Users";
-            this.DataGrid_Users.Size = new System.Drawing.Size(750, 343);
-            this.DataGrid_Users.TabIndex = 0;
+            this.dataGrid_Users.DataSource = this.userBindingSource;
+            this.dataGrid_Users.Location = new System.Drawing.Point(3, 3);
+            this.dataGrid_Users.Name = "dataGrid_Users";
+            this.dataGrid_Users.Size = new System.Drawing.Size(750, 343);
+            this.dataGrid_Users.TabIndex = 0;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -290,38 +290,38 @@ namespace Snackbar
             // 
             this.userBindingSource.DataSource = typeof(Snackbar.model.User);
             // 
-            // Button_AddUser
+            // button_AddUser
             // 
-            this.Button_AddUser.Location = new System.Drawing.Point(6, 352);
-            this.Button_AddUser.Name = "Button_AddUser";
-            this.Button_AddUser.Size = new System.Drawing.Size(75, 23);
-            this.Button_AddUser.TabIndex = 1;
-            this.Button_AddUser.Text = "Add User";
-            this.Button_AddUser.UseVisualStyleBackColor = true;
-            this.Button_AddUser.Click += new System.EventHandler(this.Button_AddUser_Click);
+            this.button_AddUser.Location = new System.Drawing.Point(6, 352);
+            this.button_AddUser.Name = "button_AddUser";
+            this.button_AddUser.Size = new System.Drawing.Size(75, 23);
+            this.button_AddUser.TabIndex = 1;
+            this.button_AddUser.Text = "Add User";
+            this.button_AddUser.UseVisualStyleBackColor = true;
+            this.button_AddUser.Click += new System.EventHandler(this.Button_AddUser_Click);
             // 
-            // Tab_Inventory
+            // tab_Inventory
             // 
-            this.Tab_Inventory.BackColor = System.Drawing.SystemColors.Control;
-            this.Tab_Inventory.Controls.Add(this.TextBox_InventorySearch);
-            this.Tab_Inventory.Controls.Add(this.label7);
-            this.Tab_Inventory.Controls.Add(this.Button_DeleteItem);
-            this.Tab_Inventory.Controls.Add(this.Button_AddItem);
-            this.Tab_Inventory.Controls.Add(this.DataGrid_Inventory);
-            this.Tab_Inventory.Location = new System.Drawing.Point(4, 22);
-            this.Tab_Inventory.Name = "Tab_Inventory";
-            this.Tab_Inventory.Padding = new System.Windows.Forms.Padding(3);
-            this.Tab_Inventory.Size = new System.Drawing.Size(756, 375);
-            this.Tab_Inventory.TabIndex = 1;
-            this.Tab_Inventory.Text = "Inventory";
+            this.tab_Inventory.BackColor = System.Drawing.SystemColors.Control;
+            this.tab_Inventory.Controls.Add(this.textBox_InventorySearch);
+            this.tab_Inventory.Controls.Add(this.label7);
+            this.tab_Inventory.Controls.Add(this.button_DeleteItem);
+            this.tab_Inventory.Controls.Add(this.button_AddItem);
+            this.tab_Inventory.Controls.Add(this.dataGrid_Inventory);
+            this.tab_Inventory.Location = new System.Drawing.Point(4, 22);
+            this.tab_Inventory.Name = "tab_Inventory";
+            this.tab_Inventory.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_Inventory.Size = new System.Drawing.Size(756, 375);
+            this.tab_Inventory.TabIndex = 1;
+            this.tab_Inventory.Text = "Inventory";
             // 
-            // TextBox_InventorySearch
+            // textBox_InventorySearch
             // 
-            this.TextBox_InventorySearch.Location = new System.Drawing.Point(633, 354);
-            this.TextBox_InventorySearch.Name = "TextBox_InventorySearch";
-            this.TextBox_InventorySearch.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_InventorySearch.TabIndex = 4;
-            this.TextBox_InventorySearch.TextChanged += new System.EventHandler(this.TextBox_InventorySearch_TextChanged);
+            this.textBox_InventorySearch.Location = new System.Drawing.Point(633, 354);
+            this.textBox_InventorySearch.Name = "textBox_InventorySearch";
+            this.textBox_InventorySearch.Size = new System.Drawing.Size(120, 20);
+            this.textBox_InventorySearch.TabIndex = 4;
+            this.textBox_InventorySearch.TextChanged += new System.EventHandler(this.TextBox_InventorySearch_TextChanged);
             // 
             // label7
             // 
@@ -332,40 +332,40 @@ namespace Snackbar
             this.label7.TabIndex = 3;
             this.label7.Text = "Search:";
             // 
-            // Button_DeleteItem
+            // button_DeleteItem
             // 
-            this.Button_DeleteItem.Location = new System.Drawing.Point(87, 352);
-            this.Button_DeleteItem.Name = "Button_DeleteItem";
-            this.Button_DeleteItem.Size = new System.Drawing.Size(75, 23);
-            this.Button_DeleteItem.TabIndex = 2;
-            this.Button_DeleteItem.Text = "Delete Item";
-            this.Button_DeleteItem.UseVisualStyleBackColor = true;
-            this.Button_DeleteItem.Click += new System.EventHandler(this.Button_DeleteItem_Click);
+            this.button_DeleteItem.Location = new System.Drawing.Point(87, 352);
+            this.button_DeleteItem.Name = "button_DeleteItem";
+            this.button_DeleteItem.Size = new System.Drawing.Size(75, 23);
+            this.button_DeleteItem.TabIndex = 2;
+            this.button_DeleteItem.Text = "Delete Item";
+            this.button_DeleteItem.UseVisualStyleBackColor = true;
+            this.button_DeleteItem.Click += new System.EventHandler(this.Button_DeleteItem_Click);
             // 
-            // Button_AddItem
+            // button_AddItem
             // 
-            this.Button_AddItem.Location = new System.Drawing.Point(6, 352);
-            this.Button_AddItem.Name = "Button_AddItem";
-            this.Button_AddItem.Size = new System.Drawing.Size(75, 23);
-            this.Button_AddItem.TabIndex = 1;
-            this.Button_AddItem.Text = "Add Item";
-            this.Button_AddItem.UseVisualStyleBackColor = true;
-            this.Button_AddItem.Click += new System.EventHandler(this.Button_AddItem_Click);
+            this.button_AddItem.Location = new System.Drawing.Point(6, 352);
+            this.button_AddItem.Name = "button_AddItem";
+            this.button_AddItem.Size = new System.Drawing.Size(75, 23);
+            this.button_AddItem.TabIndex = 1;
+            this.button_AddItem.Text = "Add Item";
+            this.button_AddItem.UseVisualStyleBackColor = true;
+            this.button_AddItem.Click += new System.EventHandler(this.Button_AddItem_Click);
             // 
-            // DataGrid_Inventory
+            // dataGrid_Inventory
             // 
-            this.DataGrid_Inventory.AutoGenerateColumns = false;
-            this.DataGrid_Inventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGrid_Inventory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGrid_Inventory.AutoGenerateColumns = false;
+            this.dataGrid_Inventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid_Inventory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn1,
             this.costDataGridViewTextBoxColumn,
             this.amountDataGridViewTextBoxColumn,
             this.uPCDataGridViewTextBoxColumn});
-            this.DataGrid_Inventory.DataSource = this.itemBindingSource;
-            this.DataGrid_Inventory.Location = new System.Drawing.Point(3, 3);
-            this.DataGrid_Inventory.Name = "DataGrid_Inventory";
-            this.DataGrid_Inventory.Size = new System.Drawing.Size(750, 343);
-            this.DataGrid_Inventory.TabIndex = 0;
+            this.dataGrid_Inventory.DataSource = this.itemBindingSource;
+            this.dataGrid_Inventory.Location = new System.Drawing.Point(3, 3);
+            this.dataGrid_Inventory.Name = "dataGrid_Inventory";
+            this.dataGrid_Inventory.Size = new System.Drawing.Size(750, 343);
+            this.dataGrid_Inventory.TabIndex = 0;
             // 
             // nameDataGridViewTextBoxColumn1
             // 
@@ -398,25 +398,25 @@ namespace Snackbar
             // 
             this.itemBindingSource.DataSource = typeof(Snackbar.model.Item);
             // 
-            // Tab_Purchases
+            // tab_Purchases
             // 
-            this.Tab_Purchases.BackColor = System.Drawing.SystemColors.Control;
-            this.Tab_Purchases.Controls.Add(this.TextBox_PurchaseSearch);
-            this.Tab_Purchases.Controls.Add(this.label9);
-            this.Tab_Purchases.Controls.Add(this.DataGrid_Purchases);
-            this.Tab_Purchases.Location = new System.Drawing.Point(4, 22);
-            this.Tab_Purchases.Name = "Tab_Purchases";
-            this.Tab_Purchases.Size = new System.Drawing.Size(756, 375);
-            this.Tab_Purchases.TabIndex = 2;
-            this.Tab_Purchases.Text = "Purchases";
+            this.tab_Purchases.BackColor = System.Drawing.SystemColors.Control;
+            this.tab_Purchases.Controls.Add(this.textBox_PurchaseSearch);
+            this.tab_Purchases.Controls.Add(this.label9);
+            this.tab_Purchases.Controls.Add(this.dataGrid_Purchases);
+            this.tab_Purchases.Location = new System.Drawing.Point(4, 22);
+            this.tab_Purchases.Name = "tab_Purchases";
+            this.tab_Purchases.Size = new System.Drawing.Size(756, 375);
+            this.tab_Purchases.TabIndex = 2;
+            this.tab_Purchases.Text = "Purchases";
             // 
-            // TextBox_PurchaseSearch
+            // textBox_PurchaseSearch
             // 
-            this.TextBox_PurchaseSearch.Location = new System.Drawing.Point(633, 354);
-            this.TextBox_PurchaseSearch.Name = "TextBox_PurchaseSearch";
-            this.TextBox_PurchaseSearch.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_PurchaseSearch.TabIndex = 2;
-            this.TextBox_PurchaseSearch.TextChanged += new System.EventHandler(this.TextBox_PurchaseSearch_TextChanged);
+            this.textBox_PurchaseSearch.Location = new System.Drawing.Point(633, 354);
+            this.textBox_PurchaseSearch.Name = "textBox_PurchaseSearch";
+            this.textBox_PurchaseSearch.Size = new System.Drawing.Size(120, 20);
+            this.textBox_PurchaseSearch.TabIndex = 2;
+            this.textBox_PurchaseSearch.TextChanged += new System.EventHandler(this.TextBox_PurchaseSearch_TextChanged);
             // 
             // label9
             // 
@@ -427,23 +427,23 @@ namespace Snackbar
             this.label9.TabIndex = 1;
             this.label9.Text = "Search:";
             // 
-            // DataGrid_Purchases
+            // dataGrid_Purchases
             // 
-            this.DataGrid_Purchases.AllowUserToAddRows = false;
-            this.DataGrid_Purchases.AllowUserToDeleteRows = false;
-            this.DataGrid_Purchases.AutoGenerateColumns = false;
-            this.DataGrid_Purchases.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGrid_Purchases.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGrid_Purchases.AllowUserToAddRows = false;
+            this.dataGrid_Purchases.AllowUserToDeleteRows = false;
+            this.dataGrid_Purchases.AutoGenerateColumns = false;
+            this.dataGrid_Purchases.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid_Purchases.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.amountDataGridViewTextBoxColumn1,
             this.userIDDataGridViewTextBoxColumn,
             this.itemNameDataGridViewTextBoxColumn,
             this.timestampDataGridViewTextBoxColumn});
-            this.DataGrid_Purchases.DataSource = this.purchaseBindingSource;
-            this.DataGrid_Purchases.Location = new System.Drawing.Point(3, 3);
-            this.DataGrid_Purchases.Name = "DataGrid_Purchases";
-            this.DataGrid_Purchases.ReadOnly = true;
-            this.DataGrid_Purchases.Size = new System.Drawing.Size(750, 343);
-            this.DataGrid_Purchases.TabIndex = 0;
+            this.dataGrid_Purchases.DataSource = this.purchaseBindingSource;
+            this.dataGrid_Purchases.Location = new System.Drawing.Point(3, 3);
+            this.dataGrid_Purchases.Name = "dataGrid_Purchases";
+            this.dataGrid_Purchases.ReadOnly = true;
+            this.dataGrid_Purchases.Size = new System.Drawing.Size(750, 343);
+            this.dataGrid_Purchases.TabIndex = 0;
             // 
             // amountDataGridViewTextBoxColumn1
             // 
@@ -479,15 +479,15 @@ namespace Snackbar
             // 
             this.purchaseBindingSource.DataSource = typeof(Snackbar.model.Purchase);
             // 
-            // Tab_Settings
+            // tab_Settings
             // 
-            this.Tab_Settings.Controls.Add(this.panel1);
-            this.Tab_Settings.Location = new System.Drawing.Point(4, 22);
-            this.Tab_Settings.Name = "Tab_Settings";
-            this.Tab_Settings.Size = new System.Drawing.Size(756, 375);
-            this.Tab_Settings.TabIndex = 3;
-            this.Tab_Settings.Text = "Settings";
-            this.Tab_Settings.UseVisualStyleBackColor = true;
+            this.tab_Settings.Controls.Add(this.panel1);
+            this.tab_Settings.Location = new System.Drawing.Point(4, 22);
+            this.tab_Settings.Name = "tab_Settings";
+            this.tab_Settings.Size = new System.Drawing.Size(756, 375);
+            this.tab_Settings.TabIndex = 3;
+            this.tab_Settings.Text = "Settings";
+            this.tab_Settings.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -503,7 +503,7 @@ namespace Snackbar
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel8.Controls.Add(this.CheckBox_EnableEasterEggs);
+            this.panel8.Controls.Add(this.checkBox_EnableEasterEggs);
             this.panel8.Controls.Add(this.label26);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 192);
@@ -511,17 +511,17 @@ namespace Snackbar
             this.panel8.Size = new System.Drawing.Size(750, 22);
             this.panel8.TabIndex = 7;
             // 
-            // CheckBox_EnableEasterEggs
+            // checkBox_EnableEasterEggs
             // 
-            this.CheckBox_EnableEasterEggs.AutoSize = true;
-            this.CheckBox_EnableEasterEggs.Checked = true;
-            this.CheckBox_EnableEasterEggs.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CheckBox_EnableEasterEggs.Location = new System.Drawing.Point(115, 3);
-            this.CheckBox_EnableEasterEggs.Name = "CheckBox_EnableEasterEggs";
-            this.CheckBox_EnableEasterEggs.Size = new System.Drawing.Size(15, 14);
-            this.CheckBox_EnableEasterEggs.TabIndex = 1;
-            this.CheckBox_EnableEasterEggs.UseVisualStyleBackColor = true;
-            this.CheckBox_EnableEasterEggs.CheckedChanged += new System.EventHandler(this.CheckBox_EnableEasterEggs_CheckedChanged);
+            this.checkBox_EnableEasterEggs.AutoSize = true;
+            this.checkBox_EnableEasterEggs.Checked = true;
+            this.checkBox_EnableEasterEggs.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_EnableEasterEggs.Location = new System.Drawing.Point(115, 3);
+            this.checkBox_EnableEasterEggs.Name = "checkBox_EnableEasterEggs";
+            this.checkBox_EnableEasterEggs.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_EnableEasterEggs.TabIndex = 1;
+            this.checkBox_EnableEasterEggs.UseVisualStyleBackColor = true;
+            this.checkBox_EnableEasterEggs.CheckedChanged += new System.EventHandler(this.CheckBox_EnableEasterEggs_CheckedChanged);
             // 
             // label26
             // 
@@ -536,9 +536,9 @@ namespace Snackbar
             // 
             this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel5.Controls.Add(this.Label_GuestIDError);
-            this.panel5.Controls.Add(this.TextBox_GuestID);
+            this.panel5.Controls.Add(this.textBox_GuestID);
             this.panel5.Controls.Add(this.label6);
-            this.panel5.Controls.Add(this.CheckBox_Guest);
+            this.panel5.Controls.Add(this.checkBox_Guest);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 142);
@@ -555,14 +555,14 @@ namespace Snackbar
             this.Label_GuestIDError.Size = new System.Drawing.Size(0, 13);
             this.Label_GuestIDError.TabIndex = 4;
             // 
-            // TextBox_GuestID
+            // textBox_GuestID
             // 
-            this.TextBox_GuestID.Location = new System.Drawing.Point(86, 22);
-            this.TextBox_GuestID.Name = "TextBox_GuestID";
-            this.TextBox_GuestID.Size = new System.Drawing.Size(100, 20);
-            this.TextBox_GuestID.TabIndex = 3;
-            this.TextBox_GuestID.Text = "Guest";
-            this.TextBox_GuestID.TextChanged += new System.EventHandler(this.TextBox_GuestID_TextChanged);
+            this.textBox_GuestID.Location = new System.Drawing.Point(86, 22);
+            this.textBox_GuestID.Name = "textBox_GuestID";
+            this.textBox_GuestID.Size = new System.Drawing.Size(100, 20);
+            this.textBox_GuestID.TabIndex = 3;
+            this.textBox_GuestID.Text = "Guest";
+            this.textBox_GuestID.TextChanged += new System.EventHandler(this.TextBox_GuestID_TextChanged);
             // 
             // label6
             // 
@@ -574,17 +574,17 @@ namespace Snackbar
             this.label6.Text = "Guest User ID:";
             this.toolTip1.SetToolTip(this.label6, "ID users will have to type in to activate the guest account.");
             // 
-            // CheckBox_Guest
+            // checkBox_Guest
             // 
-            this.CheckBox_Guest.AutoSize = true;
-            this.CheckBox_Guest.Checked = true;
-            this.CheckBox_Guest.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CheckBox_Guest.Location = new System.Drawing.Point(92, 4);
-            this.CheckBox_Guest.Name = "CheckBox_Guest";
-            this.CheckBox_Guest.Size = new System.Drawing.Size(15, 14);
-            this.CheckBox_Guest.TabIndex = 1;
-            this.CheckBox_Guest.UseVisualStyleBackColor = true;
-            this.CheckBox_Guest.CheckedChanged += new System.EventHandler(this.CheckBox_Guest_CheckedChanged);
+            this.checkBox_Guest.AutoSize = true;
+            this.checkBox_Guest.Checked = true;
+            this.checkBox_Guest.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_Guest.Location = new System.Drawing.Point(92, 4);
+            this.checkBox_Guest.Name = "checkBox_Guest";
+            this.checkBox_Guest.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_Guest.TabIndex = 1;
+            this.checkBox_Guest.UseVisualStyleBackColor = true;
+            this.checkBox_Guest.CheckedChanged += new System.EventHandler(this.CheckBox_Guest_CheckedChanged);
             // 
             // label4
             // 
@@ -599,7 +599,7 @@ namespace Snackbar
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel3.Controls.Add(this.Panel_NegativeBalanceGroup);
+            this.panel3.Controls.Add(this.panel_NegativeBalanceGroup);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 57);
@@ -607,23 +607,23 @@ namespace Snackbar
             this.panel3.Size = new System.Drawing.Size(750, 85);
             this.panel3.TabIndex = 5;
             // 
-            // Panel_NegativeBalanceGroup
+            // panel_NegativeBalanceGroup
             // 
-            this.Panel_NegativeBalanceGroup.BackColor = System.Drawing.Color.Transparent;
-            this.Panel_NegativeBalanceGroup.Controls.Add(this.panel9);
-            this.Panel_NegativeBalanceGroup.Controls.Add(this.panel7);
-            this.Panel_NegativeBalanceGroup.Controls.Add(this.panel6);
-            this.Panel_NegativeBalanceGroup.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panel_NegativeBalanceGroup.Location = new System.Drawing.Point(0, 23);
-            this.Panel_NegativeBalanceGroup.Name = "Panel_NegativeBalanceGroup";
-            this.Panel_NegativeBalanceGroup.Size = new System.Drawing.Size(750, 62);
-            this.Panel_NegativeBalanceGroup.TabIndex = 5;
+            this.panel_NegativeBalanceGroup.BackColor = System.Drawing.Color.Transparent;
+            this.panel_NegativeBalanceGroup.Controls.Add(this.panel9);
+            this.panel_NegativeBalanceGroup.Controls.Add(this.panel7);
+            this.panel_NegativeBalanceGroup.Controls.Add(this.panel6);
+            this.panel_NegativeBalanceGroup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_NegativeBalanceGroup.Location = new System.Drawing.Point(0, 23);
+            this.panel_NegativeBalanceGroup.Name = "panel_NegativeBalanceGroup";
+            this.panel_NegativeBalanceGroup.Size = new System.Drawing.Size(750, 62);
+            this.panel_NegativeBalanceGroup.TabIndex = 5;
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.Numeric_MaxDebt);
+            this.panel9.Controls.Add(this.numeric_MaxDebt);
             this.panel9.Controls.Add(this.label28);
-            this.panel9.Controls.Add(this.CheckBox_LimitDebt);
+            this.panel9.Controls.Add(this.checkBox_LimitDebt);
             this.panel9.Controls.Add(this.label27);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel9.Location = new System.Drawing.Point(241, 0);
@@ -631,28 +631,28 @@ namespace Snackbar
             this.panel9.Size = new System.Drawing.Size(200, 62);
             this.panel9.TabIndex = 3;
             // 
-            // Numeric_MaxDebt
+            // numeric_MaxDebt
             // 
-            this.Numeric_MaxDebt.Location = new System.Drawing.Point(66, 25);
-            this.Numeric_MaxDebt.Maximum = new decimal(new int[] {
+            this.numeric_MaxDebt.Location = new System.Drawing.Point(66, 25);
+            this.numeric_MaxDebt.Maximum = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.Numeric_MaxDebt.Minimum = new decimal(new int[] {
+            this.numeric_MaxDebt.Minimum = new decimal(new int[] {
             999,
             0,
             0,
             -2147483648});
-            this.Numeric_MaxDebt.Name = "Numeric_MaxDebt";
-            this.Numeric_MaxDebt.Size = new System.Drawing.Size(45, 20);
-            this.Numeric_MaxDebt.TabIndex = 5;
-            this.Numeric_MaxDebt.Value = new decimal(new int[] {
+            this.numeric_MaxDebt.Name = "numeric_MaxDebt";
+            this.numeric_MaxDebt.Size = new System.Drawing.Size(45, 20);
+            this.numeric_MaxDebt.TabIndex = 5;
+            this.numeric_MaxDebt.Value = new decimal(new int[] {
             200,
             0,
             0,
             -2147483648});
-            this.Numeric_MaxDebt.ValueChanged += new System.EventHandler(this.Numeric_MaxDebt_ValueChanged);
+            this.numeric_MaxDebt.ValueChanged += new System.EventHandler(this.Numeric_MaxDebt_ValueChanged);
             // 
             // label28
             // 
@@ -662,18 +662,19 @@ namespace Snackbar
             this.label28.Size = new System.Drawing.Size(56, 13);
             this.label28.TabIndex = 4;
             this.label28.Text = "Max Debt:";
+            this.toolTip1.SetToolTip(this.label28, "Maximum level of debt allowed.");
             // 
-            // CheckBox_LimitDebt
+            // checkBox_LimitDebt
             // 
-            this.CheckBox_LimitDebt.AutoSize = true;
-            this.CheckBox_LimitDebt.Checked = true;
-            this.CheckBox_LimitDebt.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CheckBox_LimitDebt.Location = new System.Drawing.Point(82, 4);
-            this.CheckBox_LimitDebt.Name = "CheckBox_LimitDebt";
-            this.CheckBox_LimitDebt.Size = new System.Drawing.Size(15, 14);
-            this.CheckBox_LimitDebt.TabIndex = 3;
-            this.CheckBox_LimitDebt.UseVisualStyleBackColor = true;
-            this.CheckBox_LimitDebt.CheckedChanged += new System.EventHandler(this.CheckBox_LimitDebt_CheckedChanged);
+            this.checkBox_LimitDebt.AutoSize = true;
+            this.checkBox_LimitDebt.Checked = true;
+            this.checkBox_LimitDebt.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_LimitDebt.Location = new System.Drawing.Point(82, 4);
+            this.checkBox_LimitDebt.Name = "checkBox_LimitDebt";
+            this.checkBox_LimitDebt.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_LimitDebt.TabIndex = 3;
+            this.checkBox_LimitDebt.UseVisualStyleBackColor = true;
+            this.checkBox_LimitDebt.CheckedChanged += new System.EventHandler(this.CheckBox_LimitDebt_CheckedChanged);
             // 
             // label27
             // 
@@ -683,41 +684,42 @@ namespace Snackbar
             this.label27.Size = new System.Drawing.Size(60, 13);
             this.label27.TabIndex = 0;
             this.label27.Text = "Limit Debt?";
+            this.toolTip1.SetToolTip(this.label27, "Limit the amount of debt a user can enter into.");
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.Numeric_ShameLevel);
+            this.panel7.Controls.Add(this.numeric_ShameLevel);
             this.panel7.Controls.Add(this.Label_Shame);
             this.panel7.Controls.Add(this.label5);
-            this.panel7.Controls.Add(this.CheckBox_Shame);
+            this.panel7.Controls.Add(this.checkBox_Shame);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel7.Location = new System.Drawing.Point(115, 0);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(126, 62);
             this.panel7.TabIndex = 2;
             // 
-            // Numeric_ShameLevel
+            // numeric_ShameLevel
             // 
-            this.Numeric_ShameLevel.Location = new System.Drawing.Point(67, 25);
-            this.Numeric_ShameLevel.Maximum = new decimal(new int[] {
+            this.numeric_ShameLevel.Location = new System.Drawing.Point(67, 25);
+            this.numeric_ShameLevel.Maximum = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.Numeric_ShameLevel.Minimum = new decimal(new int[] {
+            this.numeric_ShameLevel.Minimum = new decimal(new int[] {
             999,
             0,
             0,
             -2147483648});
-            this.Numeric_ShameLevel.Name = "Numeric_ShameLevel";
-            this.Numeric_ShameLevel.Size = new System.Drawing.Size(45, 20);
-            this.Numeric_ShameLevel.TabIndex = 5;
-            this.Numeric_ShameLevel.Value = new decimal(new int[] {
+            this.numeric_ShameLevel.Name = "numeric_ShameLevel";
+            this.numeric_ShameLevel.Size = new System.Drawing.Size(45, 20);
+            this.numeric_ShameLevel.TabIndex = 5;
+            this.numeric_ShameLevel.Value = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
-            this.Numeric_ShameLevel.ValueChanged += new System.EventHandler(this.Numeric_ShameLevel_ValueChanged);
+            this.numeric_ShameLevel.ValueChanged += new System.EventHandler(this.Numeric_ShameLevel_ValueChanged);
             // 
             // Label_Shame
             // 
@@ -739,52 +741,52 @@ namespace Snackbar
             this.label5.Text = "Shame User?";
             this.toolTip1.SetToolTip(this.label5, "Plays a sound file reminding user to pay their balance.");
             // 
-            // CheckBox_Shame
+            // checkBox_Shame
             // 
-            this.CheckBox_Shame.AutoSize = true;
-            this.CheckBox_Shame.Checked = true;
-            this.CheckBox_Shame.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CheckBox_Shame.Location = new System.Drawing.Point(83, 4);
-            this.CheckBox_Shame.Name = "CheckBox_Shame";
-            this.CheckBox_Shame.Size = new System.Drawing.Size(15, 14);
-            this.CheckBox_Shame.TabIndex = 3;
-            this.CheckBox_Shame.UseVisualStyleBackColor = true;
-            this.CheckBox_Shame.CheckedChanged += new System.EventHandler(this.CheckBox_Shame_CheckedChanged);
+            this.checkBox_Shame.AutoSize = true;
+            this.checkBox_Shame.Checked = true;
+            this.checkBox_Shame.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_Shame.Location = new System.Drawing.Point(83, 4);
+            this.checkBox_Shame.Name = "checkBox_Shame";
+            this.checkBox_Shame.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_Shame.TabIndex = 3;
+            this.checkBox_Shame.UseVisualStyleBackColor = true;
+            this.checkBox_Shame.CheckedChanged += new System.EventHandler(this.CheckBox_Shame_CheckedChanged);
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.Numeric_WarnLevel);
+            this.panel6.Controls.Add(this.numeric_WarnLevel);
             this.panel6.Controls.Add(this.Label_Warn);
             this.panel6.Controls.Add(this.label3);
-            this.panel6.Controls.Add(this.CheckBox_Warn);
+            this.panel6.Controls.Add(this.checkBox_Warn);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(115, 62);
             this.panel6.TabIndex = 1;
             // 
-            // Numeric_WarnLevel
+            // numeric_WarnLevel
             // 
-            this.Numeric_WarnLevel.Location = new System.Drawing.Point(62, 25);
-            this.Numeric_WarnLevel.Maximum = new decimal(new int[] {
+            this.numeric_WarnLevel.Location = new System.Drawing.Point(62, 25);
+            this.numeric_WarnLevel.Maximum = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.Numeric_WarnLevel.Minimum = new decimal(new int[] {
+            this.numeric_WarnLevel.Minimum = new decimal(new int[] {
             999,
             0,
             0,
             -2147483648});
-            this.Numeric_WarnLevel.Name = "Numeric_WarnLevel";
-            this.Numeric_WarnLevel.Size = new System.Drawing.Size(45, 20);
-            this.Numeric_WarnLevel.TabIndex = 5;
-            this.Numeric_WarnLevel.Value = new decimal(new int[] {
+            this.numeric_WarnLevel.Name = "numeric_WarnLevel";
+            this.numeric_WarnLevel.Size = new System.Drawing.Size(45, 20);
+            this.numeric_WarnLevel.TabIndex = 5;
+            this.numeric_WarnLevel.Value = new decimal(new int[] {
             50,
             0,
             0,
             -2147483648});
-            this.Numeric_WarnLevel.ValueChanged += new System.EventHandler(this.Numeric_WarnLevel_ValueChanged);
+            this.numeric_WarnLevel.ValueChanged += new System.EventHandler(this.Numeric_WarnLevel_ValueChanged);
             // 
             // Label_Warn
             // 
@@ -806,22 +808,22 @@ namespace Snackbar
             this.label3.Text = "Warn user?";
             this.toolTip1.SetToolTip(this.label3, "Warns the user that their balance is low.");
             // 
-            // CheckBox_Warn
+            // checkBox_Warn
             // 
-            this.CheckBox_Warn.AutoSize = true;
-            this.CheckBox_Warn.Checked = true;
-            this.CheckBox_Warn.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CheckBox_Warn.Location = new System.Drawing.Point(70, 4);
-            this.CheckBox_Warn.Name = "CheckBox_Warn";
-            this.CheckBox_Warn.Size = new System.Drawing.Size(15, 14);
-            this.CheckBox_Warn.TabIndex = 3;
-            this.CheckBox_Warn.UseVisualStyleBackColor = true;
-            this.CheckBox_Warn.CheckedChanged += new System.EventHandler(this.CheckBox_Warn_CheckedChanged);
+            this.checkBox_Warn.AutoSize = true;
+            this.checkBox_Warn.Checked = true;
+            this.checkBox_Warn.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_Warn.Location = new System.Drawing.Point(70, 4);
+            this.checkBox_Warn.Name = "checkBox_Warn";
+            this.checkBox_Warn.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_Warn.TabIndex = 3;
+            this.checkBox_Warn.UseVisualStyleBackColor = true;
+            this.checkBox_Warn.CheckedChanged += new System.EventHandler(this.CheckBox_Warn_CheckedChanged);
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.CheckBox_NegativeBalance);
+            this.panel4.Controls.Add(this.checkBox_NegativeBalance);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
@@ -838,26 +840,26 @@ namespace Snackbar
             this.label2.Text = "Allow Negative Balances:";
             this.toolTip1.SetToolTip(this.label2, "Allows users to make purchases on credit.");
             // 
-            // CheckBox_NegativeBalance
+            // checkBox_NegativeBalance
             // 
-            this.CheckBox_NegativeBalance.AutoSize = true;
-            this.CheckBox_NegativeBalance.Checked = true;
-            this.CheckBox_NegativeBalance.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CheckBox_NegativeBalance.Location = new System.Drawing.Point(137, 4);
-            this.CheckBox_NegativeBalance.Name = "CheckBox_NegativeBalance";
-            this.CheckBox_NegativeBalance.Size = new System.Drawing.Size(15, 14);
-            this.CheckBox_NegativeBalance.TabIndex = 3;
-            this.CheckBox_NegativeBalance.UseVisualStyleBackColor = true;
-            this.CheckBox_NegativeBalance.CheckedChanged += new System.EventHandler(this.CheckBox_NegativeBalance_CheckedChanged);
+            this.checkBox_NegativeBalance.AutoSize = true;
+            this.checkBox_NegativeBalance.Checked = true;
+            this.checkBox_NegativeBalance.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_NegativeBalance.Location = new System.Drawing.Point(137, 4);
+            this.checkBox_NegativeBalance.Name = "checkBox_NegativeBalance";
+            this.checkBox_NegativeBalance.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_NegativeBalance.TabIndex = 3;
+            this.checkBox_NegativeBalance.UseVisualStyleBackColor = true;
+            this.checkBox_NegativeBalance.CheckedChanged += new System.EventHandler(this.CheckBox_NegativeBalance_CheckedChanged);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel2.Controls.Add(this.Label_AdminPasswordError);
-            this.panel2.Controls.Add(this.Button_ChangeAdminPassword);
+            this.panel2.Controls.Add(this.button_ChangeAdminPassword);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.TextBox_AdminPassword2);
-            this.panel2.Controls.Add(this.TextBox_AdminPassword);
+            this.panel2.Controls.Add(this.textBox_AdminPassword2);
+            this.panel2.Controls.Add(this.textBox_AdminPassword);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -873,15 +875,15 @@ namespace Snackbar
             this.Label_AdminPasswordError.Size = new System.Drawing.Size(0, 13);
             this.Label_AdminPasswordError.TabIndex = 3;
             // 
-            // Button_ChangeAdminPassword
+            // button_ChangeAdminPassword
             // 
-            this.Button_ChangeAdminPassword.Location = new System.Drawing.Point(247, 27);
-            this.Button_ChangeAdminPassword.Name = "Button_ChangeAdminPassword";
-            this.Button_ChangeAdminPassword.Size = new System.Drawing.Size(75, 23);
-            this.Button_ChangeAdminPassword.TabIndex = 3;
-            this.Button_ChangeAdminPassword.Text = "Change";
-            this.Button_ChangeAdminPassword.UseVisualStyleBackColor = true;
-            this.Button_ChangeAdminPassword.Click += new System.EventHandler(this.Button_ChangeAdminPassword_Click);
+            this.button_ChangeAdminPassword.Location = new System.Drawing.Point(247, 27);
+            this.button_ChangeAdminPassword.Name = "button_ChangeAdminPassword";
+            this.button_ChangeAdminPassword.Size = new System.Drawing.Size(75, 23);
+            this.button_ChangeAdminPassword.TabIndex = 3;
+            this.button_ChangeAdminPassword.Text = "Change";
+            this.button_ChangeAdminPassword.UseVisualStyleBackColor = true;
+            this.button_ChangeAdminPassword.Click += new System.EventHandler(this.Button_ChangeAdminPassword_Click);
             // 
             // label1
             // 
@@ -893,100 +895,100 @@ namespace Snackbar
             this.label1.Text = "Admin Password:";
             this.toolTip1.SetToolTip(this.label1, "Sets the password enabling Admin mode");
             // 
-            // TextBox_AdminPassword2
+            // textBox_AdminPassword2
             // 
-            this.TextBox_AdminPassword2.Location = new System.Drawing.Point(97, 29);
-            this.TextBox_AdminPassword2.Name = "TextBox_AdminPassword2";
-            this.TextBox_AdminPassword2.PasswordChar = '*';
-            this.TextBox_AdminPassword2.Size = new System.Drawing.Size(144, 20);
-            this.TextBox_AdminPassword2.TabIndex = 2;
+            this.textBox_AdminPassword2.Location = new System.Drawing.Point(97, 29);
+            this.textBox_AdminPassword2.Name = "textBox_AdminPassword2";
+            this.textBox_AdminPassword2.PasswordChar = '*';
+            this.textBox_AdminPassword2.Size = new System.Drawing.Size(144, 20);
+            this.textBox_AdminPassword2.TabIndex = 2;
             // 
-            // TextBox_AdminPassword
+            // textBox_AdminPassword
             // 
-            this.TextBox_AdminPassword.Location = new System.Drawing.Point(97, 3);
-            this.TextBox_AdminPassword.Name = "TextBox_AdminPassword";
-            this.TextBox_AdminPassword.PasswordChar = '*';
-            this.TextBox_AdminPassword.Size = new System.Drawing.Size(144, 20);
-            this.TextBox_AdminPassword.TabIndex = 1;
+            this.textBox_AdminPassword.Location = new System.Drawing.Point(97, 3);
+            this.textBox_AdminPassword.Name = "textBox_AdminPassword";
+            this.textBox_AdminPassword.PasswordChar = '*';
+            this.textBox_AdminPassword.Size = new System.Drawing.Size(144, 20);
+            this.textBox_AdminPassword.TabIndex = 1;
             // 
-            // Tab_EasterEggs
+            // tab_EasterEggs
             // 
-            this.Tab_EasterEggs.Controls.Add(this.Panel_EasterEggs);
-            this.Tab_EasterEggs.Location = new System.Drawing.Point(4, 22);
-            this.Tab_EasterEggs.Name = "Tab_EasterEggs";
-            this.Tab_EasterEggs.Size = new System.Drawing.Size(756, 375);
-            this.Tab_EasterEggs.TabIndex = 4;
-            this.Tab_EasterEggs.Text = "Easter Eggs";
-            this.Tab_EasterEggs.UseVisualStyleBackColor = true;
+            this.tab_EasterEggs.Controls.Add(this.panel_EasterEggs);
+            this.tab_EasterEggs.Location = new System.Drawing.Point(4, 22);
+            this.tab_EasterEggs.Name = "tab_EasterEggs";
+            this.tab_EasterEggs.Size = new System.Drawing.Size(756, 375);
+            this.tab_EasterEggs.TabIndex = 4;
+            this.tab_EasterEggs.Text = "Easter Eggs";
+            this.tab_EasterEggs.UseVisualStyleBackColor = true;
             // 
-            // Panel_EasterEggs
+            // panel_EasterEggs
             // 
-            this.Panel_EasterEggs.BackColor = System.Drawing.Color.White;
-            this.Panel_EasterEggs.Controls.Add(this.Panel_EasterEgg_MainRight);
-            this.Panel_EasterEggs.Controls.Add(this.Panel_EasterEgg_MainLeft);
-            this.Panel_EasterEggs.Controls.Add(this.Label_SolemnlySwear);
-            this.Panel_EasterEggs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panel_EasterEggs.Location = new System.Drawing.Point(0, 0);
-            this.Panel_EasterEggs.Name = "Panel_EasterEggs";
-            this.Panel_EasterEggs.Size = new System.Drawing.Size(756, 375);
-            this.Panel_EasterEggs.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.Panel_EasterEggs, "Control your doubles.");
-            this.Panel_EasterEggs.DoubleClick += new System.EventHandler(this.Panel_EasterEggs_DoubleClick);
+            this.panel_EasterEggs.BackColor = System.Drawing.Color.White;
+            this.panel_EasterEggs.Controls.Add(this.panel_EasterEgg_MainRight);
+            this.panel_EasterEggs.Controls.Add(this.panel_EasterEgg_MainLeft);
+            this.panel_EasterEggs.Controls.Add(this.label_SolemnlySwear);
+            this.panel_EasterEggs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_EasterEggs.Location = new System.Drawing.Point(0, 0);
+            this.panel_EasterEggs.Name = "panel_EasterEggs";
+            this.panel_EasterEggs.Size = new System.Drawing.Size(756, 375);
+            this.panel_EasterEggs.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.panel_EasterEggs, "Knock twice but control yourself while you do.");
+            this.panel_EasterEggs.DoubleClick += new System.EventHandler(this.Panel_EasterEggs_DoubleClick);
             // 
-            // Panel_EasterEgg_MainRight
+            // panel_EasterEgg_MainRight
             // 
-            this.Panel_EasterEgg_MainRight.Controls.Add(this.ListBox_Checkout);
-            this.Panel_EasterEgg_MainRight.Controls.Add(this.ListBox_Scan);
-            this.Panel_EasterEgg_MainRight.Controls.Add(this.ListBox_Login);
-            this.Panel_EasterEgg_MainRight.Controls.Add(this.label15);
-            this.Panel_EasterEgg_MainRight.Controls.Add(this.label18);
-            this.Panel_EasterEgg_MainRight.Controls.Add(this.label12);
-            this.Panel_EasterEgg_MainRight.Controls.Add(this.Numeric_CheckoutChance);
-            this.Panel_EasterEgg_MainRight.Controls.Add(this.Numeric_ScanChance);
-            this.Panel_EasterEgg_MainRight.Controls.Add(this.Numeric_LoginChance);
-            this.Panel_EasterEgg_MainRight.Controls.Add(this.label14);
-            this.Panel_EasterEgg_MainRight.Controls.Add(this.label17);
-            this.Panel_EasterEgg_MainRight.Controls.Add(this.label11);
-            this.Panel_EasterEgg_MainRight.Controls.Add(this.Button_SelectCheckout);
-            this.Panel_EasterEgg_MainRight.Controls.Add(this.label13);
-            this.Panel_EasterEgg_MainRight.Controls.Add(this.Button_SelectScan);
-            this.Panel_EasterEgg_MainRight.Controls.Add(this.label16);
-            this.Panel_EasterEgg_MainRight.Controls.Add(this.Button_SelectLogin);
-            this.Panel_EasterEgg_MainRight.Controls.Add(this.label10);
-            this.Panel_EasterEgg_MainRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panel_EasterEgg_MainRight.Enabled = false;
-            this.Panel_EasterEgg_MainRight.Location = new System.Drawing.Point(180, 0);
-            this.Panel_EasterEgg_MainRight.Name = "Panel_EasterEgg_MainRight";
-            this.Panel_EasterEgg_MainRight.Size = new System.Drawing.Size(576, 375);
-            this.Panel_EasterEgg_MainRight.TabIndex = 1;
-            this.Panel_EasterEgg_MainRight.Visible = false;
+            this.panel_EasterEgg_MainRight.Controls.Add(this.listBox_Checkout);
+            this.panel_EasterEgg_MainRight.Controls.Add(this.listBox_Scan);
+            this.panel_EasterEgg_MainRight.Controls.Add(this.listBox_Login);
+            this.panel_EasterEgg_MainRight.Controls.Add(this.label15);
+            this.panel_EasterEgg_MainRight.Controls.Add(this.label18);
+            this.panel_EasterEgg_MainRight.Controls.Add(this.label12);
+            this.panel_EasterEgg_MainRight.Controls.Add(this.numeric_CheckoutChance);
+            this.panel_EasterEgg_MainRight.Controls.Add(this.numeric_ScanChance);
+            this.panel_EasterEgg_MainRight.Controls.Add(this.numeric_LoginChance);
+            this.panel_EasterEgg_MainRight.Controls.Add(this.label14);
+            this.panel_EasterEgg_MainRight.Controls.Add(this.label17);
+            this.panel_EasterEgg_MainRight.Controls.Add(this.label11);
+            this.panel_EasterEgg_MainRight.Controls.Add(this.button_SelectCheckout);
+            this.panel_EasterEgg_MainRight.Controls.Add(this.label13);
+            this.panel_EasterEgg_MainRight.Controls.Add(this.button_SelectScan);
+            this.panel_EasterEgg_MainRight.Controls.Add(this.label16);
+            this.panel_EasterEgg_MainRight.Controls.Add(this.button_SelectLogin);
+            this.panel_EasterEgg_MainRight.Controls.Add(this.label10);
+            this.panel_EasterEgg_MainRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_EasterEgg_MainRight.Enabled = false;
+            this.panel_EasterEgg_MainRight.Location = new System.Drawing.Point(180, 0);
+            this.panel_EasterEgg_MainRight.Name = "panel_EasterEgg_MainRight";
+            this.panel_EasterEgg_MainRight.Size = new System.Drawing.Size(576, 375);
+            this.panel_EasterEgg_MainRight.TabIndex = 1;
+            this.panel_EasterEgg_MainRight.Visible = false;
             // 
-            // ListBox_Checkout
+            // listBox_Checkout
             // 
-            this.ListBox_Checkout.FormattingEnabled = true;
-            this.ListBox_Checkout.HorizontalScrollbar = true;
-            this.ListBox_Checkout.Location = new System.Drawing.Point(223, 248);
-            this.ListBox_Checkout.Name = "ListBox_Checkout";
-            this.ListBox_Checkout.Size = new System.Drawing.Size(350, 108);
-            this.ListBox_Checkout.TabIndex = 5;
+            this.listBox_Checkout.FormattingEnabled = true;
+            this.listBox_Checkout.HorizontalScrollbar = true;
+            this.listBox_Checkout.Location = new System.Drawing.Point(223, 248);
+            this.listBox_Checkout.Name = "listBox_Checkout";
+            this.listBox_Checkout.Size = new System.Drawing.Size(350, 108);
+            this.listBox_Checkout.TabIndex = 5;
             // 
-            // ListBox_Scan
+            // listBox_Scan
             // 
-            this.ListBox_Scan.FormattingEnabled = true;
-            this.ListBox_Scan.HorizontalScrollbar = true;
-            this.ListBox_Scan.Location = new System.Drawing.Point(223, 128);
-            this.ListBox_Scan.Name = "ListBox_Scan";
-            this.ListBox_Scan.Size = new System.Drawing.Size(350, 108);
-            this.ListBox_Scan.TabIndex = 5;
+            this.listBox_Scan.FormattingEnabled = true;
+            this.listBox_Scan.HorizontalScrollbar = true;
+            this.listBox_Scan.Location = new System.Drawing.Point(223, 128);
+            this.listBox_Scan.Name = "listBox_Scan";
+            this.listBox_Scan.Size = new System.Drawing.Size(350, 108);
+            this.listBox_Scan.TabIndex = 5;
             // 
-            // ListBox_Login
+            // listBox_Login
             // 
-            this.ListBox_Login.FormattingEnabled = true;
-            this.ListBox_Login.HorizontalScrollbar = true;
-            this.ListBox_Login.Location = new System.Drawing.Point(223, 3);
-            this.ListBox_Login.Name = "ListBox_Login";
-            this.ListBox_Login.Size = new System.Drawing.Size(350, 108);
-            this.ListBox_Login.TabIndex = 5;
+            this.listBox_Login.FormattingEnabled = true;
+            this.listBox_Login.HorizontalScrollbar = true;
+            this.listBox_Login.Location = new System.Drawing.Point(223, 3);
+            this.listBox_Login.Name = "listBox_Login";
+            this.listBox_Login.Size = new System.Drawing.Size(350, 108);
+            this.listBox_Login.TabIndex = 5;
             // 
             // label15
             // 
@@ -1018,29 +1020,29 @@ namespace Snackbar
             this.label12.TabIndex = 4;
             this.label12.Text = "%";
             // 
-            // Numeric_CheckoutChance
+            // numeric_CheckoutChance
             // 
-            this.Numeric_CheckoutChance.Location = new System.Drawing.Point(109, 277);
-            this.Numeric_CheckoutChance.Name = "Numeric_CheckoutChance";
-            this.Numeric_CheckoutChance.Size = new System.Drawing.Size(41, 20);
-            this.Numeric_CheckoutChance.TabIndex = 3;
-            this.Numeric_CheckoutChance.ValueChanged += new System.EventHandler(this.Numeric_CheckoutChance_ValueChanged);
+            this.numeric_CheckoutChance.Location = new System.Drawing.Point(109, 277);
+            this.numeric_CheckoutChance.Name = "numeric_CheckoutChance";
+            this.numeric_CheckoutChance.Size = new System.Drawing.Size(41, 20);
+            this.numeric_CheckoutChance.TabIndex = 3;
+            this.numeric_CheckoutChance.ValueChanged += new System.EventHandler(this.Numeric_CheckoutChance_ValueChanged);
             // 
-            // Numeric_ScanChance
+            // numeric_ScanChance
             // 
-            this.Numeric_ScanChance.Location = new System.Drawing.Point(109, 157);
-            this.Numeric_ScanChance.Name = "Numeric_ScanChance";
-            this.Numeric_ScanChance.Size = new System.Drawing.Size(41, 20);
-            this.Numeric_ScanChance.TabIndex = 3;
-            this.Numeric_ScanChance.ValueChanged += new System.EventHandler(this.Numeric_ScanChance_ValueChanged);
+            this.numeric_ScanChance.Location = new System.Drawing.Point(109, 157);
+            this.numeric_ScanChance.Name = "numeric_ScanChance";
+            this.numeric_ScanChance.Size = new System.Drawing.Size(41, 20);
+            this.numeric_ScanChance.TabIndex = 3;
+            this.numeric_ScanChance.ValueChanged += new System.EventHandler(this.Numeric_ScanChance_ValueChanged);
             // 
-            // Numeric_LoginChance
+            // numeric_LoginChance
             // 
-            this.Numeric_LoginChance.Location = new System.Drawing.Point(109, 32);
-            this.Numeric_LoginChance.Name = "Numeric_LoginChance";
-            this.Numeric_LoginChance.Size = new System.Drawing.Size(41, 20);
-            this.Numeric_LoginChance.TabIndex = 3;
-            this.Numeric_LoginChance.ValueChanged += new System.EventHandler(this.Numeric_LoginChance_ValueChanged);
+            this.numeric_LoginChance.Location = new System.Drawing.Point(109, 32);
+            this.numeric_LoginChance.Name = "numeric_LoginChance";
+            this.numeric_LoginChance.Size = new System.Drawing.Size(41, 20);
+            this.numeric_LoginChance.TabIndex = 3;
+            this.numeric_LoginChance.ValueChanged += new System.EventHandler(this.Numeric_LoginChance_ValueChanged);
             // 
             // label14
             // 
@@ -1069,15 +1071,15 @@ namespace Snackbar
             this.label11.TabIndex = 2;
             this.label11.Text = "Chance:";
             // 
-            // Button_SelectCheckout
+            // button_SelectCheckout
             // 
-            this.Button_SelectCheckout.Location = new System.Drawing.Point(109, 248);
-            this.Button_SelectCheckout.Name = "Button_SelectCheckout";
-            this.Button_SelectCheckout.Size = new System.Drawing.Size(75, 23);
-            this.Button_SelectCheckout.TabIndex = 1;
-            this.Button_SelectCheckout.Text = "Select";
-            this.Button_SelectCheckout.UseVisualStyleBackColor = true;
-            this.Button_SelectCheckout.Click += new System.EventHandler(this.Button_SelectCheckout_Click);
+            this.button_SelectCheckout.Location = new System.Drawing.Point(109, 248);
+            this.button_SelectCheckout.Name = "button_SelectCheckout";
+            this.button_SelectCheckout.Size = new System.Drawing.Size(75, 23);
+            this.button_SelectCheckout.TabIndex = 1;
+            this.button_SelectCheckout.Text = "Select";
+            this.button_SelectCheckout.UseVisualStyleBackColor = true;
+            this.button_SelectCheckout.Click += new System.EventHandler(this.Button_SelectCheckout_Click);
             // 
             // label13
             // 
@@ -1089,15 +1091,15 @@ namespace Snackbar
             this.label13.Text = "Checkout Sounds:";
             this.toolTip1.SetToolTip(this.label13, "Select .wav files to play on checkout. Exit the dialog to clear the list.");
             // 
-            // Button_SelectScan
+            // button_SelectScan
             // 
-            this.Button_SelectScan.Location = new System.Drawing.Point(109, 128);
-            this.Button_SelectScan.Name = "Button_SelectScan";
-            this.Button_SelectScan.Size = new System.Drawing.Size(75, 23);
-            this.Button_SelectScan.TabIndex = 1;
-            this.Button_SelectScan.Text = "Select";
-            this.Button_SelectScan.UseVisualStyleBackColor = true;
-            this.Button_SelectScan.Click += new System.EventHandler(this.Button_SelectScan_Click);
+            this.button_SelectScan.Location = new System.Drawing.Point(109, 128);
+            this.button_SelectScan.Name = "button_SelectScan";
+            this.button_SelectScan.Size = new System.Drawing.Size(75, 23);
+            this.button_SelectScan.TabIndex = 1;
+            this.button_SelectScan.Text = "Select";
+            this.button_SelectScan.UseVisualStyleBackColor = true;
+            this.button_SelectScan.Click += new System.EventHandler(this.Button_SelectScan_Click);
             // 
             // label16
             // 
@@ -1109,15 +1111,15 @@ namespace Snackbar
             this.label16.Text = "Scan Sounds:";
             this.toolTip1.SetToolTip(this.label16, "Select .wav files to play on scanning. Exit the dialog to clear the list.");
             // 
-            // Button_SelectLogin
+            // button_SelectLogin
             // 
-            this.Button_SelectLogin.Location = new System.Drawing.Point(109, 3);
-            this.Button_SelectLogin.Name = "Button_SelectLogin";
-            this.Button_SelectLogin.Size = new System.Drawing.Size(75, 23);
-            this.Button_SelectLogin.TabIndex = 1;
-            this.Button_SelectLogin.Text = "Select";
-            this.Button_SelectLogin.UseVisualStyleBackColor = true;
-            this.Button_SelectLogin.Click += new System.EventHandler(this.Button_SelectLogin_Click);
+            this.button_SelectLogin.Location = new System.Drawing.Point(109, 3);
+            this.button_SelectLogin.Name = "button_SelectLogin";
+            this.button_SelectLogin.Size = new System.Drawing.Size(75, 23);
+            this.button_SelectLogin.TabIndex = 1;
+            this.button_SelectLogin.Text = "Select";
+            this.button_SelectLogin.UseVisualStyleBackColor = true;
+            this.button_SelectLogin.Click += new System.EventHandler(this.Button_SelectLogin_Click);
             // 
             // label10
             // 
@@ -1129,57 +1131,57 @@ namespace Snackbar
             this.label10.Text = "Login Sounds:";
             this.toolTip1.SetToolTip(this.label10, "Select .wav files to play on login. Exit the dialog to clear the list.");
             // 
-            // Panel_EasterEgg_MainLeft
+            // panel_EasterEgg_MainLeft
             // 
-            this.Panel_EasterEgg_MainLeft.Controls.Add(this.Panel_EasterEgg_LeftBottom);
-            this.Panel_EasterEgg_MainLeft.Controls.Add(this.Panel_EasterEgg_LeftTop);
-            this.Panel_EasterEgg_MainLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Panel_EasterEgg_MainLeft.Enabled = false;
-            this.Panel_EasterEgg_MainLeft.Location = new System.Drawing.Point(0, 0);
-            this.Panel_EasterEgg_MainLeft.Name = "Panel_EasterEgg_MainLeft";
-            this.Panel_EasterEgg_MainLeft.Size = new System.Drawing.Size(180, 375);
-            this.Panel_EasterEgg_MainLeft.TabIndex = 0;
-            this.Panel_EasterEgg_MainLeft.Visible = false;
+            this.panel_EasterEgg_MainLeft.Controls.Add(this.panel_EasterEgg_LeftBottom);
+            this.panel_EasterEgg_MainLeft.Controls.Add(this.panel_EasterEgg_LeftTop);
+            this.panel_EasterEgg_MainLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel_EasterEgg_MainLeft.Enabled = false;
+            this.panel_EasterEgg_MainLeft.Location = new System.Drawing.Point(0, 0);
+            this.panel_EasterEgg_MainLeft.Name = "panel_EasterEgg_MainLeft";
+            this.panel_EasterEgg_MainLeft.Size = new System.Drawing.Size(180, 375);
+            this.panel_EasterEgg_MainLeft.TabIndex = 0;
+            this.panel_EasterEgg_MainLeft.Visible = false;
             // 
-            // Panel_EasterEgg_LeftBottom
+            // panel_EasterEgg_LeftBottom
             // 
-            this.Panel_EasterEgg_LeftBottom.Controls.Add(this.CheckBox_JeopardyEnabled);
-            this.Panel_EasterEgg_LeftBottom.Controls.Add(this.CheckBox_DejaVuEnabled);
-            this.Panel_EasterEgg_LeftBottom.Controls.Add(this.label19);
-            this.Panel_EasterEgg_LeftBottom.Controls.Add(this.label20);
-            this.Panel_EasterEgg_LeftBottom.Controls.Add(this.CheckBox_FridaySongEnabled);
-            this.Panel_EasterEgg_LeftBottom.Controls.Add(this.Numeric_FridaySongChance);
-            this.Panel_EasterEgg_LeftBottom.Controls.Add(this.label24);
-            this.Panel_EasterEgg_LeftBottom.Controls.Add(this.label23);
-            this.Panel_EasterEgg_LeftBottom.Controls.Add(this.label21);
-            this.Panel_EasterEgg_LeftBottom.Controls.Add(this.Numeric_JeopardyChance);
-            this.Panel_EasterEgg_LeftBottom.Controls.Add(this.label22);
-            this.Panel_EasterEgg_LeftBottom.Controls.Add(this.Numeric_DejaVuChance);
-            this.Panel_EasterEgg_LeftBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panel_EasterEgg_LeftBottom.Location = new System.Drawing.Point(0, 290);
-            this.Panel_EasterEgg_LeftBottom.Name = "Panel_EasterEgg_LeftBottom";
-            this.Panel_EasterEgg_LeftBottom.Size = new System.Drawing.Size(180, 85);
-            this.Panel_EasterEgg_LeftBottom.TabIndex = 1;
+            this.panel_EasterEgg_LeftBottom.Controls.Add(this.checkBox_JeopardyEnabled);
+            this.panel_EasterEgg_LeftBottom.Controls.Add(this.checkBox_DejaVuEnabled);
+            this.panel_EasterEgg_LeftBottom.Controls.Add(this.label19);
+            this.panel_EasterEgg_LeftBottom.Controls.Add(this.label20);
+            this.panel_EasterEgg_LeftBottom.Controls.Add(this.checkBox_FridaySongEnabled);
+            this.panel_EasterEgg_LeftBottom.Controls.Add(this.numeric_FridaySongChance);
+            this.panel_EasterEgg_LeftBottom.Controls.Add(this.label24);
+            this.panel_EasterEgg_LeftBottom.Controls.Add(this.label23);
+            this.panel_EasterEgg_LeftBottom.Controls.Add(this.label21);
+            this.panel_EasterEgg_LeftBottom.Controls.Add(this.numeric_JeopardyChance);
+            this.panel_EasterEgg_LeftBottom.Controls.Add(this.label22);
+            this.panel_EasterEgg_LeftBottom.Controls.Add(this.numeric_DejaVuChance);
+            this.panel_EasterEgg_LeftBottom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_EasterEgg_LeftBottom.Location = new System.Drawing.Point(0, 290);
+            this.panel_EasterEgg_LeftBottom.Name = "panel_EasterEgg_LeftBottom";
+            this.panel_EasterEgg_LeftBottom.Size = new System.Drawing.Size(180, 85);
+            this.panel_EasterEgg_LeftBottom.TabIndex = 1;
             // 
-            // CheckBox_JeopardyEnabled
+            // checkBox_JeopardyEnabled
             // 
-            this.CheckBox_JeopardyEnabled.AutoSize = true;
-            this.CheckBox_JeopardyEnabled.Location = new System.Drawing.Point(75, 61);
-            this.CheckBox_JeopardyEnabled.Name = "CheckBox_JeopardyEnabled";
-            this.CheckBox_JeopardyEnabled.Size = new System.Drawing.Size(15, 14);
-            this.CheckBox_JeopardyEnabled.TabIndex = 1;
-            this.CheckBox_JeopardyEnabled.UseVisualStyleBackColor = true;
-            this.CheckBox_JeopardyEnabled.CheckedChanged += new System.EventHandler(this.CheckBox_JeopardyEnabled_CheckedChanged);
+            this.checkBox_JeopardyEnabled.AutoSize = true;
+            this.checkBox_JeopardyEnabled.Location = new System.Drawing.Point(75, 61);
+            this.checkBox_JeopardyEnabled.Name = "checkBox_JeopardyEnabled";
+            this.checkBox_JeopardyEnabled.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_JeopardyEnabled.TabIndex = 1;
+            this.checkBox_JeopardyEnabled.UseVisualStyleBackColor = true;
+            this.checkBox_JeopardyEnabled.CheckedChanged += new System.EventHandler(this.CheckBox_JeopardyEnabled_CheckedChanged);
             // 
-            // CheckBox_DejaVuEnabled
+            // checkBox_DejaVuEnabled
             // 
-            this.CheckBox_DejaVuEnabled.AutoSize = true;
-            this.CheckBox_DejaVuEnabled.Location = new System.Drawing.Point(75, 34);
-            this.CheckBox_DejaVuEnabled.Name = "CheckBox_DejaVuEnabled";
-            this.CheckBox_DejaVuEnabled.Size = new System.Drawing.Size(15, 14);
-            this.CheckBox_DejaVuEnabled.TabIndex = 1;
-            this.CheckBox_DejaVuEnabled.UseVisualStyleBackColor = true;
-            this.CheckBox_DejaVuEnabled.CheckedChanged += new System.EventHandler(this.CheckBox_DejaVuEnabled_CheckedChanged);
+            this.checkBox_DejaVuEnabled.AutoSize = true;
+            this.checkBox_DejaVuEnabled.Location = new System.Drawing.Point(75, 34);
+            this.checkBox_DejaVuEnabled.Name = "checkBox_DejaVuEnabled";
+            this.checkBox_DejaVuEnabled.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_DejaVuEnabled.TabIndex = 1;
+            this.checkBox_DejaVuEnabled.UseVisualStyleBackColor = true;
+            this.checkBox_DejaVuEnabled.CheckedChanged += new System.EventHandler(this.CheckBox_DejaVuEnabled_CheckedChanged);
             // 
             // label19
             // 
@@ -1201,23 +1203,23 @@ namespace Snackbar
             this.label20.TabIndex = 4;
             this.label20.Text = "%";
             // 
-            // CheckBox_FridaySongEnabled
+            // checkBox_FridaySongEnabled
             // 
-            this.CheckBox_FridaySongEnabled.AutoSize = true;
-            this.CheckBox_FridaySongEnabled.Location = new System.Drawing.Point(75, 8);
-            this.CheckBox_FridaySongEnabled.Name = "CheckBox_FridaySongEnabled";
-            this.CheckBox_FridaySongEnabled.Size = new System.Drawing.Size(15, 14);
-            this.CheckBox_FridaySongEnabled.TabIndex = 1;
-            this.CheckBox_FridaySongEnabled.UseVisualStyleBackColor = true;
-            this.CheckBox_FridaySongEnabled.CheckedChanged += new System.EventHandler(this.CheckBox_FridaySongEnabled_CheckedChanged);
+            this.checkBox_FridaySongEnabled.AutoSize = true;
+            this.checkBox_FridaySongEnabled.Location = new System.Drawing.Point(75, 8);
+            this.checkBox_FridaySongEnabled.Name = "checkBox_FridaySongEnabled";
+            this.checkBox_FridaySongEnabled.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_FridaySongEnabled.TabIndex = 1;
+            this.checkBox_FridaySongEnabled.UseVisualStyleBackColor = true;
+            this.checkBox_FridaySongEnabled.CheckedChanged += new System.EventHandler(this.CheckBox_FridaySongEnabled_CheckedChanged);
             // 
-            // Numeric_FridaySongChance
+            // numeric_FridaySongChance
             // 
-            this.Numeric_FridaySongChance.Location = new System.Drawing.Point(107, 6);
-            this.Numeric_FridaySongChance.Name = "Numeric_FridaySongChance";
-            this.Numeric_FridaySongChance.Size = new System.Drawing.Size(41, 20);
-            this.Numeric_FridaySongChance.TabIndex = 3;
-            this.Numeric_FridaySongChance.ValueChanged += new System.EventHandler(this.Numeric_FridaySongChance_ValueChanged);
+            this.numeric_FridaySongChance.Location = new System.Drawing.Point(107, 6);
+            this.numeric_FridaySongChance.Name = "numeric_FridaySongChance";
+            this.numeric_FridaySongChance.Size = new System.Drawing.Size(41, 20);
+            this.numeric_FridaySongChance.TabIndex = 3;
+            this.numeric_FridaySongChance.ValueChanged += new System.EventHandler(this.Numeric_FridaySongChance_ValueChanged);
             // 
             // label24
             // 
@@ -1249,13 +1251,13 @@ namespace Snackbar
             this.label21.TabIndex = 4;
             this.label21.Text = "%";
             // 
-            // Numeric_JeopardyChance
+            // numeric_JeopardyChance
             // 
-            this.Numeric_JeopardyChance.Location = new System.Drawing.Point(107, 59);
-            this.Numeric_JeopardyChance.Name = "Numeric_JeopardyChance";
-            this.Numeric_JeopardyChance.Size = new System.Drawing.Size(41, 20);
-            this.Numeric_JeopardyChance.TabIndex = 3;
-            this.Numeric_JeopardyChance.ValueChanged += new System.EventHandler(this.Numeric_JeopardyChance_ValueChanged);
+            this.numeric_JeopardyChance.Location = new System.Drawing.Point(107, 59);
+            this.numeric_JeopardyChance.Name = "numeric_JeopardyChance";
+            this.numeric_JeopardyChance.Size = new System.Drawing.Size(41, 20);
+            this.numeric_JeopardyChance.TabIndex = 3;
+            this.numeric_JeopardyChance.ValueChanged += new System.EventHandler(this.Numeric_JeopardyChance_ValueChanged);
             // 
             // label22
             // 
@@ -1267,23 +1269,23 @@ namespace Snackbar
             this.label22.Text = "Deja Vu:";
             this.toolTip1.SetToolTip(this.label22, "Plays if the user scans the same item twice.");
             // 
-            // Numeric_DejaVuChance
+            // numeric_DejaVuChance
             // 
-            this.Numeric_DejaVuChance.Location = new System.Drawing.Point(107, 32);
-            this.Numeric_DejaVuChance.Name = "Numeric_DejaVuChance";
-            this.Numeric_DejaVuChance.Size = new System.Drawing.Size(41, 20);
-            this.Numeric_DejaVuChance.TabIndex = 3;
-            this.Numeric_DejaVuChance.ValueChanged += new System.EventHandler(this.Numeric_DejaVuChance_ValueChanged);
+            this.numeric_DejaVuChance.Location = new System.Drawing.Point(107, 32);
+            this.numeric_DejaVuChance.Name = "numeric_DejaVuChance";
+            this.numeric_DejaVuChance.Size = new System.Drawing.Size(41, 20);
+            this.numeric_DejaVuChance.TabIndex = 3;
+            this.numeric_DejaVuChance.ValueChanged += new System.EventHandler(this.Numeric_DejaVuChance_ValueChanged);
             // 
-            // Panel_EasterEgg_LeftTop
+            // panel_EasterEgg_LeftTop
             // 
-            this.Panel_EasterEgg_LeftTop.Controls.Add(this.label25);
-            this.Panel_EasterEgg_LeftTop.Controls.Add(this.ListBox_EasterEggUsers);
-            this.Panel_EasterEgg_LeftTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Panel_EasterEgg_LeftTop.Location = new System.Drawing.Point(0, 0);
-            this.Panel_EasterEgg_LeftTop.Name = "Panel_EasterEgg_LeftTop";
-            this.Panel_EasterEgg_LeftTop.Size = new System.Drawing.Size(180, 290);
-            this.Panel_EasterEgg_LeftTop.TabIndex = 0;
+            this.panel_EasterEgg_LeftTop.Controls.Add(this.label25);
+            this.panel_EasterEgg_LeftTop.Controls.Add(this.listBox_EasterEggUsers);
+            this.panel_EasterEgg_LeftTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_EasterEgg_LeftTop.Location = new System.Drawing.Point(0, 0);
+            this.panel_EasterEgg_LeftTop.Name = "panel_EasterEgg_LeftTop";
+            this.panel_EasterEgg_LeftTop.Size = new System.Drawing.Size(180, 290);
+            this.panel_EasterEgg_LeftTop.TabIndex = 0;
             // 
             // label25
             // 
@@ -1294,28 +1296,29 @@ namespace Snackbar
             this.label25.TabIndex = 1;
             this.label25.Text = "User:";
             // 
-            // ListBox_EasterEggUsers
+            // listBox_EasterEggUsers
             // 
-            this.ListBox_EasterEggUsers.DataSource = this.easterEggUserBindingSource;
-            this.ListBox_EasterEggUsers.DisplayMember = "Name";
-            this.ListBox_EasterEggUsers.FormattingEnabled = true;
-            this.ListBox_EasterEggUsers.Location = new System.Drawing.Point(3, 20);
-            this.ListBox_EasterEggUsers.Name = "ListBox_EasterEggUsers";
-            this.ListBox_EasterEggUsers.Size = new System.Drawing.Size(171, 264);
-            this.ListBox_EasterEggUsers.TabIndex = 0;
-            this.ListBox_EasterEggUsers.SelectedIndexChanged += new System.EventHandler(this.ListBox_EasterEggUsers_SelectedIndexChanged);
+            this.listBox_EasterEggUsers.DataSource = this.easterEggUserBindingSource;
+            this.listBox_EasterEggUsers.DisplayMember = "Name";
+            this.listBox_EasterEggUsers.FormattingEnabled = true;
+            this.listBox_EasterEggUsers.Location = new System.Drawing.Point(3, 20);
+            this.listBox_EasterEggUsers.Name = "listBox_EasterEggUsers";
+            this.listBox_EasterEggUsers.Size = new System.Drawing.Size(171, 264);
+            this.listBox_EasterEggUsers.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.listBox_EasterEggUsers, "Checks user specific sounds first and then falls back on \"All Users\".");
+            this.listBox_EasterEggUsers.SelectedIndexChanged += new System.EventHandler(this.ListBox_EasterEggUsers_SelectedIndexChanged);
             // 
             // easterEggUserBindingSource
             // 
             this.easterEggUserBindingSource.DataSource = typeof(Snackbar.model.Settings.EasterEggUser);
             // 
-            // Label_SolemnlySwear
+            // label_SolemnlySwear
             // 
-            this.Label_SolemnlySwear.AutoSize = true;
-            this.Label_SolemnlySwear.Location = new System.Drawing.Point(14, 14);
-            this.Label_SolemnlySwear.Name = "Label_SolemnlySwear";
-            this.Label_SolemnlySwear.Size = new System.Drawing.Size(0, 13);
-            this.Label_SolemnlySwear.TabIndex = 6;
+            this.label_SolemnlySwear.AutoSize = true;
+            this.label_SolemnlySwear.Location = new System.Drawing.Point(14, 14);
+            this.label_SolemnlySwear.Name = "label_SolemnlySwear";
+            this.label_SolemnlySwear.Size = new System.Drawing.Size(0, 13);
+            this.label_SolemnlySwear.TabIndex = 6;
             // 
             // soundFileDialog
             // 
@@ -1327,61 +1330,61 @@ namespace Snackbar
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.GroupBox_Admin);
+            this.Controls.Add(this.groupBox_Admin);
             this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "DataManagement";
             this.Text = "Data Management";
-            this.GroupBox_Admin.ResumeLayout(false);
-            this.TabControl_DataManagement.ResumeLayout(false);
-            this.Tab_Users.ResumeLayout(false);
-            this.Tab_Users.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Users)).EndInit();
+            this.groupBox_Admin.ResumeLayout(false);
+            this.tabControl_DataManagement.ResumeLayout(false);
+            this.tab_Users.ResumeLayout(false);
+            this.tab_Users.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Users)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
-            this.Tab_Inventory.ResumeLayout(false);
-            this.Tab_Inventory.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Inventory)).EndInit();
+            this.tab_Inventory.ResumeLayout(false);
+            this.tab_Inventory.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Inventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
-            this.Tab_Purchases.ResumeLayout(false);
-            this.Tab_Purchases.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Purchases)).EndInit();
+            this.tab_Purchases.ResumeLayout(false);
+            this.tab_Purchases.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Purchases)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.purchaseBindingSource)).EndInit();
-            this.Tab_Settings.ResumeLayout(false);
+            this.tab_Settings.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.Panel_NegativeBalanceGroup.ResumeLayout(false);
+            this.panel_NegativeBalanceGroup.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Numeric_MaxDebt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_MaxDebt)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Numeric_ShameLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_ShameLevel)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Numeric_WarnLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_WarnLevel)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.Tab_EasterEggs.ResumeLayout(false);
-            this.Panel_EasterEggs.ResumeLayout(false);
-            this.Panel_EasterEggs.PerformLayout();
-            this.Panel_EasterEgg_MainRight.ResumeLayout(false);
-            this.Panel_EasterEgg_MainRight.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Numeric_CheckoutChance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Numeric_ScanChance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Numeric_LoginChance)).EndInit();
-            this.Panel_EasterEgg_MainLeft.ResumeLayout(false);
-            this.Panel_EasterEgg_LeftBottom.ResumeLayout(false);
-            this.Panel_EasterEgg_LeftBottom.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Numeric_FridaySongChance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Numeric_JeopardyChance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Numeric_DejaVuChance)).EndInit();
-            this.Panel_EasterEgg_LeftTop.ResumeLayout(false);
-            this.Panel_EasterEgg_LeftTop.PerformLayout();
+            this.tab_EasterEggs.ResumeLayout(false);
+            this.panel_EasterEggs.ResumeLayout(false);
+            this.panel_EasterEggs.PerformLayout();
+            this.panel_EasterEgg_MainRight.ResumeLayout(false);
+            this.panel_EasterEgg_MainRight.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_CheckoutChance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_ScanChance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_LoginChance)).EndInit();
+            this.panel_EasterEgg_MainLeft.ResumeLayout(false);
+            this.panel_EasterEgg_LeftBottom.ResumeLayout(false);
+            this.panel_EasterEgg_LeftBottom.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_FridaySongChance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_JeopardyChance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_DejaVuChance)).EndInit();
+            this.panel_EasterEgg_LeftTop.ResumeLayout(false);
+            this.panel_EasterEgg_LeftTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.easterEggUserBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -1389,21 +1392,21 @@ namespace Snackbar
 
         #endregion
 
-        private System.Windows.Forms.GroupBox GroupBox_Admin;
-        private System.Windows.Forms.TabControl TabControl_DataManagement;
-        private System.Windows.Forms.TabPage Tab_Users;
-        private System.Windows.Forms.TabPage Tab_Inventory;
-        private System.Windows.Forms.TabPage Tab_Purchases;
-        private System.Windows.Forms.TabPage Tab_Settings;
-        private System.Windows.Forms.DataGridView DataGrid_Users;
+        private System.Windows.Forms.GroupBox groupBox_Admin;
+        private System.Windows.Forms.TabControl tabControl_DataManagement;
+        private System.Windows.Forms.TabPage tab_Users;
+        private System.Windows.Forms.TabPage tab_Inventory;
+        private System.Windows.Forms.TabPage tab_Purchases;
+        private System.Windows.Forms.TabPage tab_Settings;
+        private System.Windows.Forms.DataGridView dataGrid_Users;
         private System.Windows.Forms.BindingSource userBindingSource;
-        private System.Windows.Forms.Button Button_DeleteUser;
-        private System.Windows.Forms.Button Button_AddUser;
-        private System.Windows.Forms.DataGridView DataGrid_Inventory;
+        private System.Windows.Forms.Button button_DeleteUser;
+        private System.Windows.Forms.Button button_AddUser;
+        private System.Windows.Forms.DataGridView dataGrid_Inventory;
         private System.Windows.Forms.BindingSource itemBindingSource;
-        private System.Windows.Forms.Button Button_DeleteItem;
-        private System.Windows.Forms.Button Button_AddItem;
-        private System.Windows.Forms.DataGridView DataGrid_Purchases;
+        private System.Windows.Forms.Button button_DeleteItem;
+        private System.Windows.Forms.Button button_AddItem;
+        private System.Windows.Forms.DataGridView dataGrid_Purchases;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemNameDataGridViewTextBoxColumn;
@@ -1411,28 +1414,28 @@ namespace Snackbar
         private System.Windows.Forms.BindingSource purchaseBindingSource;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel Panel_NegativeBalanceGroup;
+        private System.Windows.Forms.Panel panel_NegativeBalanceGroup;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox CheckBox_NegativeBalance;
+        private System.Windows.Forms.CheckBox checkBox_NegativeBalance;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TextBox_AdminPassword;
+        private System.Windows.Forms.TextBox textBox_AdminPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.CheckBox CheckBox_Warn;
-        private System.Windows.Forms.NumericUpDown Numeric_WarnLevel;
+        private System.Windows.Forms.CheckBox checkBox_Warn;
+        private System.Windows.Forms.NumericUpDown numeric_WarnLevel;
         private System.Windows.Forms.Label Label_Warn;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.NumericUpDown Numeric_ShameLevel;
+        private System.Windows.Forms.NumericUpDown numeric_ShameLevel;
         private System.Windows.Forms.Label Label_Shame;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox CheckBox_Shame;
-        private System.Windows.Forms.TabPage Tab_EasterEggs;
+        private System.Windows.Forms.CheckBox checkBox_Shame;
+        private System.Windows.Forms.TabPage tab_EasterEggs;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.CheckBox CheckBox_Guest;
+        private System.Windows.Forms.CheckBox checkBox_Guest;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox TextBox_GuestID;
+        private System.Windows.Forms.TextBox textBox_GuestID;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
@@ -1442,63 +1445,63 @@ namespace Snackbar
         private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn uPCDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox TextBox_InventorySearch;
+        private System.Windows.Forms.TextBox textBox_InventorySearch;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox TextBox_UsersSearch;
-        private System.Windows.Forms.TextBox TextBox_PurchaseSearch;
+        private System.Windows.Forms.TextBox textBox_UsersSearch;
+        private System.Windows.Forms.TextBox textBox_PurchaseSearch;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button Button_ChangeAdminPassword;
-        private System.Windows.Forms.TextBox TextBox_AdminPassword2;
+        private System.Windows.Forms.Button button_ChangeAdminPassword;
+        private System.Windows.Forms.TextBox textBox_AdminPassword2;
         private System.Windows.Forms.Label Label_AdminPasswordError;
-        private System.Windows.Forms.Panel Panel_EasterEggs;
-        private System.Windows.Forms.Panel Panel_EasterEgg_MainRight;
-        private System.Windows.Forms.Button Button_SelectLogin;
+        private System.Windows.Forms.Panel panel_EasterEggs;
+        private System.Windows.Forms.Panel panel_EasterEgg_MainRight;
+        private System.Windows.Forms.Button button_SelectLogin;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel Panel_EasterEgg_MainLeft;
-        private System.Windows.Forms.Panel Panel_EasterEgg_LeftBottom;
-        private System.Windows.Forms.ListBox ListBox_EasterEggUsers;
-        private System.Windows.Forms.Panel Panel_EasterEgg_LeftTop;
+        private System.Windows.Forms.Panel panel_EasterEgg_MainLeft;
+        private System.Windows.Forms.Panel panel_EasterEgg_LeftBottom;
+        private System.Windows.Forms.ListBox listBox_EasterEggUsers;
+        private System.Windows.Forms.Panel panel_EasterEgg_LeftTop;
         private System.Windows.Forms.OpenFileDialog soundFileDialog;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.NumericUpDown Numeric_LoginChance;
+        private System.Windows.Forms.NumericUpDown numeric_LoginChance;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ListBox ListBox_Checkout;
-        private System.Windows.Forms.ListBox ListBox_Scan;
-        private System.Windows.Forms.ListBox ListBox_Login;
+        private System.Windows.Forms.ListBox listBox_Checkout;
+        private System.Windows.Forms.ListBox listBox_Scan;
+        private System.Windows.Forms.ListBox listBox_Login;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.NumericUpDown Numeric_CheckoutChance;
-        private System.Windows.Forms.NumericUpDown Numeric_ScanChance;
+        private System.Windows.Forms.NumericUpDown numeric_CheckoutChance;
+        private System.Windows.Forms.NumericUpDown numeric_ScanChance;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button Button_SelectCheckout;
+        private System.Windows.Forms.Button button_SelectCheckout;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button Button_SelectScan;
+        private System.Windows.Forms.Button button_SelectScan;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.CheckBox CheckBox_FridaySongEnabled;
+        private System.Windows.Forms.CheckBox checkBox_FridaySongEnabled;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.NumericUpDown Numeric_FridaySongChance;
+        private System.Windows.Forms.NumericUpDown numeric_FridaySongChance;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.CheckBox CheckBox_JeopardyEnabled;
-        private System.Windows.Forms.CheckBox CheckBox_DejaVuEnabled;
+        private System.Windows.Forms.CheckBox checkBox_JeopardyEnabled;
+        private System.Windows.Forms.CheckBox checkBox_DejaVuEnabled;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.NumericUpDown Numeric_JeopardyChance;
+        private System.Windows.Forms.NumericUpDown numeric_JeopardyChance;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.NumericUpDown Numeric_DejaVuChance;
+        private System.Windows.Forms.NumericUpDown numeric_DejaVuChance;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label Label_SolemnlySwear;
-        private System.Windows.Forms.Timer Timer_SolemnlySwear;
+        private System.Windows.Forms.Label label_SolemnlySwear;
+        private System.Windows.Forms.Timer timer_SolemnlySwear;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.CheckBox CheckBox_EnableEasterEggs;
+        private System.Windows.Forms.CheckBox checkBox_EnableEasterEggs;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.BindingSource easterEggUserBindingSource;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.NumericUpDown Numeric_MaxDebt;
+        private System.Windows.Forms.NumericUpDown numeric_MaxDebt;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.CheckBox CheckBox_LimitDebt;
+        private System.Windows.Forms.CheckBox checkBox_LimitDebt;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label Label_GuestIDError;
     }

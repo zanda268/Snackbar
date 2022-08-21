@@ -11,18 +11,18 @@ using System.Windows.Forms;
 
 namespace Snackbar
 {
-    public partial class MoneyQuickAdd : Form
+    internal partial class MoneyQuickAdd : Form
     {
         public User SelectedUser { get; set; }
-        private UserList userList;
+        private UserList _userList;
 
-        public MoneyQuickAdd(UserList userList)
+        internal MoneyQuickAdd(UserList userList)
         {
             InitializeComponent();
             this.listBox1.DataSource = userList.GetUserList();
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.userList = userList;
-            this.TextBox_Search.Focus();
+            this._userList = userList;
+            this.textBox_Search.Focus();
             this.Icon = Properties.Resources.icon;
         }
 
@@ -35,10 +35,10 @@ namespace Snackbar
 
         private void TextBox_Search_TextChanged(object sender, EventArgs e)
         {
-            SortableBindingList<User> filteredList = new SortableBindingList<User>(userList.GetUserList().Where(i =>
-            i.Name.ToLower().Contains(TextBox_Search.Text.ToLower()) ||
-            i.ID.ToLower().Contains(TextBox_Search.Text.ToLower())
-            ).ToList());
+            SortableBindingList<User> filteredList = new SortableBindingList<User>(_userList.GetUserList().Where(i =>
+                                                        i.Name.ToLower().Contains(textBox_Search.Text.ToLower()) ||
+                                                        i.ID.ToLower().Contains(textBox_Search.Text.ToLower())
+                                                        ).ToList());
             listBox1.DataSource = filteredList;
         }
 
@@ -46,7 +46,7 @@ namespace Snackbar
         {
             if(Keys.Enter == e.KeyCode)
             {
-                Button_Select.PerformClick();
+                button_Select.PerformClick();
             }
         }
     }

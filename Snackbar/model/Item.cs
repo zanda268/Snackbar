@@ -6,27 +6,27 @@ using System.Text;
 
 namespace Snackbar.model
 {
-    class Item : IEquatable<Item>, INotifyPropertyChanged
+    internal class Item : IEquatable<Item>, INotifyPropertyChanged
     {
-        private string name;
-        private string upc;
-        private decimal cost;
-        private int amount;
+        private string _name;
+        private string _upc;
+        private decimal _cost;
+        private int _amount;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public string Name { get => name; set { name = value; NotifyPropertyChanged("Name"); } }
-        public decimal Cost { get => cost; set { cost = value; NotifyPropertyChanged("Cost"); }
+        public string Name { get => _name; set { _name = value; NotifyPropertyChanged("Name"); } }
+        public decimal Cost { get => _cost; set { _cost = value; NotifyPropertyChanged("Cost"); }
 }
-        public int Amount { get => amount; set { amount = value; NotifyPropertyChanged("Amount"); }}
-        public string UPC { get => upc; set { upc = value; NotifyPropertyChanged("UPC"); }}
+        public int Amount { get => _amount; set { _amount = value; NotifyPropertyChanged("Amount"); }}
+        public string UPC { get => _upc; set { _upc = value; NotifyPropertyChanged("UPC"); }}
 
-        public Item(string iName, string iUPC, decimal iCost, int iAmount)
+        internal Item(string name, string upc, decimal cost, int amount)
         {
-            Name = iName;
-            UPC = iUPC;
-            Cost = iCost;
-            Amount = iAmount;
+            this.Name = name;
+            this.UPC = upc;
+            this.Cost = cost;
+            this.Amount = amount;
         }
 
         public bool Equals(Item item)

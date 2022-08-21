@@ -36,7 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.Label_Version = new System.Windows.Forms.Label();
+            this.label_Version = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -64,7 +64,7 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.linkLabel2);
             this.panel3.Controls.Add(this.linkLabel1);
-            this.panel3.Controls.Add(this.Label_Version);
+            this.panel3.Controls.Add(this.label_Version);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(167, 0);
@@ -77,7 +77,7 @@
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
             this.richTextBox1.Location = new System.Drawing.Point(11, 99);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(233, 95);
+            this.richTextBox1.Size = new System.Drawing.Size(233, 140);
             this.richTextBox1.TabIndex = 5;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
@@ -124,14 +124,14 @@
             this.linkLabel1.Text = "Lemon background vector created by vector_corp - www.freepik.com";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // Label_Version
+            // label_Version
             // 
-            this.Label_Version.AutoSize = true;
-            this.Label_Version.Location = new System.Drawing.Point(7, 29);
-            this.Label_Version.Name = "Label_Version";
-            this.Label_Version.Size = new System.Drawing.Size(45, 13);
-            this.Label_Version.TabIndex = 1;
-            this.Label_Version.Text = "Version:";
+            this.label_Version.AutoSize = true;
+            this.label_Version.Location = new System.Drawing.Point(7, 29);
+            this.label_Version.Name = "label_Version";
+            this.label_Version.Size = new System.Drawing.Size(45, 13);
+            this.label_Version.TabIndex = 1;
+            this.label_Version.Text = "Version:";
             // 
             // label1
             // 
@@ -189,7 +189,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label Label_Version;
+        private System.Windows.Forms.Label label_Version;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label2;

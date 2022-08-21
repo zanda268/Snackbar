@@ -34,8 +34,8 @@
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.TextBox_Search = new System.Windows.Forms.TextBox();
-            this.Button_Select = new System.Windows.Forms.Button();
+            this.textBox_Search = new System.Windows.Forms.TextBox();
+            this.button_Select = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -77,8 +77,8 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.TextBox_Search);
-            this.panel4.Controls.Add(this.Button_Select);
+            this.panel4.Controls.Add(this.textBox_Search);
+            this.panel4.Controls.Add(this.button_Select);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(15, 398);
             this.panel4.Name = "panel4";
@@ -94,24 +94,24 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Search:";
             // 
-            // TextBox_Search
+            // textBox_Search
             // 
-            this.TextBox_Search.Location = new System.Drawing.Point(269, 9);
-            this.TextBox_Search.Name = "TextBox_Search";
-            this.TextBox_Search.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_Search.TabIndex = 1;
-            this.TextBox_Search.TextChanged += new System.EventHandler(this.TextBox_Search_TextChanged);
-            this.TextBox_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox_Search_KeyDown);
+            this.textBox_Search.Location = new System.Drawing.Point(269, 9);
+            this.textBox_Search.Name = "textBox_Search";
+            this.textBox_Search.Size = new System.Drawing.Size(120, 20);
+            this.textBox_Search.TabIndex = 1;
+            this.textBox_Search.TextChanged += new System.EventHandler(this.TextBox_Search_TextChanged);
+            this.textBox_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox_Search_KeyDown);
             // 
-            // Button_Select
+            // button_Select
             // 
-            this.Button_Select.Location = new System.Drawing.Point(6, 6);
-            this.Button_Select.Name = "Button_Select";
-            this.Button_Select.Size = new System.Drawing.Size(75, 23);
-            this.Button_Select.TabIndex = 2;
-            this.Button_Select.Text = "Select";
-            this.Button_Select.UseVisualStyleBackColor = true;
-            this.Button_Select.Click += new System.EventHandler(this.Button_Select_Click);
+            this.button_Select.Location = new System.Drawing.Point(6, 6);
+            this.button_Select.Name = "button_Select";
+            this.button_Select.Size = new System.Drawing.Size(75, 23);
+            this.button_Select.TabIndex = 2;
+            this.button_Select.Text = "Select";
+            this.button_Select.UseVisualStyleBackColor = true;
+            this.button_Select.Click += new System.EventHandler(this.Button_Select_Click);
             // 
             // panel3
             // 
@@ -168,9 +168,9 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.BindingSource userBindingSource;
-        private System.Windows.Forms.Button Button_Select;
+        private System.Windows.Forms.Button button_Select;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TextBox_Search;
+        private System.Windows.Forms.TextBox textBox_Search;
     }
 }

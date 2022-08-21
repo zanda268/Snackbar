@@ -11,41 +11,39 @@ using User = Snackbar.model.User;
 
 namespace Snackbar.controller
 {
-    class Checkout
+    internal class Checkout
     {
         public BindingList<PurchaseListItem> PurchaseList { get; private set; }
-        private Inventory Inventory;
-        private UserList UserList;
-        private PurchaseHistory PurchaseHistory;
-        private Label PurchaseTotal;
-        private Label Label_UPCErrorMessage;
-        private TextBox TextBox_PurchaseUPC;
-        private TextBox TextBox_Login;
-        private Settings Settings;
+        private Inventory _inventory;
+        private UserList _userList;
+        private PurchaseHistory _purchaseHistory;
+        private Label _purchaseTotal;
+        private Label _label_UPCErrorMessage;
+        private TextBox _textBox_Login;
+        private Settings _settings;
 
-        public Checkout(UserList userList, PurchaseHistory purchaseHistory, Inventory inventory, Settings settings, Label label_UPCErrorMessage, TextBox textBox_Login, Label purchaseTotal, TextBox textBox_PurchaseUPC)
+        internal Checkout(UserList userList, PurchaseHistory purchaseHistory, Inventory inventory, Settings settings, Label label_UPCErrorMessage, TextBox textBox_Login, Label purchaseTotal)
         {
             PurchaseList = new BindingList<PurchaseListItem>();
-            Inventory = inventory;
-            PurchaseTotal = purchaseTotal;
-            TextBox_PurchaseUPC = textBox_PurchaseUPC;
-            UserList = userList;
-            PurchaseHistory = purchaseHistory;
-            TextBox_Login = textBox_Login;
-            Label_UPCErrorMessage = label_UPCErrorMessage;
-            Settings = settings;
+            this._inventory = inventory;
+            this._purchaseTotal = purchaseTotal;
+            this._userList = userList;
+            this._purchaseHistory = purchaseHistory;
+            this._textBox_Login = textBox_Login;
+            this._label_UPCErrorMessage = label_UPCErrorMessage;
+            this._settings = settings;
         }
 
         public void PurchaseCart()
         {
-            User user = UserList.GetUserFromID(TextBox_Login.Text);
+            User user = _userList.GetUserFromID(_textBox_Login.Text);
 
             foreach (PurchaseListItem purchase in PurchaseList)
             {
                 for(int i=purchase.Amount; i>0; i--)
                 {
-                    PurchaseHistory.AddPurchase(new Purchase(user.ID, purchase.Name, purchase.Cost, DateTime.Now));
-                    Inventory.GetItem(purchase.UPC).Amount--;
+                    _purchaseHistory.AddPurchase(new Purchase(user.ID, purchase.Name, purchase.Cost, DateTime.Now));
+                    _inventory.GetItem(purchase.UPC).Amount--;
                     user.Balance = decimal.Subtract(user.Balance, purchase.Cost);
                 }
             }
@@ -57,8 +55,8 @@ namespace Snackbar.controller
             {
                 for (int i = purchase.Amount; i > 0; i--)
                 {
-                    PurchaseHistory.AddPurchase(new Purchase(Settings.GuestAccountID, purchase.Name, purchase.Cost, DateTime.Now));
-                    Inventory.GetItem(purchase.UPC).Amount--;
+                    _purchaseHistory.AddPurchase(new Purchase(_settings.GuestAccountID, purchase.Name, purchase.Cost, DateTime.Now));
+                    _inventory.GetItem(purchase.UPC).Amount--;
                 }
             }
         }
@@ -80,16 +78,16 @@ namespace Snackbar.controller
 
         public bool AddPurchaseToList(string upc)
         {
-            Item i = Inventory.GetItem(upc);
+            Item i = _inventory.GetItem(upc);
 
             if(i==null)
             {
-                Label_UPCErrorMessage.Text = "Invalid UPC!";
+                _label_UPCErrorMessage.Text = "Invalid UPC!";
                 SystemSounds.Beep.Play();
                 return false;
             }
 
-            Label_UPCErrorMessage.Text = "";
+            _label_UPCErrorMessage.Text = "";
 
             if (!PurchaseList.Contains(new PurchaseListItem("",upc,0,0m)))
                 PurchaseList.Add(new PurchaseListItem(i.Name, i.UPC, 1, i.Cost));
@@ -109,7 +107,7 @@ namespace Snackbar.controller
                 total += j.Cost * j.Amount;
             }
 
-            PurchaseTotal.Text = "Total: $" + total;
+            _purchaseTotal.Text = "Total: $" + total;
 
             return true;
         }
@@ -117,43 +115,12 @@ namespace Snackbar.controller
         public void ClearCart()
         {
             PurchaseList.Clear();
-            PurchaseTotal.Text = "Total: $0";
-        }
-
-        public class PurchaseListItem : IEquatable<PurchaseListItem>
-        {
-            private string name;
-            private string upc;
-            private int amount;
-            private decimal cost;
-
-            public string Name { get => name; set => name = value; }
-            public string UPC { get => upc; set => upc = value; }
-            public int Amount { get => amount; set => amount = value; }
-            public decimal Cost { get => cost; set => cost = value; }
-
-            public PurchaseListItem(string name, string upc, int amount, decimal cost)
-            {
-                Name = name;
-                UPC = upc;
-                Amount = amount;
-                Cost = cost;
-            }
-
-            public override string ToString()
-            {
-                return Amount.ToString() + "x - " + Name.ToString();
-            }
-
-            bool IEquatable<PurchaseListItem>.Equals(PurchaseListItem other)
-            {
-                return other.UPC.Equals(UPC);
-            }
+            _purchaseTotal.Text = "Total: $0";
         }
 
         public void RemovePurchaseFromList(int index)
         {
-            if(PurchaseList[index].Amount>1)
+            if (PurchaseList[index].Amount > 1)
             {
                 PurchaseList[index].Amount--;
                 PurchaseList.ResetBindings();
@@ -169,7 +136,38 @@ namespace Snackbar.controller
                 total += j.Cost * j.Amount;
             }
 
-            PurchaseTotal.Text = "Total: $" + total;
+            _purchaseTotal.Text = "Total: $" + total;
+        }
+
+        internal class PurchaseListItem : IEquatable<PurchaseListItem>
+        {
+            private string _name;
+            private string _upc;
+            private int _amount;
+            private decimal _cost;
+
+            public string Name { get => _name; set => _name = value; }
+            public string UPC { get => _upc; set => _upc = value; }
+            public int Amount { get => _amount; set => _amount = value; }
+            public decimal Cost { get => _cost; set => _cost = value; }
+
+            internal PurchaseListItem(string name, string upc, int amount, decimal cost)
+            {
+                this.Name = name;
+                this.UPC = upc;
+                this.Amount = amount;
+                this.Cost = cost;
+            }
+
+            public override string ToString()
+            {
+                return Amount.ToString() + "x - " + Name.ToString();
+            }
+
+            bool IEquatable<PurchaseListItem>.Equals(PurchaseListItem other)
+            {
+                return other.UPC.Equals(UPC);
+            }
         }
     }
 }

@@ -84,7 +84,6 @@
     </Compile>
     <Compile Include="controller\Checkout.cs" />
     <Compile Include="controller\FileIO.cs" />
-    <Compile Include="controller\LoginManager.cs" />
     <Compile Include="EnableAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,31 +170,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="resources\logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\logo.bmp" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="resources\images\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="resources\icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="resources\images\icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\sounds\Checkout\CashRegisterDing.wav" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\sounds\Checkout\CountingCash.wav" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\sounds\Checkout\DukeNukem_Postal.wav" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\sounds\Checkout\Spongebob_Thanks.wav" />
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\sounds\Checkout_CashRegisterDing.wav" />

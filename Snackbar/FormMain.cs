@@ -14,48 +14,46 @@ using User = Snackbar.model.User;
 
 namespace Snackbar
 {
-    public partial class FormMain : Form
+    internal partial class FormMain : Form
     {
-        private UserList userList;
-        private PurchaseHistory purchaseHistory;
-        private Inventory inventory;
-        private Settings settings;
-        private Checkout checkout;
-        private LoginManager loginManager;
-        private DataManagement dataManagement;
-        private EasterEggManager easterEggManager;
-        private SoundPlayer player;
+        private UserList _userList;
+        private PurchaseHistory _purchaseHistory;
+        private Inventory _inventory;
+        private Settings _settings;
+        private Checkout _checkout;
+        private DataManagement _dataManagement;
+        private EasterEggManager _easterEggManager;
+        private SoundPlayer _player;
 
-        public FormMain()
+        internal FormMain()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            
+
 
             //Initialize components
-            userList = new UserList();
-            purchaseHistory = new PurchaseHistory();
-            inventory = new Inventory();
-            settings = new Settings();
-            checkout = new Checkout(userList, purchaseHistory, inventory, settings, Label_UPCErrorMessage, TextBox_Login, Label_PurchaseTotal, TextBox_PurchaseUPC);
-            loginManager = new LoginManager(userList, settings);
-            easterEggManager = new EasterEggManager(settings);
+            _settings = new Settings();
+            _purchaseHistory = new PurchaseHistory();
+            _inventory = new Inventory();
+            _userList = new UserList(_settings);
+            _easterEggManager = new EasterEggManager(_settings);
+            _checkout = new Checkout(_userList, _purchaseHistory, _inventory, _settings, Label_UPCErrorMessage, textBox_Login, label_PurchaseTotal);
 
-            ListBox_PurchaseList.DataSource = checkout.PurchaseList;
+            listBox_PurchaseList.DataSource = _checkout.PurchaseList;
 
-            FileIO.Initialize(userList,purchaseHistory,inventory, settings);;
+            FileIO.Initialize(_userList,_purchaseHistory,_inventory, _settings);;
 
             this.Icon = Properties.Resources.icon;
-            player = new SoundPlayer();
+            _player = new SoundPlayer();
 
-            dataManagement = new DataManagement(userList, inventory, purchaseHistory, settings);
+            _dataManagement = new DataManagement(_userList, _inventory, _purchaseHistory, _settings);
         }
 
         //Save data on window close.
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
-            FileIO.SaveData(userList, purchaseHistory, inventory, settings);
+            FileIO.SaveData(_userList, _purchaseHistory, _inventory, _settings);
         }
 
         //User attempted to add purchase to cart with Enter keypress
@@ -63,17 +61,17 @@ namespace Snackbar
         {
             if(Control.ModifierKeys == Keys.Shift && e.KeyCode == Keys.Enter)
             {
-                Button_Checkout.PerformClick();
+                button_Checkout.PerformClick();
                 e.SuppressKeyPress = true; //Used to remove Ding after user presses enter.
             }
             else if(e.KeyCode == Keys.Enter)
             {
-                Button_AddItemToCart.PerformClick();
+                button_AddItemToCart.PerformClick();
                 e.SuppressKeyPress = true; //Used to remove Ding after user presses enter.
             }
             else if(e.KeyCode == Keys.Escape)
             {
-                Button_Logout.PerformClick();
+                button_Logout.PerformClick();
                 e.SuppressKeyPress = true; //Used to remove Ding after user presses esc.
             }
         }
@@ -81,10 +79,10 @@ namespace Snackbar
         //User attempted to add purchase to cart with button
         private void Button_AddItemToCart_Click(object sender, EventArgs e)
         {
-            if (checkout.AddPurchaseToList(TextBox_PurchaseUPC.Text))
-                easterEggManager.Scan(TextBox_Login.Text, inventory.GetItem(TextBox_PurchaseUPC.Text));
-            TextBox_PurchaseUPC.Clear();
-            TextBox_PurchaseUPC.Focus();
+            if (_checkout.AddPurchaseToList(textBox_PurchaseUPC.Text))
+                _easterEggManager.Scan(textBox_Login.Text, _inventory.GetItem(textBox_PurchaseUPC.Text));
+            textBox_PurchaseUPC.Clear();
+            textBox_PurchaseUPC.Focus();
         }
 
         //User attempted to login with button press
@@ -103,7 +101,7 @@ namespace Snackbar
             }
             else if(e.KeyCode == Keys.Escape)
             {
-                TextBox_Login.Clear();
+                textBox_Login.Clear();
                 e.SuppressKeyPress = true;
             }
         }
@@ -111,119 +109,119 @@ namespace Snackbar
         //Abstracted method to for login code
         private void AttemptLogin()
         {
-            GroupBox_PurchaseList.Enabled = loginManager.IsUserAuthorized(TextBox_Login.Text);
-            GroupBox_Login.Enabled = !GroupBox_PurchaseList.Enabled;
+            groupBox_PurchaseList.Enabled = _userList.IsUserAuthorized(textBox_Login.Text);
+            groupBox_Login.Enabled = !groupBox_PurchaseList.Enabled;
 
-            if (GroupBox_PurchaseList.Enabled)
+            if (groupBox_PurchaseList.Enabled)
             {
                 //User successfully logged in.
-                User u = userList.GetUserFromID(TextBox_Login.Text);
-                u = u != null ? u : new User(settings.GuestAccountID, "Guest", 0m);
+                User u = _userList.GetUserFromID(textBox_Login.Text);
+                u = u != null ? u : new User(_settings.GuestAccountID, "Guest", 0m);
 
-                TextBox_PurchaseUPC.Focus();
-                Label_LoggedIn.BackColor = System.Drawing.Color.DarkGreen;
-                Label_LoggedIn.Text = $"Welcome, {u.Name.Split(' ')[0]}!   Balance: ${u.Balance}";
-                Button_ClearCart.BackColor = System.Drawing.Color.LightCoral;
-                Button_Checkout.BackColor = System.Drawing.Color.PaleGreen;
-                Button_Logout.BackColor = System.Drawing.Color.SteelBlue;
+                textBox_PurchaseUPC.Focus();
+                label_LoggedIn.BackColor = System.Drawing.Color.DarkGreen;
+                label_LoggedIn.Text = $"Welcome, {u.Name.Split(' ')[0]}!   Balance: ${u.Balance}";
+                button_ClearCart.BackColor = System.Drawing.Color.LightCoral;
+                button_Checkout.BackColor = System.Drawing.Color.PaleGreen;
+                button_Logout.BackColor = System.Drawing.Color.SteelBlue;
 
                 //Check balance for warns/shames
-                if (settings.ShameUserEnabled && u.Balance <= settings.ShameUserValue)
+                if (_settings.ShameUserEnabled && u.Balance <= _settings.ShameUserValue)
                 {
-                    player = new SoundPlayer(Properties.Resources.ShameUserFinal);
-                    player.Play();
+                    _player = new SoundPlayer(Properties.Resources.ShameUserFinal);
+                    _player.Play();
                 }
 
-                if (settings.WarnUserEnabled && u.Balance <= settings.WarnUserValue)
+                if (_settings.WarnUserEnabled && u.Balance <= _settings.WarnUserValue)
                 {
                     MessageBox.Show("Your funds are low. Please consider adding more.","Funds Low",MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
-                easterEggManager.Login(u.ID);
+                _easterEggManager.Login(u.ID);
             }
             else
             {
                 //User Id not found.
-                if(TextBox_Login.Text != "")
+                if(textBox_Login.Text != "")
                     SystemSounds.Beep.Play();
-                TextBox_Login.Clear();
-                TextBox_Login.Focus();
-                Label_LoggedIn.BackColor = System.Drawing.Color.Maroon;
-                Label_LoggedIn.Text = "Not Logged In!";
-                Button_ClearCart.BackColor = System.Drawing.SystemColors.Control;
-                Button_Checkout.BackColor = System.Drawing.SystemColors.Control;
-                Button_Logout.BackColor = System.Drawing.SystemColors.Control;
+                textBox_Login.Clear();
+                textBox_Login.Focus();
+                label_LoggedIn.BackColor = System.Drawing.Color.Maroon;
+                label_LoggedIn.Text = "Not Logged In!";
+                button_ClearCart.BackColor = System.Drawing.SystemColors.Control;
+                button_Checkout.BackColor = System.Drawing.SystemColors.Control;
+                button_Logout.BackColor = System.Drawing.SystemColors.Control;
             }
         }
 
         //User attempted to clear Login textbox
         private void Button_LoginClear_Click(object sender, EventArgs e)
         {
-            TextBox_Login.Clear();
-            TextBox_Login.Focus();
+            textBox_Login.Clear();
+            textBox_Login.Focus();
         }
 
         //User wants to purchase all items in their cart
         private void Button_Checkout_Click(object sender, EventArgs e)
         {
-            easterEggManager.Cancel_Timer();
+            _easterEggManager.Cancel_Timer();
 
             //Process checkout as a guest.
-            if (TextBox_Login.Text.Equals(settings.GuestAccountID))
+            if (textBox_Login.Text.Equals(_settings.GuestAccountID))
             {
-                MessageBox.Show($"Please pay ${checkout.Total()} in cash.", "Guest Account", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                checkout.PurchaseCartGuest();
-                checkout.ClearCart();
-                TextBox_Login.Clear();
+                MessageBox.Show($"Please pay ${_checkout.Total()} in cash.", "Guest Account", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                _checkout.PurchaseCartGuest();
+                _checkout.ClearCart();
+                textBox_Login.Clear();
                 AttemptLogin();
                 return;
             }
 
             //Ensure user has enough credit to cover transaction.
-            if ((!settings.NegativeBalancesEnabled && userList.GetUserFromID(TextBox_Login.Text).Balance < checkout.Total()) ||
-                (settings.LimitDebtEnabled && (userList.GetUserFromID(TextBox_Login.Text).Balance - checkout.Total()) < settings.MaxDebtValue))
+            if ((!_settings.NegativeBalancesEnabled && _userList.GetUserFromID(textBox_Login.Text).Balance < _checkout.Total()) ||
+                (_settings.LimitDebtEnabled && (_userList.GetUserFromID(textBox_Login.Text).Balance - _checkout.Total()) < _settings.MaxDebtValue))
             {
                 MessageBox.Show("Insufficent funds! Please add more funds to your account.", "Insufficent funds!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            checkout.PurchaseCart();
-            checkout.ClearCart();
-            easterEggManager.Checkout(TextBox_Login.Text);
-            TextBox_Login.Clear();
+            _checkout.PurchaseCart();
+            _checkout.ClearCart();
+            _easterEggManager.Checkout(textBox_Login.Text);
+            textBox_Login.Clear();
             AttemptLogin();
 
             //Write all data to files after each purchase
-            FileIO.SaveData(userList, purchaseHistory, inventory, settings);
+            FileIO.SaveData(_userList, _purchaseHistory, _inventory, _settings);
         }
 
         //User wants to clear items from cart
         private void Button_ClearCart_Click(object sender, EventArgs e)
         {
-            checkout.ClearCart();
-            TextBox_PurchaseUPC.Focus();
+            _checkout.ClearCart();
+            textBox_PurchaseUPC.Focus();
         }
 
         //User wants to log out.
         private void Button_Logout_Click(object sender, EventArgs e)
         {
-            easterEggManager.Cancel_Timer();
+            _easterEggManager.Cancel_Timer();
 
-            checkout.ClearCart();
-            TextBox_PurchaseUPC.Clear();
-            TextBox_Login.Clear();
+            _checkout.ClearCart();
+            textBox_PurchaseUPC.Clear();
+            textBox_Login.Clear();
             AttemptLogin();
         }
 
         //User wants to remove selected item from their cart
         private void Button_RemoveItemFromCart_Click(object sender, EventArgs e)
         {
-            checkout.RemovePurchaseFromList(ListBox_PurchaseList.SelectedIndex);
+            _checkout.RemovePurchaseFromList(listBox_PurchaseList.SelectedIndex);
         }
 
         private void dataManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataManagement.ShowDialog();
+            _dataManagement.ShowDialog();
         }
 
         //User wants to toggle admin mode
@@ -231,7 +229,7 @@ namespace Snackbar
         {
             if (adminModeToolStripMenuItem.Text.Equals("Enable Admin Mode"))
             {
-                EnableAdmin enableAdmin = new EnableAdmin(settings, enableAdminMode, disableAdminMode);
+                EnableAdmin enableAdmin = new EnableAdmin(_settings, enableAdminMode, disableAdminMode);
                 enableAdmin.ShowDialog();
             }
             else
@@ -240,33 +238,37 @@ namespace Snackbar
             }
         }
 
-        //Abstraction of logic used when enabling Admin mode.
+        //Reference of logic used when enabling Admin mode.
         private void enableAdminMode()
         {
             adminModeToolStripMenuItem.Text = "Disable Admin Mode";
             adminToolStripMenuItem.Enabled = true;
         }
 
-        //Abstraction of logic needed when disabling Admin mode.
+        //Reference of logic needed when disabling Admin mode.
         //Close any windows with admin priviledges and reset Admin MenuItem
+        //Unable to close Quick Add tools.
         private void disableAdminMode()
         {
             adminModeToolStripMenuItem.Text = "Enable Admin Mode";
             adminToolStripMenuItem.Enabled = false;
-            dataManagement.Close();
+            _dataManagement.Close();
         }
 
+        //Toolbar - Help window
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Help help = new Help();
             help.ShowDialog();
         }
 
+        //Toolbar - Save
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FileIO.SaveData(userList, purchaseHistory, inventory, settings);
+            FileIO.SaveData(_userList, _purchaseHistory, _inventory, _settings);
         }
 
+        //Toolbar - Inventory Quick Add Tool
         private void inventoryQuickAddToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string input = "";
@@ -277,7 +279,7 @@ namespace Snackbar
                 if (input.Length == 0)
                     return;
 
-                Item i = inventory.GetItem(input);
+                Item i = _inventory.GetItem(input);
                 if (i == null)
                 {
                     //Add item
@@ -302,7 +304,7 @@ namespace Snackbar
                             return;
                     }
 
-                    inventory.AddItem(new Item(name, upc, cost, amount));
+                    _inventory.AddItem(new Item(name, upc, cost, amount));
                 }
                 else
                 {
@@ -322,11 +324,14 @@ namespace Snackbar
                 }
 
             } while (input != "");
+
+            FileIO.SaveData(_userList, _purchaseHistory, _inventory, _settings);
         }
 
+        //Toolbar - Money Quick Add Tool
         private void moneyQuickAddToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MoneyQuickAdd moneyQuickAdd = new MoneyQuickAdd(userList);
+            MoneyQuickAdd moneyQuickAdd = new MoneyQuickAdd(_userList);
             DialogResult result = moneyQuickAdd.ShowDialog();
 
             if(result == DialogResult.OK)
@@ -346,8 +351,11 @@ namespace Snackbar
 
                 u.Balance += amount;
             }
+
+            FileIO.SaveData(_userList, _purchaseHistory, _inventory, _settings);
         }
 
+        //Toolbar - Open save location
         private void openSaveLocationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Process.Start(FileIO.APP_PATH);

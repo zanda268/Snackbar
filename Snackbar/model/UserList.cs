@@ -7,35 +7,37 @@ using System.Text;
 
 namespace Snackbar.model
 {
-    public class UserList
+    internal class UserList
     {
-        private SortableBindingList<User> userList;
+        private SortableBindingList<User> _userList;
+        private Settings _settings;
 
         //Constructer
-        public UserList()
+        internal UserList(Settings settings)
         {
-            userList = new SortableBindingList<User>();
+            this._userList = new SortableBindingList<User>();
+            this._settings = settings;
         }
 
         //Returns user found with UserID
         public User GetUserFromID(string userID)
         {
-            return userList.ToList().Find(x => x.ID.Equals(userID));
+            return _userList.ToList().Find(x => x.ID.Equals(userID));
         }
 
         //Returns true if ID already exists
         public bool UserIDExists(string userID)
         {
-            return userList.ToList().Find(x => x.ID.Equals(userID)) != null;
+            return _userList.ToList().Find(x => x.ID.Equals(userID)) != null;
         }
 
         //Adds new user to userList after verifing ID is unique
         //Returns true if the user is not already contained in the list
         public bool AddUser(User user)
         {
-            if(!userList.Contains(user))
+            if(!_userList.Contains(user))
             {
-                userList.Add(user);
+                _userList.Add(user);
                 return true;
             }
             else
@@ -44,9 +46,14 @@ namespace Snackbar.model
             }
         }
 
+        public bool IsUserAuthorized(string userID)
+        {
+            return _userList.Contains(new User(userID, "", 0m)) || _settings.GuestAccountID.Equals(userID);
+        }
+
         public SortableBindingList<User> GetUserList()
         {
-            return userList;
+            return _userList;
         }
 
         //Returns a string with each line representing a user object
@@ -54,7 +61,7 @@ namespace Snackbar.model
         {
             string returnString = "";
 
-            foreach (User u in userList)
+            foreach (User u in _userList)
                 returnString += u.ToString() + Environment.NewLine;
 
             return returnString;

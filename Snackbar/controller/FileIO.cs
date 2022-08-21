@@ -10,13 +10,13 @@ using static Snackbar.model.Settings;
 
 namespace Snackbar.controller
 {
-    class FileIO
+    internal class FileIO
     {
         public readonly static string APP_PATH = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Snackbar\\";
-        private static string userFile = APP_PATH + "Users.csv";
-        private static string purchaseHistoryFile = APP_PATH + "PurchaseHistory.csv";
-        private static string inventoryFile = APP_PATH + "Inventory.csv";
-        private static string settingsFile = APP_PATH + "Settings.xml";
+        private static string s_userFile = APP_PATH + "Users.csv";
+        private static string s_purchaseHistoryFile = APP_PATH + "PurchaseHistory.csv";
+        private static string s_inventoryFile = APP_PATH + "Inventory.csv";
+        private static string s_settingsFile = APP_PATH + "Settings.xml";
 
         public static void Initialize(UserList userList, PurchaseHistory purchaseHistory, Inventory inventory, Settings settings)
         {
@@ -28,11 +28,11 @@ namespace Snackbar.controller
                     Directory.CreateDirectory(APP_PATH);
 
                 //Load userList
-                if (!File.Exists(userFile))
-                    File.Create(userFile).Close();
+                if (!File.Exists(s_userFile))
+                    File.Create(s_userFile).Close();
                 else
                 {
-                    sr = new StreamReader(userFile);
+                    sr = new StreamReader(s_userFile);
 
                     //Loop through userFile and split each line into 3 fields to load into a new user for the userList
                     string line;
@@ -47,11 +47,11 @@ namespace Snackbar.controller
                 }
 
                 //Load purchaseHistory
-                if (!File.Exists(purchaseHistoryFile))
-                    File.Create(purchaseHistoryFile).Close();
+                if (!File.Exists(s_purchaseHistoryFile))
+                    File.Create(s_purchaseHistoryFile).Close();
                 else
                 {
-                    sr = new StreamReader(purchaseHistoryFile);
+                    sr = new StreamReader(s_purchaseHistoryFile);
 
                     //Loop through purchaseHistory and split each line into 4 fields to load into a new purchase for the purchaseHistory
                     string line;
@@ -66,11 +66,11 @@ namespace Snackbar.controller
                 }
 
                 //Load inventory
-                if (!File.Exists(inventoryFile))
-                    File.Create(inventoryFile).Close();
+                if (!File.Exists(s_inventoryFile))
+                    File.Create(s_inventoryFile).Close();
                 else
                 {
-                    sr = new StreamReader(inventoryFile);
+                    sr = new StreamReader(s_inventoryFile);
 
                     //Loop through inventoryFile and split each line into 4 fields to load into a new item for the inventory
                     string line;
@@ -85,10 +85,10 @@ namespace Snackbar.controller
                 }
 
                 //Load settings
-                if (!File.Exists(settingsFile))
+                if (!File.Exists(s_settingsFile))
                 {
                     //Settings file doesnt exist. Create and set defaults.
-                    File.Create(settingsFile).Close();
+                    File.Create(s_settingsFile).Close();
 
                     settings.NegativeBalancesEnabled = true;
                     settings.WarnUserEnabled = true;
@@ -113,7 +113,7 @@ namespace Snackbar.controller
                     XmlDocument doc = new XmlDocument();
                     try
                     {
-                        doc.Load(settingsFile);
+                        doc.Load(s_settingsFile);
                     }
                     catch (XmlException)
                     {
@@ -179,7 +179,7 @@ namespace Snackbar.controller
 
             //Save userList data
             {
-                w = new StreamWriter(userFile);
+                w = new StreamWriter(s_userFile);
 
                 foreach (User u in userList.GetUserList())
                 {
@@ -191,7 +191,7 @@ namespace Snackbar.controller
 
             //Save purchaseHistory data
             {
-                w = new StreamWriter(purchaseHistoryFile);
+                w = new StreamWriter(s_purchaseHistoryFile);
 
                 foreach (Purchase p in purchaseHistory.GetPurchaseHistoryList())
                 {
@@ -203,7 +203,7 @@ namespace Snackbar.controller
 
             //Save inventory data
             {
-                w = new StreamWriter(inventoryFile);
+                w = new StreamWriter(s_inventoryFile);
 
                 foreach (Item i in inventory.GetItemList())
                 {
@@ -215,7 +215,7 @@ namespace Snackbar.controller
 
             //Save settings
             {
-                XmlWriter writer = XmlWriter.Create(settingsFile);
+                XmlWriter writer = XmlWriter.Create(s_settingsFile);
                 writer.WriteStartDocument();
                 writer.WriteStartElement("root");
 

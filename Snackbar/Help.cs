@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Snackbar
 {
-    public partial class Help : Form
+    internal partial class Help : Form
     {
-        public Help()
+        internal Help()
         {
             InitializeComponent();
-            Label_Version.Text = String.Format("Version {0}", AssemblyVersion);
+            label_Version.Text = String.Format("Version {0}", AssemblyVersion);
             this.StartPosition = FormStartPosition.CenterScreen;
 
             this.Icon = Properties.Resources.icon;

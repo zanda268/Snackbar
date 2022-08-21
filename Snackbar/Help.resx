@@ -118,6 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>A small program to handle monetary transactions for food in offices. Most labels next to controls have tooltips that explain their function. Should you have any issue with this program, please email me at Zanda268@gmail.com with the subject line "Snackbar".</value>
+    <value>A small program to handle monetary transactions for food in offices. Most labels next to controls have tooltips that explain their function. Files are saved after each checkout, closing the Data Management window, or the entire program. Should you have any issue with this program, please email me at Zanda268@gmail.com with the subject line "Snackbar".</value>
   </data>
 </root>

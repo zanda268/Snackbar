@@ -42,30 +42,30 @@
             this.openSaveLocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Panel_LoggedIn = new System.Windows.Forms.Panel();
-            this.Label_LoggedIn = new System.Windows.Forms.Label();
-            this.GroupBox_Login = new System.Windows.Forms.GroupBox();
-            this.Button_LoginClear = new System.Windows.Forms.Button();
-            this.Button_Login = new System.Windows.Forms.Button();
-            this.TextBox_Login = new System.Windows.Forms.TextBox();
-            this.Label_UserID = new System.Windows.Forms.Label();
-            this.GroupBox_PurchaseList = new System.Windows.Forms.GroupBox();
+            this.panel_LoggedIn = new System.Windows.Forms.Panel();
+            this.label_LoggedIn = new System.Windows.Forms.Label();
+            this.groupBox_Login = new System.Windows.Forms.GroupBox();
+            this.button_LoginClear = new System.Windows.Forms.Button();
+            this.button_Login = new System.Windows.Forms.Button();
+            this.textBox_Login = new System.Windows.Forms.TextBox();
+            this.label_UserID = new System.Windows.Forms.Label();
+            this.groupBox_PurchaseList = new System.Windows.Forms.GroupBox();
             this.Label_UPCErrorMessage = new System.Windows.Forms.Label();
-            this.Button_Logout = new System.Windows.Forms.Button();
-            this.Button_RemoveItemFromCart = new System.Windows.Forms.Button();
-            this.Button_AddItemToCart = new System.Windows.Forms.Button();
-            this.Button_ClearCart = new System.Windows.Forms.Button();
-            this.Button_Checkout = new System.Windows.Forms.Button();
-            this.ListBox_PurchaseList = new System.Windows.Forms.ListBox();
+            this.button_Logout = new System.Windows.Forms.Button();
+            this.button_RemoveItemFromCart = new System.Windows.Forms.Button();
+            this.button_AddItemToCart = new System.Windows.Forms.Button();
+            this.button_ClearCart = new System.Windows.Forms.Button();
+            this.button_Checkout = new System.Windows.Forms.Button();
+            this.listBox_PurchaseList = new System.Windows.Forms.ListBox();
             this.purchaseListItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Label_PurchaseTotal = new System.Windows.Forms.Label();
-            this.TextBox_PurchaseUPC = new System.Windows.Forms.TextBox();
+            this.label_PurchaseTotal = new System.Windows.Forms.Label();
+            this.textBox_PurchaseUPC = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.Panel_LoggedIn.SuspendLayout();
-            this.GroupBox_Login.SuspendLayout();
-            this.GroupBox_PurchaseList.SuspendLayout();
+            this.panel_LoggedIn.SuspendLayout();
+            this.groupBox_Login.SuspendLayout();
+            this.groupBox_PurchaseList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.purchaseListItemBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,6 +116,7 @@
             this.saveDataToolStripMenuItem.Name = "saveDataToolStripMenuItem";
             this.saveDataToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.saveDataToolStripMenuItem.Text = "Data Management";
+            this.saveDataToolStripMenuItem.ToolTipText = "Opens a panel to edit any data stored in the application.";
             this.saveDataToolStripMenuItem.Click += new System.EventHandler(this.dataManagementToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
@@ -128,6 +129,7 @@
             this.moneyQuickAddToolStripMenuItem.Name = "moneyQuickAddToolStripMenuItem";
             this.moneyQuickAddToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.moneyQuickAddToolStripMenuItem.Text = "Money Quick Add";
+            this.moneyQuickAddToolStripMenuItem.ToolTipText = "Add money to user quickly";
             this.moneyQuickAddToolStripMenuItem.Click += new System.EventHandler(this.moneyQuickAddToolStripMenuItem_Click);
             // 
             // inventoryQuickAddToolStripMenuItem
@@ -135,6 +137,7 @@
             this.inventoryQuickAddToolStripMenuItem.Name = "inventoryQuickAddToolStripMenuItem";
             this.inventoryQuickAddToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.inventoryQuickAddToolStripMenuItem.Text = "Inventory Quick Add";
+            this.inventoryQuickAddToolStripMenuItem.ToolTipText = "Add Items/stock quickly";
             this.inventoryQuickAddToolStripMenuItem.Click += new System.EventHandler(this.inventoryQuickAddToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
@@ -147,6 +150,7 @@
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.ToolTipText = "Manually save all data in application.";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // openSaveLocationToolStripMenuItem
@@ -154,6 +158,7 @@
             this.openSaveLocationToolStripMenuItem.Name = "openSaveLocationToolStripMenuItem";
             this.openSaveLocationToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.openSaveLocationToolStripMenuItem.Text = "Open Save Location";
+            this.openSaveLocationToolStripMenuItem.ToolTipText = "Opens the folder where all files are saved.";
             this.openSaveLocationToolStripMenuItem.Click += new System.EventHandler(this.openSaveLocationToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
@@ -167,106 +172,106 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.Panel_LoggedIn);
-            this.panel1.Controls.Add(this.GroupBox_Login);
-            this.panel1.Controls.Add(this.GroupBox_PurchaseList);
+            this.panel1.Controls.Add(this.panel_LoggedIn);
+            this.panel1.Controls.Add(this.groupBox_Login);
+            this.panel1.Controls.Add(this.groupBox_PurchaseList);
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 426);
             this.panel1.TabIndex = 1;
             // 
-            // Panel_LoggedIn
+            // panel_LoggedIn
             // 
-            this.Panel_LoggedIn.Controls.Add(this.Label_LoggedIn);
-            this.Panel_LoggedIn.Location = new System.Drawing.Point(195, 3);
-            this.Panel_LoggedIn.Name = "Panel_LoggedIn";
-            this.Panel_LoggedIn.Size = new System.Drawing.Size(593, 82);
-            this.Panel_LoggedIn.TabIndex = 5;
+            this.panel_LoggedIn.Controls.Add(this.label_LoggedIn);
+            this.panel_LoggedIn.Location = new System.Drawing.Point(195, 3);
+            this.panel_LoggedIn.Name = "panel_LoggedIn";
+            this.panel_LoggedIn.Size = new System.Drawing.Size(593, 82);
+            this.panel_LoggedIn.TabIndex = 5;
             // 
-            // Label_LoggedIn
+            // label_LoggedIn
             // 
-            this.Label_LoggedIn.BackColor = System.Drawing.Color.Maroon;
-            this.Label_LoggedIn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Label_LoggedIn.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_LoggedIn.ForeColor = System.Drawing.Color.White;
-            this.Label_LoggedIn.Location = new System.Drawing.Point(0, 0);
-            this.Label_LoggedIn.Name = "Label_LoggedIn";
-            this.Label_LoggedIn.Size = new System.Drawing.Size(593, 82);
-            this.Label_LoggedIn.TabIndex = 0;
-            this.Label_LoggedIn.Text = "Not Logged In!";
-            this.Label_LoggedIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_LoggedIn.BackColor = System.Drawing.Color.Maroon;
+            this.label_LoggedIn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_LoggedIn.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_LoggedIn.ForeColor = System.Drawing.Color.White;
+            this.label_LoggedIn.Location = new System.Drawing.Point(0, 0);
+            this.label_LoggedIn.Name = "label_LoggedIn";
+            this.label_LoggedIn.Size = new System.Drawing.Size(593, 82);
+            this.label_LoggedIn.TabIndex = 0;
+            this.label_LoggedIn.Text = "Not Logged In!";
+            this.label_LoggedIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // GroupBox_Login
+            // groupBox_Login
             // 
-            this.GroupBox_Login.Controls.Add(this.Button_LoginClear);
-            this.GroupBox_Login.Controls.Add(this.Button_Login);
-            this.GroupBox_Login.Controls.Add(this.TextBox_Login);
-            this.GroupBox_Login.Controls.Add(this.Label_UserID);
-            this.GroupBox_Login.Location = new System.Drawing.Point(12, 3);
-            this.GroupBox_Login.Name = "GroupBox_Login";
-            this.GroupBox_Login.Size = new System.Drawing.Size(177, 82);
-            this.GroupBox_Login.TabIndex = 4;
-            this.GroupBox_Login.TabStop = false;
-            this.GroupBox_Login.Text = "User Login";
+            this.groupBox_Login.Controls.Add(this.button_LoginClear);
+            this.groupBox_Login.Controls.Add(this.button_Login);
+            this.groupBox_Login.Controls.Add(this.textBox_Login);
+            this.groupBox_Login.Controls.Add(this.label_UserID);
+            this.groupBox_Login.Location = new System.Drawing.Point(12, 3);
+            this.groupBox_Login.Name = "groupBox_Login";
+            this.groupBox_Login.Size = new System.Drawing.Size(177, 82);
+            this.groupBox_Login.TabIndex = 4;
+            this.groupBox_Login.TabStop = false;
+            this.groupBox_Login.Text = "User Login";
             // 
-            // Button_LoginClear
+            // button_LoginClear
             // 
-            this.Button_LoginClear.Location = new System.Drawing.Point(90, 42);
-            this.Button_LoginClear.Name = "Button_LoginClear";
-            this.Button_LoginClear.Size = new System.Drawing.Size(75, 23);
-            this.Button_LoginClear.TabIndex = 3;
-            this.Button_LoginClear.Text = "Clear";
-            this.toolTip1.SetToolTip(this.Button_LoginClear, "Clears the text stored in the above text box.");
-            this.Button_LoginClear.UseVisualStyleBackColor = true;
-            this.Button_LoginClear.Click += new System.EventHandler(this.Button_LoginClear_Click);
+            this.button_LoginClear.Location = new System.Drawing.Point(90, 42);
+            this.button_LoginClear.Name = "button_LoginClear";
+            this.button_LoginClear.Size = new System.Drawing.Size(75, 23);
+            this.button_LoginClear.TabIndex = 3;
+            this.button_LoginClear.Text = "Clear";
+            this.toolTip1.SetToolTip(this.button_LoginClear, "Clears the text stored in the above text box.");
+            this.button_LoginClear.UseVisualStyleBackColor = true;
+            this.button_LoginClear.Click += new System.EventHandler(this.Button_LoginClear_Click);
             // 
-            // Button_Login
+            // button_Login
             // 
-            this.Button_Login.Location = new System.Drawing.Point(9, 42);
-            this.Button_Login.Name = "Button_Login";
-            this.Button_Login.Size = new System.Drawing.Size(75, 23);
-            this.Button_Login.TabIndex = 2;
-            this.Button_Login.Text = "Login";
-            this.toolTip1.SetToolTip(this.Button_Login, "Click to log in with the current ID entered in the above text box.");
-            this.Button_Login.UseVisualStyleBackColor = true;
-            this.Button_Login.Click += new System.EventHandler(this.Button_Login_Click);
+            this.button_Login.Location = new System.Drawing.Point(9, 42);
+            this.button_Login.Name = "button_Login";
+            this.button_Login.Size = new System.Drawing.Size(75, 23);
+            this.button_Login.TabIndex = 2;
+            this.button_Login.Text = "Login";
+            this.toolTip1.SetToolTip(this.button_Login, "Click to log in with the current ID entered in the above text box.");
+            this.button_Login.UseVisualStyleBackColor = true;
+            this.button_Login.Click += new System.EventHandler(this.Button_Login_Click);
             // 
-            // TextBox_Login
+            // textBox_Login
             // 
-            this.TextBox_Login.Location = new System.Drawing.Point(58, 16);
-            this.TextBox_Login.Name = "TextBox_Login";
-            this.TextBox_Login.Size = new System.Drawing.Size(107, 20);
-            this.TextBox_Login.TabIndex = 1;
-            this.TextBox_Login.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox_Login_KeyDown);
+            this.textBox_Login.Location = new System.Drawing.Point(58, 16);
+            this.textBox_Login.Name = "textBox_Login";
+            this.textBox_Login.Size = new System.Drawing.Size(107, 20);
+            this.textBox_Login.TabIndex = 1;
+            this.textBox_Login.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox_Login_KeyDown);
             // 
-            // Label_UserID
+            // label_UserID
             // 
-            this.Label_UserID.AutoSize = true;
-            this.Label_UserID.Location = new System.Drawing.Point(6, 19);
-            this.Label_UserID.Name = "Label_UserID";
-            this.Label_UserID.Size = new System.Drawing.Size(46, 13);
-            this.Label_UserID.TabIndex = 0;
-            this.Label_UserID.Text = "User ID:";
-            this.toolTip1.SetToolTip(this.Label_UserID, "Enter a unique ID set by the Snackbar manager.");
+            this.label_UserID.AutoSize = true;
+            this.label_UserID.Location = new System.Drawing.Point(6, 19);
+            this.label_UserID.Name = "label_UserID";
+            this.label_UserID.Size = new System.Drawing.Size(46, 13);
+            this.label_UserID.TabIndex = 0;
+            this.label_UserID.Text = "User ID:";
+            this.toolTip1.SetToolTip(this.label_UserID, "Enter a unique ID set by the Snackbar manager.");
             // 
-            // GroupBox_PurchaseList
+            // groupBox_PurchaseList
             // 
-            this.GroupBox_PurchaseList.Controls.Add(this.Label_UPCErrorMessage);
-            this.GroupBox_PurchaseList.Controls.Add(this.Button_Logout);
-            this.GroupBox_PurchaseList.Controls.Add(this.Button_RemoveItemFromCart);
-            this.GroupBox_PurchaseList.Controls.Add(this.Button_AddItemToCart);
-            this.GroupBox_PurchaseList.Controls.Add(this.Button_ClearCart);
-            this.GroupBox_PurchaseList.Controls.Add(this.Button_Checkout);
-            this.GroupBox_PurchaseList.Controls.Add(this.ListBox_PurchaseList);
-            this.GroupBox_PurchaseList.Controls.Add(this.Label_PurchaseTotal);
-            this.GroupBox_PurchaseList.Controls.Add(this.TextBox_PurchaseUPC);
-            this.GroupBox_PurchaseList.Enabled = false;
-            this.GroupBox_PurchaseList.Location = new System.Drawing.Point(12, 91);
-            this.GroupBox_PurchaseList.Name = "GroupBox_PurchaseList";
-            this.GroupBox_PurchaseList.Size = new System.Drawing.Size(776, 323);
-            this.GroupBox_PurchaseList.TabIndex = 3;
-            this.GroupBox_PurchaseList.TabStop = false;
-            this.GroupBox_PurchaseList.Text = "Purchase List";
+            this.groupBox_PurchaseList.Controls.Add(this.Label_UPCErrorMessage);
+            this.groupBox_PurchaseList.Controls.Add(this.button_Logout);
+            this.groupBox_PurchaseList.Controls.Add(this.button_RemoveItemFromCart);
+            this.groupBox_PurchaseList.Controls.Add(this.button_AddItemToCart);
+            this.groupBox_PurchaseList.Controls.Add(this.button_ClearCart);
+            this.groupBox_PurchaseList.Controls.Add(this.button_Checkout);
+            this.groupBox_PurchaseList.Controls.Add(this.listBox_PurchaseList);
+            this.groupBox_PurchaseList.Controls.Add(this.label_PurchaseTotal);
+            this.groupBox_PurchaseList.Controls.Add(this.textBox_PurchaseUPC);
+            this.groupBox_PurchaseList.Enabled = false;
+            this.groupBox_PurchaseList.Location = new System.Drawing.Point(12, 91);
+            this.groupBox_PurchaseList.Name = "groupBox_PurchaseList";
+            this.groupBox_PurchaseList.Size = new System.Drawing.Size(776, 323);
+            this.groupBox_PurchaseList.TabIndex = 3;
+            this.groupBox_PurchaseList.TabStop = false;
+            this.groupBox_PurchaseList.Text = "Purchase List";
             // 
             // Label_UPCErrorMessage
             // 
@@ -277,102 +282,102 @@
             this.Label_UPCErrorMessage.Size = new System.Drawing.Size(0, 13);
             this.Label_UPCErrorMessage.TabIndex = 8;
             // 
-            // Button_Logout
+            // button_Logout
             // 
-            this.Button_Logout.BackColor = System.Drawing.SystemColors.Control;
-            this.Button_Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_Logout.ForeColor = System.Drawing.Color.Black;
-            this.Button_Logout.Location = new System.Drawing.Point(632, 279);
-            this.Button_Logout.Name = "Button_Logout";
-            this.Button_Logout.Size = new System.Drawing.Size(138, 44);
-            this.Button_Logout.TabIndex = 7;
-            this.Button_Logout.Text = "Logout";
-            this.toolTip1.SetToolTip(this.Button_Logout, "Cancels purchase and logs the current user out.");
-            this.Button_Logout.UseVisualStyleBackColor = false;
-            this.Button_Logout.Click += new System.EventHandler(this.Button_Logout_Click);
+            this.button_Logout.BackColor = System.Drawing.SystemColors.Control;
+            this.button_Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Logout.ForeColor = System.Drawing.Color.Black;
+            this.button_Logout.Location = new System.Drawing.Point(632, 279);
+            this.button_Logout.Name = "button_Logout";
+            this.button_Logout.Size = new System.Drawing.Size(138, 44);
+            this.button_Logout.TabIndex = 7;
+            this.button_Logout.Text = "Logout";
+            this.toolTip1.SetToolTip(this.button_Logout, "Cancels purchase and logs the current user out.");
+            this.button_Logout.UseVisualStyleBackColor = false;
+            this.button_Logout.Click += new System.EventHandler(this.Button_Logout_Click);
             // 
-            // Button_RemoveItemFromCart
+            // button_RemoveItemFromCart
             // 
-            this.Button_RemoveItemFromCart.Location = new System.Drawing.Point(294, 71);
-            this.Button_RemoveItemFromCart.Name = "Button_RemoveItemFromCart";
-            this.Button_RemoveItemFromCart.Size = new System.Drawing.Size(99, 23);
-            this.Button_RemoveItemFromCart.TabIndex = 6;
-            this.Button_RemoveItemFromCart.Text = "Remove Item";
-            this.toolTip1.SetToolTip(this.Button_RemoveItemFromCart, "Removes selected item from cart to the left.");
-            this.Button_RemoveItemFromCart.UseVisualStyleBackColor = true;
-            this.Button_RemoveItemFromCart.Click += new System.EventHandler(this.Button_RemoveItemFromCart_Click);
+            this.button_RemoveItemFromCart.Location = new System.Drawing.Point(294, 71);
+            this.button_RemoveItemFromCart.Name = "button_RemoveItemFromCart";
+            this.button_RemoveItemFromCart.Size = new System.Drawing.Size(99, 23);
+            this.button_RemoveItemFromCart.TabIndex = 6;
+            this.button_RemoveItemFromCart.Text = "Remove Item";
+            this.toolTip1.SetToolTip(this.button_RemoveItemFromCart, "Removes selected item from cart to the left.");
+            this.button_RemoveItemFromCart.UseVisualStyleBackColor = true;
+            this.button_RemoveItemFromCart.Click += new System.EventHandler(this.Button_RemoveItemFromCart_Click);
             // 
-            // Button_AddItemToCart
+            // button_AddItemToCart
             // 
-            this.Button_AddItemToCart.Location = new System.Drawing.Point(294, 42);
-            this.Button_AddItemToCart.Name = "Button_AddItemToCart";
-            this.Button_AddItemToCart.Size = new System.Drawing.Size(99, 23);
-            this.Button_AddItemToCart.TabIndex = 5;
-            this.Button_AddItemToCart.Text = "Add Item";
-            this.toolTip1.SetToolTip(this.Button_AddItemToCart, "Adds item to cart that matches UPC in above text box.");
-            this.Button_AddItemToCart.UseVisualStyleBackColor = true;
-            this.Button_AddItemToCart.Click += new System.EventHandler(this.Button_AddItemToCart_Click);
+            this.button_AddItemToCart.Location = new System.Drawing.Point(294, 42);
+            this.button_AddItemToCart.Name = "button_AddItemToCart";
+            this.button_AddItemToCart.Size = new System.Drawing.Size(99, 23);
+            this.button_AddItemToCart.TabIndex = 5;
+            this.button_AddItemToCart.Text = "Add Item";
+            this.toolTip1.SetToolTip(this.button_AddItemToCart, "Adds item to cart that matches UPC in above text box.");
+            this.button_AddItemToCart.UseVisualStyleBackColor = true;
+            this.button_AddItemToCart.Click += new System.EventHandler(this.Button_AddItemToCart_Click);
             // 
-            // Button_ClearCart
+            // button_ClearCart
             // 
-            this.Button_ClearCart.BackColor = System.Drawing.SystemColors.Control;
-            this.Button_ClearCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_ClearCart.Location = new System.Drawing.Point(150, 273);
-            this.Button_ClearCart.Name = "Button_ClearCart";
-            this.Button_ClearCart.Size = new System.Drawing.Size(138, 44);
-            this.Button_ClearCart.TabIndex = 4;
-            this.Button_ClearCart.Text = "Clear Cart";
-            this.toolTip1.SetToolTip(this.Button_ClearCart, "Clears all items from the cart.");
-            this.Button_ClearCart.UseVisualStyleBackColor = false;
-            this.Button_ClearCart.Click += new System.EventHandler(this.Button_ClearCart_Click);
+            this.button_ClearCart.BackColor = System.Drawing.SystemColors.Control;
+            this.button_ClearCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_ClearCart.Location = new System.Drawing.Point(150, 273);
+            this.button_ClearCart.Name = "button_ClearCart";
+            this.button_ClearCart.Size = new System.Drawing.Size(138, 44);
+            this.button_ClearCart.TabIndex = 4;
+            this.button_ClearCart.Text = "Clear Cart";
+            this.toolTip1.SetToolTip(this.button_ClearCart, "Clears all items from the cart.");
+            this.button_ClearCart.UseVisualStyleBackColor = false;
+            this.button_ClearCart.Click += new System.EventHandler(this.Button_ClearCart_Click);
             // 
-            // Button_Checkout
+            // button_Checkout
             // 
-            this.Button_Checkout.BackColor = System.Drawing.SystemColors.Control;
-            this.Button_Checkout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_Checkout.Location = new System.Drawing.Point(6, 273);
-            this.Button_Checkout.Name = "Button_Checkout";
-            this.Button_Checkout.Size = new System.Drawing.Size(138, 44);
-            this.Button_Checkout.TabIndex = 3;
-            this.Button_Checkout.Text = "Purchase";
-            this.toolTip1.SetToolTip(this.Button_Checkout, "Purchases all the items in the cart. Can also press Shift + Enter");
-            this.Button_Checkout.UseVisualStyleBackColor = false;
-            this.Button_Checkout.Click += new System.EventHandler(this.Button_Checkout_Click);
+            this.button_Checkout.BackColor = System.Drawing.SystemColors.Control;
+            this.button_Checkout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Checkout.Location = new System.Drawing.Point(6, 273);
+            this.button_Checkout.Name = "button_Checkout";
+            this.button_Checkout.Size = new System.Drawing.Size(138, 44);
+            this.button_Checkout.TabIndex = 3;
+            this.button_Checkout.Text = "Purchase";
+            this.toolTip1.SetToolTip(this.button_Checkout, "Purchases all the items in the cart. Can also press Shift + Enter");
+            this.button_Checkout.UseVisualStyleBackColor = false;
+            this.button_Checkout.Click += new System.EventHandler(this.Button_Checkout_Click);
             // 
-            // ListBox_PurchaseList
+            // listBox_PurchaseList
             // 
-            this.ListBox_PurchaseList.DataSource = this.purchaseListItemBindingSource;
-            this.ListBox_PurchaseList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListBox_PurchaseList.FormattingEnabled = true;
-            this.ListBox_PurchaseList.ItemHeight = 16;
-            this.ListBox_PurchaseList.Location = new System.Drawing.Point(6, 16);
-            this.ListBox_PurchaseList.Name = "ListBox_PurchaseList";
-            this.ListBox_PurchaseList.Size = new System.Drawing.Size(282, 180);
-            this.ListBox_PurchaseList.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.ListBox_PurchaseList, "Displays a list of items currently in the cart to purchase.");
+            this.listBox_PurchaseList.DataSource = this.purchaseListItemBindingSource;
+            this.listBox_PurchaseList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox_PurchaseList.FormattingEnabled = true;
+            this.listBox_PurchaseList.ItemHeight = 16;
+            this.listBox_PurchaseList.Location = new System.Drawing.Point(6, 16);
+            this.listBox_PurchaseList.Name = "listBox_PurchaseList";
+            this.listBox_PurchaseList.Size = new System.Drawing.Size(282, 180);
+            this.listBox_PurchaseList.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.listBox_PurchaseList, "Displays a list of items currently in the cart to purchase.");
             // 
             // purchaseListItemBindingSource
             // 
             this.purchaseListItemBindingSource.DataSource = typeof(Snackbar.controller.Checkout.PurchaseListItem);
             // 
-            // Label_PurchaseTotal
+            // label_PurchaseTotal
             // 
-            this.Label_PurchaseTotal.AutoSize = true;
-            this.Label_PurchaseTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_PurchaseTotal.Location = new System.Drawing.Point(3, 199);
-            this.Label_PurchaseTotal.Name = "Label_PurchaseTotal";
-            this.Label_PurchaseTotal.Size = new System.Drawing.Size(58, 16);
-            this.Label_PurchaseTotal.TabIndex = 2;
-            this.Label_PurchaseTotal.Text = "Total: $0";
+            this.label_PurchaseTotal.AutoSize = true;
+            this.label_PurchaseTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_PurchaseTotal.Location = new System.Drawing.Point(3, 199);
+            this.label_PurchaseTotal.Name = "label_PurchaseTotal";
+            this.label_PurchaseTotal.Size = new System.Drawing.Size(58, 16);
+            this.label_PurchaseTotal.TabIndex = 2;
+            this.label_PurchaseTotal.Text = "Total: $0";
             // 
-            // TextBox_PurchaseUPC
+            // textBox_PurchaseUPC
             // 
-            this.TextBox_PurchaseUPC.Location = new System.Drawing.Point(294, 16);
-            this.TextBox_PurchaseUPC.Name = "TextBox_PurchaseUPC";
-            this.TextBox_PurchaseUPC.Size = new System.Drawing.Size(165, 20);
-            this.TextBox_PurchaseUPC.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.TextBox_PurchaseUPC, "Enter an Items UPC and then press enter or click the Add Item button.");
-            this.TextBox_PurchaseUPC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox_PurchaseUPC_KeyDown);
+            this.textBox_PurchaseUPC.Location = new System.Drawing.Point(294, 16);
+            this.textBox_PurchaseUPC.Name = "textBox_PurchaseUPC";
+            this.textBox_PurchaseUPC.Size = new System.Drawing.Size(165, 20);
+            this.textBox_PurchaseUPC.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.textBox_PurchaseUPC, "Enter an Items UPC and then press enter or click the Add Item button.");
+            this.textBox_PurchaseUPC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox_PurchaseUPC_KeyDown);
             // 
             // FormMain
             // 
@@ -388,11 +393,11 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.Panel_LoggedIn.ResumeLayout(false);
-            this.GroupBox_Login.ResumeLayout(false);
-            this.GroupBox_Login.PerformLayout();
-            this.GroupBox_PurchaseList.ResumeLayout(false);
-            this.GroupBox_PurchaseList.PerformLayout();
+            this.panel_LoggedIn.ResumeLayout(false);
+            this.groupBox_Login.ResumeLayout(false);
+            this.groupBox_Login.PerformLayout();
+            this.groupBox_PurchaseList.ResumeLayout(false);
+            this.groupBox_PurchaseList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.purchaseListItemBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -408,23 +413,23 @@
         private System.Windows.Forms.ToolStripMenuItem saveDataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox TextBox_PurchaseUPC;
-        private System.Windows.Forms.ListBox ListBox_PurchaseList;
+        private System.Windows.Forms.TextBox textBox_PurchaseUPC;
+        private System.Windows.Forms.ListBox listBox_PurchaseList;
         private System.Windows.Forms.BindingSource purchaseListItemBindingSource;
-        private System.Windows.Forms.Label Label_PurchaseTotal;
-        private System.Windows.Forms.GroupBox GroupBox_Login;
-        private System.Windows.Forms.GroupBox GroupBox_PurchaseList;
-        private System.Windows.Forms.Button Button_LoginClear;
-        private System.Windows.Forms.Button Button_Login;
-        private System.Windows.Forms.TextBox TextBox_Login;
-        private System.Windows.Forms.Label Label_UserID;
-        private System.Windows.Forms.Panel Panel_LoggedIn;
-        private System.Windows.Forms.Label Label_LoggedIn;
-        private System.Windows.Forms.Button Button_Checkout;
-        private System.Windows.Forms.Button Button_ClearCart;
-        private System.Windows.Forms.Button Button_RemoveItemFromCart;
-        private System.Windows.Forms.Button Button_AddItemToCart;
-        private System.Windows.Forms.Button Button_Logout;
+        private System.Windows.Forms.Label label_PurchaseTotal;
+        private System.Windows.Forms.GroupBox groupBox_Login;
+        private System.Windows.Forms.GroupBox groupBox_PurchaseList;
+        private System.Windows.Forms.Button button_LoginClear;
+        private System.Windows.Forms.Button button_Login;
+        private System.Windows.Forms.TextBox textBox_Login;
+        private System.Windows.Forms.Label label_UserID;
+        private System.Windows.Forms.Panel panel_LoggedIn;
+        private System.Windows.Forms.Label label_LoggedIn;
+        private System.Windows.Forms.Button button_Checkout;
+        private System.Windows.Forms.Button button_ClearCart;
+        private System.Windows.Forms.Button button_RemoveItemFromCart;
+        private System.Windows.Forms.Button button_AddItemToCart;
+        private System.Windows.Forms.Button button_Logout;
         private System.Windows.Forms.Label Label_UPCErrorMessage;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventoryQuickAddToolStripMenuItem;

@@ -6,29 +6,29 @@ using System.Text;
 
 namespace Snackbar.model
 {
-    class Purchase : IComparable<Purchase>, INotifyPropertyChanged
+    internal class Purchase : IComparable<Purchase>, INotifyPropertyChanged
     {
         //Private variables
-        private string userID;
-        private string itemName;
-        private decimal amount;
-        private DateTime timestamp;
+        private string _userID;
+        private string _itemName;
+        private decimal _amount;
+        private DateTime _timestamp;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         //Getters/Setters
-        public decimal Amount { get => amount; set { amount = value; NotifyPropertyChanged("Amount"); } }
-        public string UserID { get => userID; set { userID = value; NotifyPropertyChanged("UserID"); } }
-        public string ItemName { get => itemName; set { itemName = value; NotifyPropertyChanged("ItemName"); } }
-        public DateTime Timestamp { get => timestamp; set { timestamp = value; NotifyPropertyChanged("TimeStamp"); } }
+        public decimal Amount { get => _amount; set { _amount = value; NotifyPropertyChanged("Amount"); } }
+        public string UserID { get => _userID; set { _userID = value; NotifyPropertyChanged("UserID"); } }
+        public string ItemName { get => _itemName; set { _itemName = value; NotifyPropertyChanged("ItemName"); } }
+        public DateTime Timestamp { get => _timestamp; set { _timestamp = value; NotifyPropertyChanged("TimeStamp"); } }
 
         //Constructer
-        public Purchase(string pUserID, string pItemName, decimal pAmount, DateTime pTimestamp)
+        internal Purchase(string id, string name, decimal amount, DateTime timeStamp)
         {
-            UserID = pUserID;
-            ItemName = pItemName;
-            Amount = pAmount;
-            Timestamp = pTimestamp;
+            this.UserID = id;
+            this.ItemName = name;
+            this.Amount = amount;
+            this.Timestamp = timeStamp;
         }
 
         //Overrides CompareTo method to sort by DateTime

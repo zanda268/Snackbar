@@ -6,26 +6,26 @@ using System.Text;
 
 namespace Snackbar.model
 {
-    public class User : IEquatable<User>, INotifyPropertyChanged
+    internal class User : IEquatable<User>, INotifyPropertyChanged
     {
         //Private variables
-        private string id;
-        private string name;
-        private decimal balance;
+        private string _id;
+        private string _name;
+        private decimal _balance;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         //Getters/Setters
-        public string ID { get => id; set { id = value; NotifyPropertyChanged("ID"); } }
-        public string Name { get => name; set { name = value; NotifyPropertyChanged("Name"); } }
-        public decimal Balance { get => balance; set { balance = value; NotifyPropertyChanged("Balance"); } }
+        public string ID { get => _id; set { _id = value; NotifyPropertyChanged("ID"); } }
+        public string Name { get => _name; set { _name = value; NotifyPropertyChanged("Name"); } }
+        public decimal Balance { get => _balance; set { _balance = value; NotifyPropertyChanged("Balance"); } }
 
         //Constructer
-        public User(string userID, string userName, decimal userBalance)
+        internal User(string userID, string userName, decimal userBalance)
         {
-            ID = userID;
-            Name = userName;
-            Balance = userBalance;
+            this.ID = userID;
+            this.Name = userName;
+            this.Balance = userBalance;
         }
 
         //Override Equals check to verify user ID

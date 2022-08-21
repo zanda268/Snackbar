@@ -7,19 +7,19 @@ using System.Text;
 
 namespace Snackbar.model
 {
-    class PurchaseHistory
+    internal class PurchaseHistory
     {
-        private SortableBindingList<Purchase> purchaseHistory;
+        private SortableBindingList<Purchase> _purchaseHistory;
 
-        public PurchaseHistory()
+        internal PurchaseHistory()
         {
-            purchaseHistory = new SortableBindingList<Purchase>();
+            _purchaseHistory = new SortableBindingList<Purchase>();
         }
 
         //Adds a purchase object to the purchaseHistory list
         public void AddPurchase(Purchase purchase)
         {
-            purchaseHistory.Add(purchase);
+            _purchaseHistory.Add(purchase);
         }
 
         //Returns a string with each line representing a purchase object
@@ -27,7 +27,7 @@ namespace Snackbar.model
         {
             string returnString = "";
 
-            foreach (Purchase p in purchaseHistory)
+            foreach (Purchase p in _purchaseHistory)
                 returnString += p.ToString() + Environment.NewLine;
 
             return returnString;
@@ -35,7 +35,7 @@ namespace Snackbar.model
 
         public SortableBindingList<Purchase> GetPurchaseHistoryList()
         {
-            return purchaseHistory;
+            return _purchaseHistory;
         }
     }
 }
