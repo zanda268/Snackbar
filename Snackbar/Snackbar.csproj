@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{16C85CBC-6D3E-4932-810C-231B98BBA034}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Snackbar</RootNamespace>
+    <AssemblyName>Snackbar</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Zacha\source\repos\Snackbar\Snackbar\Publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>0.9.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>2673DAC8140D5EA5186CB861E3468330A88CEB34</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Snackbar_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>resources\images\icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="controller\EasterEggManager.cs" />
+    <Compile Include="DataManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataManagement.Designer.cs">
+      <DependentUpon>DataManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controller\Checkout.cs" />
+    <Compile Include="controller\FileIO.cs" />
+    <Compile Include="controller\LoginManager.cs" />
+    <Compile Include="EnableAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnableAdmin.Designer.cs">
+      <DependentUpon>EnableAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Help.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help.Designer.cs">
+      <DependentUpon>Help.cs</DependentUpon>
+    </Compile>
+    <Compile Include="model\Inventory.cs" />
+    <Compile Include="model\Item.cs" />
+    <Compile Include="model\Purchase.cs" />
+    <Compile Include="model\PurchaseHistory.cs" />
+    <Compile Include="model\Settings.cs" />
+    <Compile Include="model\User.cs" />
+    <Compile Include="model\UserList.cs" />
+    <Compile Include="MoneyQuickAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MoneyQuickAdd.Designer.cs">
+      <DependentUpon>MoneyQuickAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="utils\SortableBindingList.cs" />
+    <EmbeddedResource Include="DataManagement.resx">
+      <DependentUpon>DataManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnableAdmin.resx">
+      <DependentUpon>EnableAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help.resx">
+      <DependentUpon>Help.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoneyQuickAdd.resx">
+      <DependentUpon>MoneyQuickAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\Snackbar.controller.Checkout+PurchaseListItem.datasource" />
+    <None Include="Properties\DataSources\Snackbar.model.Item.datasource" />
+    <None Include="Properties\DataSources\Snackbar.model.Purchase.datasource" />
+    <None Include="Properties\DataSources\Snackbar.model.Settings+EasterEggUser.datasource" />
+    <None Include="Properties\DataSources\Snackbar.model.User.datasource" />
+    <None Include="Properties\DataSources\Snackbar.model.User1.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Snackbar_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\logo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\images\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Checkout\CashRegisterDing.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Checkout\CountingCash.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Checkout\DukeNukem_Postal.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Checkout\Spongebob_Thanks.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Checkout_CashRegisterDing.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Checkout_CountingCash.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Checkout_DukeNukem_Postal.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Checkout_Spongebob_Thanks.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Login_BigSmokeOrdersFood.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Login_NonstopLaughing.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Scan_MinecraftDrinking.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Scan_MinecraftEating.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Scan_UnexpectedItemInBaggingArea.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Special_DejaVu.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Special_ElevatorMusic.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Special_Friday.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Special_JeopardyTheme.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Unique_Lyso_Checkout_1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Unique_Lyso_Checkout_2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Unique_Untalasco_Login_1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Unique_Vet_Login_1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Unique_Weller_Login_1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Unique_Wright_Checkout_1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Unique_Wright_Login_1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Unused_aughhhhh.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Unused_MinecraftVillager.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Unused_ShameUserFinal.wav" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
