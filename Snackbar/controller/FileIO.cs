@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 using System.Xml;
 using Snackbar.model;
 using Snackbar.utils;
@@ -18,158 +20,186 @@ namespace Snackbar.controller
         private static string s_inventoryFile = APP_PATH + "Inventory.csv";
         private static string s_settingsFile = APP_PATH + "Settings.xml";
 
-        public static void Initialize(UserList userList, PurchaseHistory purchaseHistory, Inventory inventory, Settings settings)
+        public static void ReadData(UserList userList, PurchaseHistory purchaseHistory, Inventory inventory, Settings settings)
         {
-            StreamReader sr;
-
-            //Initialize or load files/directories
+            StreamReader sr = null;
+            try
             {
-                if (!Directory.Exists(APP_PATH))
-                    Directory.CreateDirectory(APP_PATH);
-
-                //Load userList
-                if (!File.Exists(s_userFile))
-                    File.Create(s_userFile).Close();
-                else
+                //Initialize or load files/directories
                 {
-                    sr = new StreamReader(s_userFile);
+                    if (!Directory.Exists(APP_PATH))
+                        Directory.CreateDirectory(APP_PATH);
 
-                    //Loop through userFile and split each line into 3 fields to load into a new user for the userList
-                    string line;
-                    string[] split;
-                    while ((line = sr.ReadLine()) != null)
+                    //Load userList
+                    if (!File.Exists(s_userFile))
+                        File.Create(s_userFile).Close();
+                    else
                     {
-                        split = line.Split(',');
-                        userList.AddUser(new User(split[0].Trim(), split[1].Trim(), decimal.Parse(split[2])));
+                        sr = new StreamReader(s_userFile);
+
+                        //Loop through userFile and split each line into 3 fields to load into a new user for the userList
+                        string line;
+                        string[] split;
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            split = line.Split(',');
+                            userList.AddUser(new User(split[0].Trim(), split[1].Trim(), decimal.Parse(split[2])));
+                        }
+
+                        sr.Close();
                     }
 
-                    sr.Close();
-                }
-
-                //Load purchaseHistory
-                if (!File.Exists(s_purchaseHistoryFile))
-                    File.Create(s_purchaseHistoryFile).Close();
-                else
-                {
-                    sr = new StreamReader(s_purchaseHistoryFile);
-
-                    //Loop through purchaseHistory and split each line into 4 fields to load into a new purchase for the purchaseHistory
-                    string line;
-                    string[] split;
-                    while ((line = sr.ReadLine()) != null)
+                    //Load purchaseHistory
+                    if (!File.Exists(s_purchaseHistoryFile))
+                        File.Create(s_purchaseHistoryFile).Close();
+                    else
                     {
-                        split = line.Split(',');
-                        purchaseHistory.AddPurchase(new Purchase(split[1].Trim(), split[2].Trim(), decimal.Parse(split[3]), DateTime.Parse(split[0])));
+                        sr = new StreamReader(s_purchaseHistoryFile);
+
+                        //Loop through purchaseHistory and split each line into 4 fields to load into a new purchase for the purchaseHistory
+                        string line;
+                        string[] split;
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            split = line.Split(',');
+                            purchaseHistory.AddPurchase(new Purchase(split[1].Trim(), split[2].Trim(), decimal.Parse(split[3]), DateTime.Parse(split[0])));
+                        }
+
+                        sr.Close();
                     }
 
-                    sr.Close();
-                }
-
-                //Load inventory
-                if (!File.Exists(s_inventoryFile))
-                    File.Create(s_inventoryFile).Close();
-                else
-                {
-                    sr = new StreamReader(s_inventoryFile);
-
-                    //Loop through inventoryFile and split each line into 4 fields to load into a new item for the inventory
-                    string line;
-                    string[] split;
-                    while ((line = sr.ReadLine()) != null)
+                    //Load inventory
+                    if (!File.Exists(s_inventoryFile))
+                        File.Create(s_inventoryFile).Close();
+                    else
                     {
-                        split = line.Split(',');
-                        inventory.AddItem(new Item(split[0].Trim(), split[1].Trim(), decimal.Parse(split[2]), int.Parse(split[3])));
+                        sr = new StreamReader(s_inventoryFile);
+
+                        //Loop through inventoryFile and split each line into 4 fields to load into a new item for the inventory
+                        string line;
+                        string[] split;
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            split = line.Split(',');
+                            inventory.AddItem(new Item(split[0].Trim(), split[1].Trim(), decimal.Parse(split[2]), int.Parse(split[3])));
+                        }
+
+                        sr.Close();
                     }
 
-                    sr.Close();
-                }
-
-                //Load settings
-                if (!File.Exists(s_settingsFile))
-                {
-                    //Settings file doesnt exist. Create and set defaults.
-                    File.Create(s_settingsFile).Close();
-
-                    settings.NegativeBalancesEnabled = true;
-                    settings.WarnUserEnabled = true;
-                    settings.WarnUserValue = -50;
-                    settings.ShameUserEnabled = true;
-                    settings.ShameUserValue = -100;
-                    settings.LimitDebtEnabled = true;
-                    settings.MaxDebtValue = -150;
-                    settings.GuestAccountEnabled = true;
-                    settings.GuestAccountID = "Guest";
-                    settings.EasterEggsEnabled = false;
-                    settings.AdminPassword = "password";
-                    settings.FridaySongEnabled = true;
-                    settings.FridaySongChance = 10;
-                    settings.DejaVuEnabled = true;
-                    settings.DejaVuChance = 20;
-                    settings.JeopardyEnabled = true;
-                    settings.JeopardyChance = 30;
-                }
-                else
-                {
-                    XmlDocument doc = new XmlDocument();
-                    try
+                    //Load settings
+                    if (!File.Exists(s_settingsFile))
                     {
-                        doc.Load(s_settingsFile);
-                    }
-                    catch (XmlException)
-                    {
-                        //Prevents crash if the xml file is blank for some reason.
+                        //Settings file doesnt exist. Create and set defaults.
+                        File.Create(s_settingsFile).Close();
+
+                        settings.NegativeBalancesEnabled = true;
+                        settings.WarnUserEnabled = true;
+                        settings.WarnUserValue = -50;
+                        settings.ShameUserEnabled = true;
+                        settings.ShameUserValue = -100;
+                        settings.LimitDebtEnabled = true;
+                        settings.MaxDebtValue = -150;
+                        settings.GuestAccountEnabled = true;
+                        settings.GuestAccountID = "Guest";
+                        settings.EasterEggsEnabled = false;
                         settings.AdminPassword = "password";
-                        return;
+                        settings.FridaySongEnabled = true;
+                        settings.FridaySongChance = 10;
+                        settings.DejaVuEnabled = true;
+                        settings.DejaVuChance = 20;
+                        settings.JeopardyEnabled = true;
+                        settings.JeopardyChance = 30;
                     }
-
-                    settings.NegativeBalancesEnabled = bool.Parse(doc.GetElementsByTagName("settings")[0].SelectSingleNode("negativeBalanceEnabled").InnerText);
-                    settings.WarnUserEnabled = bool.Parse(doc.GetElementsByTagName("settings")[0].SelectSingleNode("warnUserEnabled").InnerText);
-                    settings.WarnUserValue = int.Parse(doc.GetElementsByTagName("settings")[0].SelectSingleNode("warnUserValue").InnerText);
-                    settings.ShameUserEnabled = bool.Parse(doc.GetElementsByTagName("settings")[0].SelectSingleNode("shameUserEnabled").InnerText);
-                    settings.ShameUserValue = int.Parse(doc.GetElementsByTagName("settings")[0].SelectSingleNode("shameUserValue").InnerText);
-                    settings.LimitDebtEnabled = bool.Parse(doc.GetElementsByTagName("settings")[0].SelectSingleNode("limitDebtEnabled").InnerText);
-                    settings.MaxDebtValue = int.Parse(doc.GetElementsByTagName("settings")[0].SelectSingleNode("maxDebtValue").InnerText);
-                    settings.GuestAccountEnabled = bool.Parse(doc.GetElementsByTagName("settings")[0].SelectSingleNode("guestAccountEnabled").InnerText);
-                    settings.GuestAccountID = doc.GetElementsByTagName("settings")[0].SelectSingleNode("guestAccountID").InnerText;
-                    settings.EasterEggsEnabled = bool.Parse(doc.GetElementsByTagName("settings")[0].SelectSingleNode("easterEggsEnabled").InnerText);
-                    settings.AdminPassword = doc.GetElementsByTagName("settings")[0].SelectSingleNode("adminPassword").InnerText;
-
-                    settings.FridaySongEnabled = bool.Parse(doc.GetElementsByTagName("easterEggs")[0].SelectSingleNode("fridaySongEnabled").InnerText);
-                    settings.FridaySongChance = int.Parse(doc.GetElementsByTagName("easterEggs")[0].SelectSingleNode("fridaySongChance").InnerText);
-                    settings.DejaVuEnabled = bool.Parse(doc.GetElementsByTagName("easterEggs")[0].SelectSingleNode("dejaVuEnabled").InnerText);
-                    settings.DejaVuChance = int.Parse(doc.GetElementsByTagName("easterEggs")[0].SelectSingleNode("dejaVuChance").InnerText);
-                    settings.JeopardyEnabled = bool.Parse(doc.GetElementsByTagName("easterEggs")[0].SelectSingleNode("jeopardyEnabled").InnerText);
-                    settings.JeopardyChance = int.Parse(doc.GetElementsByTagName("easterEggs")[0].SelectSingleNode("jeopardyChance").InnerText);
-
-                    foreach (XmlNode node in doc.GetElementsByTagName("user"))
+                    else
                     {
-                        string ID = node.SelectSingleNode("ID").InnerText;
-                        string name = node.SelectSingleNode("name").InnerText;
-                        EasterEggUser u = new EasterEggUser(ID, name);
-                        u.LoginChance = int.Parse(node.SelectSingleNode("loginChance").InnerText);
-                        u.ScanChance = int.Parse(node.SelectSingleNode("scanChance").InnerText);
-                        u.CheckoutChance = int.Parse(node.SelectSingleNode("checkoutChance").InnerText);
+                        XmlDocument doc = new XmlDocument();
+                        try
+                        {
+                            doc.Load(s_settingsFile);
+                        }
+                        catch (XmlException)
+                        {
+                            //Prevents crash if the xml file is blank for some reason.
+                            settings.AdminPassword = "password";
+                            return;
+                        }
 
-                        u.LoginSounds = new SortableBindingList<string>(node.SelectSingleNode("loginSounds").InnerText.Split(','));
-                        u.ScanSounds = new SortableBindingList<string>(node.SelectSingleNode("scanSounds").InnerText.Split(','));
-                        u.CheckoutSounds = new SortableBindingList<string>(node.SelectSingleNode("checkoutSounds").InnerText.Split(','));
+                        settings.NegativeBalancesEnabled = bool.Parse(doc.GetElementsByTagName("settings")[0].SelectSingleNode("negativeBalanceEnabled").InnerText);
+                        settings.WarnUserEnabled = bool.Parse(doc.GetElementsByTagName("settings")[0].SelectSingleNode("warnUserEnabled").InnerText);
+                        settings.WarnUserValue = int.Parse(doc.GetElementsByTagName("settings")[0].SelectSingleNode("warnUserValue").InnerText);
+                        settings.ShameUserEnabled = bool.Parse(doc.GetElementsByTagName("settings")[0].SelectSingleNode("shameUserEnabled").InnerText);
+                        settings.ShameUserValue = int.Parse(doc.GetElementsByTagName("settings")[0].SelectSingleNode("shameUserValue").InnerText);
+                        settings.LimitDebtEnabled = bool.Parse(doc.GetElementsByTagName("settings")[0].SelectSingleNode("limitDebtEnabled").InnerText);
+                        settings.MaxDebtValue = int.Parse(doc.GetElementsByTagName("settings")[0].SelectSingleNode("maxDebtValue").InnerText);
+                        settings.GuestAccountEnabled = bool.Parse(doc.GetElementsByTagName("settings")[0].SelectSingleNode("guestAccountEnabled").InnerText);
+                        settings.GuestAccountID = doc.GetElementsByTagName("settings")[0].SelectSingleNode("guestAccountID").InnerText;
+                        settings.EasterEggsEnabled = bool.Parse(doc.GetElementsByTagName("settings")[0].SelectSingleNode("easterEggsEnabled").InnerText);
+                        settings.AdminPassword = doc.GetElementsByTagName("settings")[0].SelectSingleNode("adminPassword").InnerText;
 
-                        //Fixes weird spacing that sometimes shows up...
-                        for(int i = 0; i < u.LoginSounds.Count; i++)
-                            u.LoginSounds[i] = u.LoginSounds[i].Trim();
-                        for (int i = 0; i < u.ScanSounds.Count; i++)
-                            u.ScanSounds[i] = u.ScanSounds[i].Trim();
-                        for (int i = 0; i < u.CheckoutSounds.Count; i++)
-                            u.CheckoutSounds[i] = u.CheckoutSounds[i].Trim();
+                        settings.FridaySongEnabled = bool.Parse(doc.GetElementsByTagName("easterEggs")[0].SelectSingleNode("fridaySongEnabled").InnerText);
+                        settings.FridaySongChance = int.Parse(doc.GetElementsByTagName("easterEggs")[0].SelectSingleNode("fridaySongChance").InnerText);
+                        settings.DejaVuEnabled = bool.Parse(doc.GetElementsByTagName("easterEggs")[0].SelectSingleNode("dejaVuEnabled").InnerText);
+                        settings.DejaVuChance = int.Parse(doc.GetElementsByTagName("easterEggs")[0].SelectSingleNode("dejaVuChance").InnerText);
+                        settings.JeopardyEnabled = bool.Parse(doc.GetElementsByTagName("easterEggs")[0].SelectSingleNode("jeopardyEnabled").InnerText);
+                        settings.JeopardyChance = int.Parse(doc.GetElementsByTagName("easterEggs")[0].SelectSingleNode("jeopardyChance").InnerText);
 
-                        settings.EasterEggUsers.Add(u);
+                        foreach (XmlNode node in doc.GetElementsByTagName("user"))
+                        {
+                            string ID = node.SelectSingleNode("ID").InnerText;
+                            string name = node.SelectSingleNode("name").InnerText;
+                            EasterEggUser u = new EasterEggUser(ID, name);
+                            u.LoginChance = int.Parse(node.SelectSingleNode("loginChance").InnerText);
+                            u.ScanChance = int.Parse(node.SelectSingleNode("scanChance").InnerText);
+                            u.CheckoutChance = int.Parse(node.SelectSingleNode("checkoutChance").InnerText);
 
-                        if (u.UserID.Equals(settings.ALL_USERS))
-                            settings.AllUsersUser = u;
+                            u.LoginSounds = new SortableBindingList<string>(node.SelectSingleNode("loginSounds").InnerText.Split(','));
+                            u.ScanSounds = new SortableBindingList<string>(node.SelectSingleNode("scanSounds").InnerText.Split(','));
+                            u.CheckoutSounds = new SortableBindingList<string>(node.SelectSingleNode("checkoutSounds").InnerText.Split(','));
+
+                            //Fixes weird spacing that sometimes shows up...
+                            for (int i = 0; i < u.LoginSounds.Count; i++)
+                                u.LoginSounds[i] = u.LoginSounds[i].Trim();
+                            for (int i = 0; i < u.ScanSounds.Count; i++)
+                                u.ScanSounds[i] = u.ScanSounds[i].Trim();
+                            for (int i = 0; i < u.CheckoutSounds.Count; i++)
+                                u.CheckoutSounds[i] = u.CheckoutSounds[i].Trim();
+
+                            settings.EasterEggUsers.Add(u);
+
+                            if (u.UserID.Equals(settings.ALL_USERS))
+                                settings.AllUsersUser = u;
+                        }
+
+
                     }
-
-
                 }
+            }
+            catch (Exception)
+            {
+                Process.Start(FileIO.APP_PATH);
+                MessageBox.Show("There was an issue loading files. Moving files to backup and creating blank files.","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                if (sr != null)
+                {
+                    sr.Close();
+                    sr.Dispose();
+                }
+
+                string backupDir = APP_PATH + $"Backup-{DateTime.Now.ToString("yyyyMMdd HH.mm.ss").Replace("/","")}\\";
+                if (!Directory.Exists(backupDir))
+                    Directory.CreateDirectory(backupDir);
+                Console.WriteLine(backupDir + $"{s_userFile.Substring(s_userFile.LastIndexOf("\\"))}");
+                if (File.Exists(s_userFile))
+                    File.Move(s_userFile, backupDir + $"{s_userFile.Substring(s_userFile.LastIndexOf("\\"))}");
+                if (File.Exists(s_settingsFile))
+                    File.Move(s_settingsFile, backupDir + $"{s_settingsFile.Substring(s_settingsFile.LastIndexOf("\\"))}");
+                if (File.Exists(s_inventoryFile))
+                    File.Move(s_inventoryFile, backupDir + $"{s_inventoryFile.Substring(s_inventoryFile.LastIndexOf("\\"))}");
+                if (File.Exists(s_purchaseHistoryFile))
+                    File.Move(s_purchaseHistoryFile, backupDir + $"{s_purchaseHistoryFile.Substring(s_purchaseHistoryFile.LastIndexOf("\\"))}");
+
+                ReadData(userList, purchaseHistory, inventory, settings);
             }
         }
 

@@ -298,6 +298,8 @@ namespace Snackbar
         //Attempts to add a new user to the list up to 100.
         private void Button_AddUser_Click(object sender, EventArgs e)
         {
+            dataGrid_Users.DataSource = this._userList.GetUserList();
+
             if (!_userList.AddUser(new User("New User ID", "New User Name", 0m)))
             {
                 int count = 1;
@@ -339,6 +341,7 @@ namespace Snackbar
         //Add item to inventory list
         private void Button_AddItem_Click(object sender, EventArgs e)
         {
+            dataGrid_Inventory.DataSource = this._inventory.GetItemList();
             _inventory.GetItemList().Add(new Item("Item Name", "Item UPC", 0m, 0));
         }
 
@@ -515,9 +518,12 @@ namespace Snackbar
             DialogResult dr = this.soundFileDialog.ShowDialog();
             EasterEggUser u = (EasterEggUser)listBox_EasterEggUsers.SelectedItem;
             u.LoginSounds.Clear();
-            foreach (string str in soundFileDialog.FileNames.ToList())
+            if (dr == DialogResult.OK)
             {
-                u.LoginSounds.Add(str);
+                foreach (string str in soundFileDialog.FileNames.ToList())
+                {
+                    u.LoginSounds.Add(str);
+                }
             }
         }
 
@@ -526,10 +532,14 @@ namespace Snackbar
             DialogResult dr = this.soundFileDialog.ShowDialog();
             EasterEggUser u = (EasterEggUser)listBox_EasterEggUsers.SelectedItem;
             u.ScanSounds.Clear();
-            foreach (string str in soundFileDialog.FileNames.ToList())
+            if (dr == DialogResult.OK)
             {
-                u.ScanSounds.Add(str);
+                foreach (string str in soundFileDialog.FileNames.ToList())
+                {
+                    u.ScanSounds.Add(str);
+                }
             }
+
         }
 
         private void Button_SelectCheckout_Click(object sender, EventArgs e)
@@ -537,9 +547,12 @@ namespace Snackbar
             DialogResult dr = this.soundFileDialog.ShowDialog();
             EasterEggUser u = (EasterEggUser)listBox_EasterEggUsers.SelectedItem;
             u.CheckoutSounds.Clear();
-            foreach (string str in soundFileDialog.FileNames.ToList())
+            if (dr == DialogResult.OK)
             {
-                u.CheckoutSounds.Add(str);
+                foreach (string str in soundFileDialog.FileNames.ToList())
+                {
+                    u.CheckoutSounds.Add(str);
+                }
             }
         }
 

@@ -13,6 +13,7 @@ namespace Snackbar.controller
     {
         private Settings _settings;
         private SoundPlayer _player;
+        //private SoundPlayer _checkoutPlayer;
         private Random _random;
         private Item _previousItem = new Item("","",0m,0);
         private Timer _timer = new Timer();
@@ -21,6 +22,7 @@ namespace Snackbar.controller
         {
             this._settings = settings;
             _player = new SoundPlayer();
+            //_checkoutPlayer = new SoundPlayer();
             _random = new Random();
         }
 
@@ -34,7 +36,6 @@ namespace Snackbar.controller
         {
             _timer.Enabled = false;
             _player.Stop();
-            _player.Dispose();
         }
 
         internal void Login(string userID)
@@ -42,7 +43,7 @@ namespace Snackbar.controller
             if (!_settings.EasterEggsEnabled)
                 return;
 
-            _timer.Interval = 1000 * 20; //Delays for 20 seconds
+            _timer.Interval = 1000 * 40; //Delays for 20 seconds
             _timer.Enabled = true;
             _timer.Tick += new EventHandler(Timer_Tick);
 

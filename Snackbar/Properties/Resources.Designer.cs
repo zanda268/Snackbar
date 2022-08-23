@@ -119,6 +119,15 @@ namespace Snackbar.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream PurchaseCancelled {
+            get {
+                return ResourceManager.GetStream("PurchaseCancelled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream ShameUserFinal {
             get {
                 return ResourceManager.GetStream("ShameUserFinal", resourceCulture);

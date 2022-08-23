@@ -30,7 +30,6 @@ namespace Snackbar
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
 
-
             //Initialize components
             _settings = new Settings();
             _purchaseHistory = new PurchaseHistory();
@@ -41,7 +40,7 @@ namespace Snackbar
 
             listBox_PurchaseList.DataSource = _checkout.PurchaseList;
 
-            FileIO.Initialize(_userList,_purchaseHistory,_inventory, _settings);;
+            FileIO.ReadData(_userList,_purchaseHistory,_inventory, _settings);;
 
             this.Icon = Properties.Resources.icon;
             _player = new SoundPlayer();
@@ -71,6 +70,8 @@ namespace Snackbar
             }
             else if(e.KeyCode == Keys.Escape)
             {
+                _player = new SoundPlayer(Properties.Resources.PurchaseCancelled);
+                _player.Play();
                 button_Logout.PerformClick();
                 e.SuppressKeyPress = true; //Used to remove Ding after user presses esc.
             }
@@ -164,6 +165,7 @@ namespace Snackbar
         //User wants to purchase all items in their cart
         private void Button_Checkout_Click(object sender, EventArgs e)
         {
+            _player.Stop();
             _easterEggManager.Cancel_Timer();
 
             //Process checkout as a guest.
@@ -285,9 +287,14 @@ namespace Snackbar
                     //Add item
                     string upc = input;
                     string name = Interaction.InputBox("New UPC detected. Enter the name of the item.", "Quick Add", "", this.Left + this.Size.Width / 2 - 200, this.Top + this.Size.Height / 2 - 100);
+                    while (name.Contains(","))
+                    {
+                        name = Interaction.InputBox("Unable to use commas in name. Please enter a different name.", "Quick Add", "", this.Left + this.Size.Width / 2 - 200, this.Top + this.Size.Height / 2 - 100);
+                    }
                     input = Interaction.InputBox($"Item: {name}.{Environment.NewLine}Enter cost of item.", "Quick Add", "", this.Left + this.Size.Width / 2 - 200, this.Top + this.Size.Height / 2 - 100);
                     if (input.Length == 0)
                         return;
+
                     decimal cost;
                     while(!decimal.TryParse(input, out cost))
                     {
