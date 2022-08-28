@@ -72,8 +72,6 @@ namespace Snackbar
 
             if (!settings.EasterEggsEnabled)
                 tabControl_DataManagement.TabPages.Remove(tab_EasterEggs);
-            if (!settings.LotteryEnabled)
-                tabControl_DataManagement.TabPages.Remove(tab_Stats);
 
             this.Icon = Properties.Resources.icon;
             dataGrid_Purchases.Sort(timestampDataGridViewTextBoxColumn, ListSortDirection.Descending);
@@ -596,19 +594,6 @@ namespace Snackbar
         {
             _settings.LotteryEnabled = checkbox_lottery.Checked;
             numeric_lotteryChance.Enabled = checkbox_lottery.Checked;
-
-            if (!_settings.LotteryEnabled)
-                tabControl_DataManagement.TabPages.Remove(tab_Stats);
-            else
-            {
-                if (!tabControl_DataManagement.TabPages.Contains(tab_Stats))
-                    tabControl_DataManagement.TabPages.Add(tab_Stats);
-            }
-        }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-            _settings.LotteryChance = (int)numeric_lotteryChance.Value;
         }
 
         private void button_LotteryCalculate_Click(object sender, EventArgs e)
@@ -651,6 +636,11 @@ namespace Snackbar
                 label_AmountLottoLost.Text = "$0";
                 label_PercentLottoWon.Text = "0%";
             }
+        }
+
+        private void numeric_lotteryChance_ValueChanged(object sender, EventArgs e)
+        {
+            _settings.LotteryChance = (int)numeric_lotteryChance.Value;
         }
     }
 }

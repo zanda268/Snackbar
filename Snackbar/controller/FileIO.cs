@@ -197,7 +197,6 @@ namespace Snackbar.controller
                 string backupDir = APP_PATH + $"Backup-{DateTime.Now.ToString("yyyyMMdd HH.mm.ss").Replace("/","")}\\";
                 if (!Directory.Exists(backupDir))
                     Directory.CreateDirectory(backupDir);
-                Console.WriteLine(backupDir + $"{s_userFile.Substring(s_userFile.LastIndexOf("\\"))}");
                 if (File.Exists(s_userFile))
                     File.Move(s_userFile, backupDir + $"{s_userFile.Substring(s_userFile.LastIndexOf("\\"))}");
                 if (File.Exists(s_settingsFile))

@@ -580,7 +580,7 @@ namespace Snackbar
             this.numeric_lotteryChance.Name = "numeric_lotteryChance";
             this.numeric_lotteryChance.Size = new System.Drawing.Size(37, 20);
             this.numeric_lotteryChance.TabIndex = 2;
-            this.numeric_lotteryChance.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.numeric_lotteryChance.ValueChanged += new System.EventHandler(this.numeric_lotteryChance_ValueChanged);
             // 
             // checkbox_lottery
             // 

@@ -13,7 +13,6 @@ namespace Snackbar.controller
     {
         private Settings _settings;
         private SoundPlayer _player;
-        //private SoundPlayer _checkoutPlayer;
         private Random _random;
         private Item _previousItem = new Item("","",0m,0);
         private Timer _timer = new Timer();
@@ -22,7 +21,6 @@ namespace Snackbar.controller
         {
             this._settings = settings;
             _player = new SoundPlayer();
-            //_checkoutPlayer = new SoundPlayer();
             _random = new Random();
         }
 

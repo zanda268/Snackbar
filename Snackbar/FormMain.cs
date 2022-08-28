@@ -73,7 +73,7 @@ namespace Snackbar
             else if(e.KeyCode == Keys.Escape)
             {
                 _player = new SoundPlayer(Properties.Resources.PurchaseCancelled);
-                _player.Play();
+                _player.PlaySync();
                 button_Logout.PerformClick();
                 e.SuppressKeyPress = true; //Used to remove Ding after user presses esc.
             }

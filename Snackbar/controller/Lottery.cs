@@ -18,9 +18,7 @@ namespace Snackbar.controller
 
         public bool CheckIfWinner()
         {
-            int i = _random.Next(100);
-            Console.WriteLine(i);
-            return (_settings.LotteryEnabled && i < _settings.LotteryChance);
+            return (_settings.LotteryEnabled && _random.Next(100) < _settings.LotteryChance);
         }
     }
 }
