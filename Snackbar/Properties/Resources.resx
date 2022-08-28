@@ -130,6 +130,9 @@
   <data name="icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\images\icon.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Jackpot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\sounds\Special_Jackpot.wav;System.IO.MemoryStream, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="JeopardyTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\sounds\Special_JeopardyTheme.wav;System.IO.MemoryStream, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

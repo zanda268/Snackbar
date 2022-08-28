@@ -248,5 +248,8 @@
   <ItemGroup>
     <None Include="resources\sounds\Special_PurchaseCancelled.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\sounds\Special_Jackpot.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

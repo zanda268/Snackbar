@@ -72,9 +72,13 @@ namespace Snackbar
 
             if (!settings.EasterEggsEnabled)
                 tabControl_DataManagement.TabPages.Remove(tab_EasterEggs);
+            if (!settings.LotteryEnabled)
+                tabControl_DataManagement.TabPages.Remove(tab_Stats);
 
             this.Icon = Properties.Resources.icon;
             dataGrid_Purchases.Sort(timestampDataGridViewTextBoxColumn, ListSortDirection.Descending);
+
+
         }
 
         //Save data on window close.
@@ -592,11 +596,61 @@ namespace Snackbar
         {
             _settings.LotteryEnabled = checkbox_lottery.Checked;
             numeric_lotteryChance.Enabled = checkbox_lottery.Checked;
+
+            if (!_settings.LotteryEnabled)
+                tabControl_DataManagement.TabPages.Remove(tab_Stats);
+            else
+            {
+                if (!tabControl_DataManagement.TabPages.Contains(tab_Stats))
+                    tabControl_DataManagement.TabPages.Add(tab_Stats);
+            }
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             _settings.LotteryChance = (int)numeric_lotteryChance.Value;
+        }
+
+        private void button_LotteryCalculate_Click(object sender, EventArgs e)
+        {
+            dateTimePicker_Start.Value = dateTimePicker_Start.Value.Date;
+            dateTimePicker_End.Value = DateTime.Parse(dateTimePicker_End.Value.Date.ToString().Split(' ')[0] + " 23:59:59");
+
+            int totalPurchases = 0;
+            decimal totalCost = 0;
+            int numWinners = 0;
+            decimal lottoCost = 0;
+
+            foreach (Purchase p in _purchaseHistory.GetPurchaseHistoryList())
+            {
+                if(p.Timestamp.CompareTo(dateTimePicker_Start.Value)==1 && p.Timestamp.CompareTo(dateTimePicker_End.Value)==-1)
+                {
+                    totalPurchases++;
+                    totalCost += p.Amount;
+                    if (p.LotteryWinner)
+                    {
+                        numWinners++;
+                        lottoCost += p.Amount;
+                    }
+                }
+            }
+
+            if (totalPurchases > 0)
+            {
+                label_NumPurchases.Text = $"{totalPurchases}";
+                label_TotalRevenue.Text = $"${totalCost}";
+                label_NumLottoWinners.Text = $"{numWinners}";
+                label_AmountLottoLost.Text = $"${lottoCost}";
+                label_PercentLottoWon.Text = $"{decimal.Round((decimal)numWinners / (decimal)totalPurchases * 100, 2)}%";
+            }
+            else
+            {
+                label_NumPurchases.Text = "0";
+                label_TotalRevenue.Text = "$0";
+                label_NumLottoWinners.Text = "0";
+                label_AmountLottoLost.Text = "$0";
+                label_PercentLottoWon.Text = "0%";
+            }
         }
     }
 }

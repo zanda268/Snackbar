@@ -100,6 +100,15 @@ namespace Snackbar.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Jackpot {
+            get {
+                return ResourceManager.GetStream("Jackpot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream JeopardyTheme {
             get {
                 return ResourceManager.GetStream("JeopardyTheme", resourceCulture);

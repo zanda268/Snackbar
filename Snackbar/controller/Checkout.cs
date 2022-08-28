@@ -22,6 +22,7 @@ namespace Snackbar.controller
         private TextBox _textBox_Login;
         private Settings _settings;
         private Lottery _lottery;
+        private SoundPlayer _soundPlayer;
 
         internal Checkout(UserList userList, PurchaseHistory purchaseHistory, Inventory inventory, Settings settings, Lottery lottery, Label label_UPCErrorMessage, TextBox textBox_Login, Label purchaseTotal)
         {
@@ -43,7 +44,9 @@ namespace Snackbar.controller
             if (user.Balance > 0 && _lottery.CheckIfWinner())
             {
                 //Won lottery
-                MessageBox.Show("You won!","Winner",MessageBoxButtons.OK);
+                _soundPlayer = new SoundPlayer(Properties.Resources.Jackpot);
+                _soundPlayer.Play();
+                MessageBox.Show("Congratulations! This purchase wasn't charged to your account.","Winner",MessageBoxButtons.OK);
                 foreach (PurchaseListItem purchase in PurchaseList)
                 {
                     for (int i = purchase.Amount; i > 0; i--)
