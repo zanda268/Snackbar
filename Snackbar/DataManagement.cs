@@ -53,6 +53,8 @@ namespace Snackbar
             numeric_ShameLevel.Value = settings.ShameUserValue;
             checkBox_LimitDebt.Checked = settings.LimitDebtEnabled;
             numeric_MaxDebt.Value = settings.MaxDebtValue;
+            checkbox_lottery.Checked = settings.LotteryEnabled;
+            numeric_lotteryChance.Value = settings.LotteryChance;
 
             checkBox_Guest.Checked = settings.GuestAccountEnabled;
             textBox_GuestID.Text = settings.GuestAccountID;
@@ -583,8 +585,18 @@ namespace Snackbar
             _settings.MaxDebtValue = (int)numeric_MaxDebt.Value;
         }
 
+
         #endregion
 
+        private void checkbox_lottery_CheckedChanged(object sender, EventArgs e)
+        {
+            _settings.LotteryEnabled = checkbox_lottery.Checked;
+            numeric_lotteryChance.Enabled = checkbox_lottery.Checked;
+        }
 
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            _settings.LotteryChance = (int)numeric_lotteryChance.Value;
+        }
     }
 }

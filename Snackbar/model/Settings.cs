@@ -21,6 +21,8 @@ namespace Snackbar.model
         private string _guestAccountID;
         private bool _easterEggsEnabled;
         private string _adminPassword;
+        private bool _lotteryEnabled;
+        private int _lotteryChance;
         private EasterEggUser _allUsersUser;
 
         private SortableBindingList<EasterEggUser> _easterEggUsers;
@@ -50,6 +52,8 @@ namespace Snackbar.model
         public bool LimitDebtEnabled { get => _limitDebtEnabled; set => _limitDebtEnabled = value; }
         public int MaxDebtValue { get => _maxDebtValue; set => _maxDebtValue = value; }
         public EasterEggUser AllUsersUser { get => _allUsersUser; set => _allUsersUser = value; }
+        public bool LotteryEnabled { get => _lotteryEnabled; set => _lotteryEnabled = value; }
+        public int LotteryChance { get => _lotteryChance; set => _lotteryChance = value; }
 
         public readonly string ALL_USERS = "\"All Users\"";
 

@@ -62,7 +62,10 @@ namespace Snackbar.controller
                         while ((line = sr.ReadLine()) != null)
                         {
                             split = line.Split(',');
-                            purchaseHistory.AddPurchase(new Purchase(split[1].Trim(), split[2].Trim(), decimal.Parse(split[3]), DateTime.Parse(split[0])));
+                            if(split.Length == 4)
+                                purchaseHistory.AddPurchase(new Purchase(split[1].Trim(), split[2].Trim(), decimal.Parse(split[3]), DateTime.Parse(split[0]), false));
+                            else
+                                purchaseHistory.AddPurchase(new Purchase(split[1].Trim(), split[2].Trim(), decimal.Parse(split[3]), DateTime.Parse(split[0]), bool.Parse(split[4])));
                         }
 
                         sr.Close();
@@ -110,6 +113,8 @@ namespace Snackbar.controller
                         settings.DejaVuChance = 20;
                         settings.JeopardyEnabled = true;
                         settings.JeopardyChance = 30;
+                        settings.LotteryEnabled = false;
+                        settings.LotteryChance = 0;
                     }
                     else
                     {
@@ -136,6 +141,9 @@ namespace Snackbar.controller
                         settings.GuestAccountID = doc.GetElementsByTagName("settings")[0].SelectSingleNode("guestAccountID").InnerText;
                         settings.EasterEggsEnabled = bool.Parse(doc.GetElementsByTagName("settings")[0].SelectSingleNode("easterEggsEnabled").InnerText);
                         settings.AdminPassword = doc.GetElementsByTagName("settings")[0].SelectSingleNode("adminPassword").InnerText;
+                        settings.LotteryEnabled = bool.Parse(doc.GetElementsByTagName("settings")[0].SelectSingleNode("lotteryEnabled").InnerText);
+                        settings.LotteryChance = int.Parse(doc.GetElementsByTagName("settings")[0].SelectSingleNode("lotteryChance").InnerText);
+
 
                         settings.FridaySongEnabled = bool.Parse(doc.GetElementsByTagName("easterEggs")[0].SelectSingleNode("fridaySongEnabled").InnerText);
                         settings.FridaySongChance = int.Parse(doc.GetElementsByTagName("easterEggs")[0].SelectSingleNode("fridaySongChance").InnerText);
@@ -261,6 +269,8 @@ namespace Snackbar.controller
                 writer.WriteElementString("guestAccountID", settings.GuestAccountID.ToString());
                 writer.WriteElementString("easterEggsEnabled", settings.EasterEggsEnabled.ToString());
                 writer.WriteElementString("adminPassword", settings.AdminPassword.ToString());
+                writer.WriteElementString("lotteryEnabled", settings.LotteryEnabled.ToString());
+                writer.WriteElementString("lotteryChance", settings.LotteryChance.ToString());
                 writer.WriteEndElement();
 
                 writer.WriteStartElement("easterEggs");

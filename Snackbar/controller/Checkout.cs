@@ -21,8 +21,9 @@ namespace Snackbar.controller
         private Label _label_UPCErrorMessage;
         private TextBox _textBox_Login;
         private Settings _settings;
+        private Lottery _lottery;
 
-        internal Checkout(UserList userList, PurchaseHistory purchaseHistory, Inventory inventory, Settings settings, Label label_UPCErrorMessage, TextBox textBox_Login, Label purchaseTotal)
+        internal Checkout(UserList userList, PurchaseHistory purchaseHistory, Inventory inventory, Settings settings, Lottery lottery, Label label_UPCErrorMessage, TextBox textBox_Login, Label purchaseTotal)
         {
             PurchaseList = new BindingList<PurchaseListItem>();
             this._inventory = inventory;
@@ -32,19 +33,37 @@ namespace Snackbar.controller
             this._textBox_Login = textBox_Login;
             this._label_UPCErrorMessage = label_UPCErrorMessage;
             this._settings = settings;
+            this._lottery = lottery;
         }
 
         public void PurchaseCart()
         {
             User user = _userList.GetUserFromID(_textBox_Login.Text);
 
-            foreach (PurchaseListItem purchase in PurchaseList)
+            if (user.Balance > 0 && _lottery.CheckIfWinner())
             {
-                for(int i=purchase.Amount; i>0; i--)
+                //Won lottery
+                MessageBox.Show("You won!","Winner",MessageBoxButtons.OK);
+                foreach (PurchaseListItem purchase in PurchaseList)
                 {
-                    _purchaseHistory.AddPurchase(new Purchase(user.ID, purchase.Name, purchase.Cost, DateTime.Now));
-                    _inventory.GetItem(purchase.UPC).Amount--;
-                    user.Balance = decimal.Subtract(user.Balance, purchase.Cost);
+                    for (int i = purchase.Amount; i > 0; i--)
+                    {
+                        _purchaseHistory.AddPurchase(new Purchase(user.ID, purchase.Name, purchase.Cost, DateTime.Now, true));
+                        _inventory.GetItem(purchase.UPC).Amount--;
+                    }
+                }
+            }
+            else
+            {
+                //This guys is a LOOOOSSSERR!
+                foreach (PurchaseListItem purchase in PurchaseList)
+                {
+                    for (int i = purchase.Amount; i > 0; i--)
+                    {
+                        _purchaseHistory.AddPurchase(new Purchase(user.ID, purchase.Name, purchase.Cost, DateTime.Now, false));
+                        _inventory.GetItem(purchase.UPC).Amount--;
+                        user.Balance = decimal.Subtract(user.Balance, purchase.Cost);
+                    }
                 }
             }
         }
@@ -55,7 +74,7 @@ namespace Snackbar.controller
             {
                 for (int i = purchase.Amount; i > 0; i--)
                 {
-                    _purchaseHistory.AddPurchase(new Purchase(_settings.GuestAccountID, purchase.Name, purchase.Cost, DateTime.Now));
+                    _purchaseHistory.AddPurchase(new Purchase(_settings.GuestAccountID, purchase.Name, purchase.Cost, DateTime.Now, false));
                     _inventory.GetItem(purchase.UPC).Amount--;
                 }
             }

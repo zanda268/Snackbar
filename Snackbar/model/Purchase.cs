@@ -13,6 +13,7 @@ namespace Snackbar.model
         private string _itemName;
         private decimal _amount;
         private DateTime _timestamp;
+        private bool _lotteryWinner;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -21,14 +22,16 @@ namespace Snackbar.model
         public string UserID { get => _userID; set { _userID = value; NotifyPropertyChanged("UserID"); } }
         public string ItemName { get => _itemName; set { _itemName = value; NotifyPropertyChanged("ItemName"); } }
         public DateTime Timestamp { get => _timestamp; set { _timestamp = value; NotifyPropertyChanged("TimeStamp"); } }
+        public bool LotteryWinner { get => _lotteryWinner; set { _lotteryWinner = value; NotifyPropertyChanged("LotteryWinner"); } }
 
         //Constructer
-        internal Purchase(string id, string name, decimal amount, DateTime timeStamp)
+        internal Purchase(string id, string name, decimal amount, DateTime timeStamp, bool lotteryWinner)
         {
             this.UserID = id;
             this.ItemName = name;
             this.Amount = amount;
             this.Timestamp = timeStamp;
+            this.LotteryWinner = lotteryWinner;
         }
 
         //Overrides CompareTo method to sort by DateTime
@@ -43,7 +46,7 @@ namespace Snackbar.model
 
         public override string ToString()
         {
-            return Timestamp.ToString() + ", " + UserID.ToString() + ", " + ItemName.ToString() + ", " + Amount.ToString();
+            return $"{Timestamp.ToString()}, {UserID.ToString()}, {ItemName.ToString()}, {Amount.ToString()}, {LotteryWinner.ToString()}";
         }
 
         private void NotifyPropertyChanged(string p)

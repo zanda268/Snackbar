@@ -24,6 +24,7 @@ namespace Snackbar
         private DataManagement _dataManagement;
         private EasterEggManager _easterEggManager;
         private SoundPlayer _player;
+        private Lottery _lottery;
 
         internal FormMain()
         {
@@ -34,9 +35,10 @@ namespace Snackbar
             _settings = new Settings();
             _purchaseHistory = new PurchaseHistory();
             _inventory = new Inventory();
+            _lottery = new Lottery(_settings);
             _userList = new UserList(_settings);
             _easterEggManager = new EasterEggManager(_settings);
-            _checkout = new Checkout(_userList, _purchaseHistory, _inventory, _settings, Label_UPCErrorMessage, textBox_Login, label_PurchaseTotal);
+            _checkout = new Checkout(_userList, _purchaseHistory, _inventory, _settings, _lottery, Label_UPCErrorMessage, textBox_Login, label_PurchaseTotal);
 
             listBox_PurchaseList.DataSource = _checkout.PurchaseList;
 
@@ -186,6 +188,7 @@ namespace Snackbar
                 MessageBox.Show("Insufficent funds! Please add more funds to your account.", "Insufficent funds!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
 
             _checkout.PurchaseCart();
             _checkout.ClearCart();
