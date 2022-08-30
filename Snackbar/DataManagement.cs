@@ -76,6 +76,8 @@ namespace Snackbar
             this.Icon = Properties.Resources.icon;
             dataGrid_Purchases.Sort(timestampDataGridViewTextBoxColumn, ListSortDirection.Descending);
 
+            //TODO - Add Deletion button to purchases and log all deletions
+
 
         }
 

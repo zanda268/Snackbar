@@ -225,8 +225,8 @@ namespace Snackbar
             this.tabControl_DataManagement.Controls.Add(this.tab_Inventory);
             this.tabControl_DataManagement.Controls.Add(this.tab_Purchases);
             this.tabControl_DataManagement.Controls.Add(this.tab_Settings);
-            this.tabControl_DataManagement.Controls.Add(this.tab_EasterEggs);
             this.tabControl_DataManagement.Controls.Add(this.tab_Stats);
+            this.tabControl_DataManagement.Controls.Add(this.tab_EasterEggs);
             this.tabControl_DataManagement.Location = new System.Drawing.Point(6, 19);
             this.tabControl_DataManagement.Name = "tabControl_DataManagement";
             this.tabControl_DataManagement.SelectedIndex = 0;
