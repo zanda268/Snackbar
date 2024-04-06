@@ -257,7 +257,7 @@ namespace Snackbar
         {
             adminModeToolStripMenuItem.Text = "Enable Admin Mode";
             adminToolStripMenuItem.Enabled = false;
-            _dataManagement.Close();
+            _dataManagement.Hide();
         }
 
         //Toolbar - Help window

@@ -38,5 +38,10 @@ namespace Snackbar
         {
             System.Diagnostics.Process.Start("https://www.vecteezy.com/free-vector/hand");
         }
-    }
+
+		private void label3_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
